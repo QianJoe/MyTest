@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  JQHomeTableViewController.h
 //  SchoolOrderFood
 //
 //  Created by 乔谦 on 16/10/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface JQHomeTableViewController : UIViewController
 
 @end
-

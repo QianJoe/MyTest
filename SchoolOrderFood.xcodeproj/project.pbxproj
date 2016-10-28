@@ -9,23 +9,41 @@
 /* Begin PBXBuildFile section */
 		6F30DA3C1DC1ABC8000824CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3B1DC1ABC8000824CE /* main.m */; };
 		6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */; };
-		6F30DA421DC1ABC8000824CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA411DC1ABC8000824CE /* ViewController.m */; };
-		6F30DA451DC1ABC8000824CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA431DC1ABC8000824CE /* Main.storyboard */; };
 		6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA461DC1ABC8000824CE /* Assets.xcassets */; };
 		6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA481DC1ABC8000824CE /* LaunchScreen.storyboard */; };
+		6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */; };
+		6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */; };
+		6F30DA661DC1E491000824CE /* JQPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA651DC1E491000824CE /* JQPageView.m */; };
+		6F30DA691DC1E502000824CE /* JQHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */; };
+		6F30DA6C1DC1F0B0000824CE /* JQContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6B1DC1F0B0000824CE /* JQContainerView.m */; };
+		6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */; };
+		E35627C336C394EB6B498972 /* libPods-SchoolOrderFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493A3DB52835B953AE9768FA /* Pods-SchoolOrderFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolOrderFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood.debug.xcconfig"; sourceTree = "<group>"; };
+		6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolOrderFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood.release.xcconfig"; sourceTree = "<group>"; };
 		6F30DA371DC1ABC8000824CE /* SchoolOrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolOrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30DA3B1DC1ABC8000824CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6F30DA401DC1ABC8000824CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6F30DA411DC1ABC8000824CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6F30DA441DC1ABC8000824CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F30DA461DC1ABC8000824CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F30DA491DC1ABC8000824CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F30DA4B1DC1ABC8000824CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F30DA581DC1D6DB000824CE /* JQBasicTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQBasicTabBarController.h; sourceTree = "<group>"; };
+		6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQBasicTabBarController.m; sourceTree = "<group>"; };
+		6F30DA5B1DC1D7F9000824CE /* JQBasicNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQBasicNaviController.h; sourceTree = "<group>"; };
+		6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQBasicNaviController.m; sourceTree = "<group>"; };
+		6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6F30DA641DC1E491000824CE /* JQPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPageView.h; sourceTree = "<group>"; };
+		6F30DA651DC1E491000824CE /* JQPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPageView.m; sourceTree = "<group>"; };
+		6F30DA671DC1E501000824CE /* JQHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeTableViewController.h; sourceTree = "<group>"; };
+		6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeTableViewController.m; sourceTree = "<group>"; };
+		6F30DA6A1DC1F0B0000824CE /* JQContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQContainerView.h; sourceTree = "<group>"; };
+		6F30DA6B1DC1F0B0000824CE /* JQContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQContainerView.m; sourceTree = "<group>"; };
+		6F30DA6E1DC1F9CD000824CE /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchoolOrderFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35627C336C394EB6B498972 /* libPods-SchoolOrderFood.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19AE1D46EC7CAFD44906A319 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3929C1D0D3AC13F1D2E57060 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				493A3DB52835B953AE9768FA /* Pods-SchoolOrderFood.debug.xcconfig */,
+				6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6F30DA2E1DC1ABC8000824CE = {
 			isa = PBXGroup;
 			children = (
 				6F30DA391DC1ABC8000824CE /* SchoolOrderFood */,
 				6F30DA381DC1ABC8000824CE /* Products */,
+				3929C1D0D3AC13F1D2E57060 /* Pods */,
+				19AE1D46EC7CAFD44906A319 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,15 +96,9 @@
 		6F30DA391DC1ABC8000824CE /* SchoolOrderFood */ = {
 			isa = PBXGroup;
 			children = (
-				6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */,
-				6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */,
-				6F30DA401DC1ABC8000824CE /* ViewController.h */,
-				6F30DA411DC1ABC8000824CE /* ViewController.m */,
-				6F30DA431DC1ABC8000824CE /* Main.storyboard */,
-				6F30DA461DC1ABC8000824CE /* Assets.xcassets */,
-				6F30DA481DC1ABC8000824CE /* LaunchScreen.storyboard */,
-				6F30DA4B1DC1ABC8000824CE /* Info.plist */,
-				6F30DA3A1DC1ABC8000824CE /* Supporting Files */,
+				6F30DA531DC1AD36000824CE /* other(资源和配置) */,
+				6F30DA521DC1ACED000824CE /* enter(入口文件) */,
+				6F30DA511DC1ACE0000824CE /* classes */,
 			);
 			path = SchoolOrderFood;
 			sourceTree = "<group>";
@@ -79,6 +111,127 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6F30DA511DC1ACE0000824CE /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA541DC1D4FA000824CE /* Main */,
+				6F30DA5F1DC1E3F2000824CE /* Home(首页) */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		6F30DA521DC1ACED000824CE /* enter(入口文件) */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA481DC1ABC8000824CE /* LaunchScreen.storyboard */,
+				6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */,
+				6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */,
+			);
+			name = "enter(入口文件)";
+			sourceTree = "<group>";
+		};
+		6F30DA531DC1AD36000824CE /* other(资源和配置) */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */,
+				6F30DA3A1DC1ABC8000824CE /* Supporting Files */,
+				6F30DA461DC1ABC8000824CE /* Assets.xcassets */,
+				6F30DA4B1DC1ABC8000824CE /* Info.plist */,
+			);
+			name = "other(资源和配置)";
+			sourceTree = "<group>";
+		};
+		6F30DA541DC1D4FA000824CE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA6D1DC1F9A8000824CE /* Other */,
+				6F30DA551DC1D4FA000824CE /* Controller */,
+				6F30DA561DC1D4FA000824CE /* Model */,
+				6F30DA571DC1D4FA000824CE /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6F30DA551DC1D4FA000824CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA581DC1D6DB000824CE /* JQBasicTabBarController.h */,
+				6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */,
+				6F30DA5B1DC1D7F9000824CE /* JQBasicNaviController.h */,
+				6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F30DA561DC1D4FA000824CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F30DA571DC1D4FA000824CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6F30DA5F1DC1E3F2000824CE /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA631DC1E426000824CE /* Other */,
+				6F30DA601DC1E3F2000824CE /* Controller */,
+				6F30DA611DC1E3F2000824CE /* Model */,
+				6F30DA621DC1E3F2000824CE /* View */,
+			);
+			name = "Home(首页)";
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6F30DA601DC1E3F2000824CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA671DC1E501000824CE /* JQHomeTableViewController.h */,
+				6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F30DA611DC1E3F2000824CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F30DA621DC1E3F2000824CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA641DC1E491000824CE /* JQPageView.h */,
+				6F30DA651DC1E491000824CE /* JQPageView.m */,
+				6F30DA6A1DC1F0B0000824CE /* JQContainerView.h */,
+				6F30DA6B1DC1F0B0000824CE /* JQContainerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6F30DA631DC1E426000824CE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6F30DA6D1DC1F9A8000824CE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				6F30DA6E1DC1F9CD000824CE /* UIImage+Image.h */,
+				6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F30DA4E1DC1ABC8000824CE /* Build configuration list for PBXNativeTarget "SchoolOrderFood" */;
 			buildPhases = (
+				C54752DEDB67D51A45DADA13 /* 📦 Check Pods Manifest.lock */,
 				6F30DA331DC1ABC8000824CE /* Sources */,
 				6F30DA341DC1ABC8000824CE /* Frameworks */,
 				6F30DA351DC1ABC8000824CE /* Resources */,
+				961BEA626066DDD6C79D7438 /* 📦 Embed Pods Frameworks */,
+				5EA4F9DDE1A4F1E8DFD643D3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,6 +261,7 @@
 		6F30DA2F1DC1ABC8000824CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JQ;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = wlr;
 				TargetAttributes = {
@@ -139,18 +296,70 @@
 			files = (
 				6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
-				6F30DA451DC1ABC8000824CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EA4F9DDE1A4F1E8DFD643D3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		961BEA626066DDD6C79D7438 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C54752DEDB67D51A45DADA13 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F30DA331DC1ABC8000824CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F30DA421DC1ABC8000824CE /* ViewController.m in Sources */,
+				6F30DA6C1DC1F0B0000824CE /* JQContainerView.m in Sources */,
+				6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */,
+				6F30DA661DC1E491000824CE /* JQPageView.m in Sources */,
+				6F30DA691DC1E502000824CE /* JQHomeTableViewController.m in Sources */,
+				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
+				6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */,
 				6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,
 			);
@@ -159,14 +368,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6F30DA431DC1ABC8000824CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6F30DA441DC1ABC8000824CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6F30DA481DC1ABC8000824CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -260,8 +461,11 @@
 		};
 		6F30DA4F1DC1ABC8000824CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 493A3DB52835B953AE9768FA /* Pods-SchoolOrderFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SchoolOrderFood/PrefixHeader.pch;
 				INFOPLIST_FILE = SchoolOrderFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.wlr.SchoolOrderFood;
@@ -271,8 +475,11 @@
 		};
 		6F30DA501DC1ABC8000824CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SchoolOrderFood/PrefixHeader.pch;
 				INFOPLIST_FILE = SchoolOrderFood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.wlr.SchoolOrderFood;
@@ -299,6 +506,7 @@
 				6F30DA501DC1ABC8000824CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

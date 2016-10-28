@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JQBasicTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -14,12 +15,35 @@
 
 @implementation AppDelegate
 
-
+#pragma mark - 入口方法
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 设置根控制器
+    [self setRootVC];
+    
     return YES;
 }
 
+#pragma mark - 设置根控制器
+- (void)setRootVC {
+    
+    // 注意这里initWithFrame在9.0之后就不需要了，直接用init
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    // 强引用
+    self.window = window;
+    
+    // 创建根控制器，因为使用的是底部菜单，所以使用tabBarVC，当然是自定义的23333
+    JQBasicTabBarController *tbVc = [[JQBasicTabBarController alloc] init];
+    // 将创建好的根控制器，让窗口强引用
+    window.rootViewController = tbVc;
+    
+    // 将窗口显示出来
+    [self.window makeKeyAndVisible];
+}
+
+
+
+# pragma mark - 主代理方法的其他一些方法
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
