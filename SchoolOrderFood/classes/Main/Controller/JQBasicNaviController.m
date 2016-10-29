@@ -23,4 +23,10 @@
     [self.navigationBar setBackgroundImage:navBackImg forBarMetrics:UIBarMetricsDefault];
 }
 
+#pragma mark - 状态栏改成亮白色
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return UIStatusBarStyleLightContent;
+}
+
 @end

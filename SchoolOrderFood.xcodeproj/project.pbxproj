@@ -7,22 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0EB4CD1DC3304000A967FB /* JQACFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EB4CC1DC3304000A967FB /* JQACFoodModel.m */; };
+		6F0EB4CF1DC3321A00A967FB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F0EB4CE1DC3321A00A967FB /* data.json */; };
+		6F0EB4D21DC3351A00A967FB /* JQACFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EB4D11DC3351A00A967FB /* JQACFoodTableViewCell.m */; };
+		6F0EB4DB1DC3442700A967FB /* JQLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EB4DA1DC3442700A967FB /* JQLineLayout.m */; };
+		6F0EB4E11DC34B9200A967FB /* JQAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EB4E01DC34B9200A967FB /* JQAdView.m */; };
 		6F30DA3C1DC1ABC8000824CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3B1DC1ABC8000824CE /* main.m */; };
 		6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */; };
 		6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA461DC1ABC8000824CE /* Assets.xcassets */; };
 		6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA481DC1ABC8000824CE /* LaunchScreen.storyboard */; };
 		6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */; };
 		6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */; };
-		6F30DA661DC1E491000824CE /* JQPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA651DC1E491000824CE /* JQPageView.m */; };
 		6F30DA691DC1E502000824CE /* JQHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */; };
-		6F30DA6C1DC1F0B0000824CE /* JQContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6B1DC1F0B0000824CE /* JQContainerView.m */; };
 		6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */; };
+		6FAA7A2C1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAA7A2A1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m */; };
+		6FAA7A2D1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAA7A2B1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib */; };
+		6FDBFC081DC47B7D00D4FD20 /* JQHotFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBFC071DC47B7D00D4FD20 /* JQHotFoodModel.m */; };
 		E35627C336C394EB6B498972 /* libPods-SchoolOrderFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		493A3DB52835B953AE9768FA /* Pods-SchoolOrderFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolOrderFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood.debug.xcconfig"; sourceTree = "<group>"; };
 		6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolOrderFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood.release.xcconfig"; sourceTree = "<group>"; };
+		6F0EB4CB1DC3304000A967FB /* JQACFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQACFoodModel.h; sourceTree = "<group>"; };
+		6F0EB4CC1DC3304000A967FB /* JQACFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQACFoodModel.m; sourceTree = "<group>"; };
+		6F0EB4CE1DC3321A00A967FB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		6F0EB4D01DC3351A00A967FB /* JQACFoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQACFoodTableViewCell.h; sourceTree = "<group>"; };
+		6F0EB4D11DC3351A00A967FB /* JQACFoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQACFoodTableViewCell.m; sourceTree = "<group>"; };
+		6F0EB4D91DC3442700A967FB /* JQLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLineLayout.h; sourceTree = "<group>"; };
+		6F0EB4DA1DC3442700A967FB /* JQLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLineLayout.m; sourceTree = "<group>"; };
+		6F0EB4DF1DC34B9200A967FB /* JQAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQAdView.h; sourceTree = "<group>"; };
+		6F0EB4E01DC34B9200A967FB /* JQAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQAdView.m; sourceTree = "<group>"; };
 		6F30DA371DC1ABC8000824CE /* SchoolOrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolOrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30DA3B1DC1ABC8000824CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,14 +50,15 @@
 		6F30DA5B1DC1D7F9000824CE /* JQBasicNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQBasicNaviController.h; sourceTree = "<group>"; };
 		6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQBasicNaviController.m; sourceTree = "<group>"; };
 		6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		6F30DA641DC1E491000824CE /* JQPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPageView.h; sourceTree = "<group>"; };
-		6F30DA651DC1E491000824CE /* JQPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPageView.m; sourceTree = "<group>"; };
 		6F30DA671DC1E501000824CE /* JQHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeTableViewController.h; sourceTree = "<group>"; };
 		6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeTableViewController.m; sourceTree = "<group>"; };
-		6F30DA6A1DC1F0B0000824CE /* JQContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQContainerView.h; sourceTree = "<group>"; };
-		6F30DA6B1DC1F0B0000824CE /* JQContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQContainerView.m; sourceTree = "<group>"; };
 		6F30DA6E1DC1F9CD000824CE /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		6FAA7A291DC3A45100F4252C /* JQHotFoodCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotFoodCollectionViewCell.h; sourceTree = "<group>"; };
+		6FAA7A2A1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotFoodCollectionViewCell.m; sourceTree = "<group>"; };
+		6FAA7A2B1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQHotFoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		6FDBFC061DC47B7D00D4FD20 /* JQHotFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotFoodModel.h; sourceTree = "<group>"; };
+		6FDBFC071DC47B7D00D4FD20 /* JQHotFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotFoodModel.m; sourceTree = "<group>"; };
 		7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchoolOrderFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +149,7 @@
 		6F30DA531DC1AD36000824CE /* other(资源和配置) */ = {
 			isa = PBXGroup;
 			children = (
+				6F0EB4CE1DC3321A00A967FB /* data.json */,
 				6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */,
 				6F30DA3A1DC1ABC8000824CE /* Supporting Files */,
 				6F30DA461DC1ABC8000824CE /* Assets.xcassets */,
@@ -201,6 +218,10 @@
 		6F30DA611DC1E3F2000824CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F0EB4CB1DC3304000A967FB /* JQACFoodModel.h */,
+				6F0EB4CC1DC3304000A967FB /* JQACFoodModel.m */,
+				6FDBFC061DC47B7D00D4FD20 /* JQHotFoodModel.h */,
+				6FDBFC071DC47B7D00D4FD20 /* JQHotFoodModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,10 +229,15 @@
 		6F30DA621DC1E3F2000824CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6F30DA641DC1E491000824CE /* JQPageView.h */,
-				6F30DA651DC1E491000824CE /* JQPageView.m */,
-				6F30DA6A1DC1F0B0000824CE /* JQContainerView.h */,
-				6F30DA6B1DC1F0B0000824CE /* JQContainerView.m */,
+				6F0EB4D91DC3442700A967FB /* JQLineLayout.h */,
+				6F0EB4DA1DC3442700A967FB /* JQLineLayout.m */,
+				6F0EB4DF1DC34B9200A967FB /* JQAdView.h */,
+				6F0EB4E01DC34B9200A967FB /* JQAdView.m */,
+				6F0EB4D01DC3351A00A967FB /* JQACFoodTableViewCell.h */,
+				6F0EB4D11DC3351A00A967FB /* JQACFoodTableViewCell.m */,
+				6FAA7A291DC3A45100F4252C /* JQHotFoodCollectionViewCell.h */,
+				6FAA7A2A1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m */,
+				6FAA7A2B1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +321,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */,
+				6FAA7A2D1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib in Resources */,
+				6F0EB4CF1DC3321A00A967FB /* data.json in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,11 +382,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F30DA6C1DC1F0B0000824CE /* JQContainerView.m in Sources */,
 				6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */,
-				6F30DA661DC1E491000824CE /* JQPageView.m in Sources */,
+				6F0EB4E11DC34B9200A967FB /* JQAdView.m in Sources */,
 				6F30DA691DC1E502000824CE /* JQHomeTableViewController.m in Sources */,
+				6FDBFC081DC47B7D00D4FD20 /* JQHotFoodModel.m in Sources */,
 				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
+				6F0EB4CD1DC3304000A967FB /* JQACFoodModel.m in Sources */,
+				6F0EB4D21DC3351A00A967FB /* JQACFoodTableViewCell.m in Sources */,
+				6FAA7A2C1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m in Sources */,
+				6F0EB4DB1DC3442700A967FB /* JQLineLayout.m in Sources */,
 				6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */,
 				6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,
