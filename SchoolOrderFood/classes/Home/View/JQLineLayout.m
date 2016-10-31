@@ -9,8 +9,8 @@
 #import "JQLineLayout.h"
 
 // 宽高
-static const CGFloat LineLayoutItemH = 190;
-static const CGFloat LineLayoutItemW = 250;
+static const CGFloat LineLayoutItemH = 170;
+static const CGFloat LineLayoutItemW = 200;
 
 
 @interface JQLineLayout ()
@@ -36,6 +36,7 @@ static const CGFloat LineLayoutItemW = 250;
  *  @return 
  */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
+    
     //1.计算出scrollview最后会停留的范围
     CGRect lastRect;
     lastRect.origin = proposedContentOffset;

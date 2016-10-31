@@ -1,0 +1,28 @@
+{
+    "hotShop": [
+                {
+                "shopName": "骚敏敏骚",
+                "shopImgName": "hot_shop03",
+                "shopIntro": "This is forkingdog team. Here's our logo?\nGithub: \"forkingdog\"",
+                "price": "20"
+                },
+                 {
+                     "shopName": "吊龙泉龙泉吊",
+                     "shopImgName": "hot_shop01",
+                     "shopIntro": "asdasdasdasd是法萨芬撒爱上飞洒发啊沙发沙发沙发暗示法法师案说法是否",
+                     "price": "50"
+                 },
+                 {
+                     "shopName": "吊威威吊",
+                     "shopImgName": "hot_shop02",
+                     "shopIntro": "asdasdasdasd是法萨芬撒爱上飞洒发啊沙发沙发沙发暗示法法师案说法是否",
+                     "price": "10"
+                 },
+                 {
+                     "shopName": "骚敏敏骚",
+                     "shopImgName": "hot_shop03",
+                     "shopIntro": "This is forkingdog team. Here's our logo?\nGithub: \"forkingdog\"",
+                     "price": "20"
+                 }
+                ]
+}

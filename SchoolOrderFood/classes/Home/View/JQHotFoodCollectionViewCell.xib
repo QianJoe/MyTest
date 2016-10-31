@@ -19,10 +19,10 @@
                         <color key="textColor" red="0.1435645517676768" green="0.1435645517676768" blue="0.1435645517676768" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下载" translatesAutoresizingMaskIntoConstraints="NO" id="nej-9U-W5q">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下载" translatesAutoresizingMaskIntoConstraints="NO" id="nej-9U-W5q">
                         <rect key="frame" x="117" y="51.5" width="45" height="36"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sark" translatesAutoresizingMaskIntoConstraints="NO" id="Rdb-Md-r0p">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogebread" translatesAutoresizingMaskIntoConstraints="NO" id="Rdb-Md-r0p">
                         <rect key="frame" x="117" y="10" width="45" height="36.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="BOy-Lo-iF2"/>
@@ -34,7 +34,7 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forkingdog" translatesAutoresizingMaskIntoConstraints="NO" id="GMg-Xb-NDC">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forkingdog" translatesAutoresizingMaskIntoConstraints="NO" id="GMg-Xb-NDC">
                         <rect key="frame" x="117" y="94.5" width="45" height="36.5"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="doge" translatesAutoresizingMaskIntoConstraints="NO" id="mQ0-Bg-SX0">
@@ -90,8 +90,8 @@
     </objects>
     <resources>
         <image name="doge" width="111" height="96"/>
+        <image name="dogebread" width="474" height="312"/>
         <image name="forkingdog" width="128" height="128"/>
-        <image name="sark" width="92" height="93"/>
         <image name="下载" width="100" height="100"/>
     </resources>
 </document>

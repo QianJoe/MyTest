@@ -14,6 +14,15 @@
 #import "JQLineLayout.h"
 #import "JQAdView.h"
 #import "JQHotFoodCollectionViewCell.h"
+#import "JQHeaderForTableViewCell.h"
+#import "JQHeaderForTbCellModel.h"
+
+#import "JQTestTableViewCell.h"
+
+#import "JQHotShopTableViewCell.h"
+#import "JQHotShopModel.h"
+
+#define LandscapeScrollViewH 180
 
 @interface JQHomeTableViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -31,10 +40,17 @@
 
 /**tableview*/
 @property (nonatomic, weak) UITableView *listTableView;
+
 /**活动的数据模型JSON数组*/
-@property (nonatomic, strong) NSArray *acFoodModelsFromJSON; // json中解析出来的
+@property (nonatomic, strong) NSArray<JQACFoodModel *> *acFoodModelsFromJSON; // json中解析出来的
+/**热门商店cell的数据模型数组*/
+@property (nonatomic, strong) NSMutableArray<JQHotShopModel *> *hotShopModelsFromJSON;
 /**活动的数据模型数组*/
-@property (nonatomic, strong) NSMutableArray *acFoodModels;
+@property (nonatomic, strong) NSMutableArray *homeModels;
+
+/**每一组cell的headerview的数据模型的数组*/
+@property (nonatomic, strong) NSMutableArray<JQHeaderForTbCellModel *> *headerForTbCellModels;
+
 
 @end
 
@@ -47,9 +63,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // 改变navigationbar
     [self changeNavi];
-    
-    // tableview的设置
-//    [self tableviewSet];
     
     // 创建头view（作为轮播器和collectionview的容器）,方便设置为tableview的头view
     [self createHeadView];
@@ -65,24 +78,41 @@
     
     // 加载json数据
     [self loadJSONData:^{ // 加载完josn数据后要做的操作
+
+        self.homeModels = @[].mutableCopy;
         
-        self.acFoodModels = @[].mutableCopy;
+        [self.homeModels addObject:self.hotShopModelsFromJSON.mutableCopy];
         
-        [self.acFoodModels addObject:self.acFoodModelsFromJSON.mutableCopy];
+        [self.homeModels addObject:self.acFoodModelsFromJSON.mutableCopy];
         
         // 给一个标识符，告诉tableView要创建哪个类
         [self.listTableView registerClass:[JQACFoodTableViewCell class] forCellReuseIdentifier:ACCELLID];
-        
+//        [self.listTableView registerClass:[JQTestTableViewCell class] forCellReuseIdentifier:TESTID];
+        [self.listTableView registerClass:[JQHotShopTableViewCell class] forCellReuseIdentifier:HOTSHOPCELLID];
+
         [self.listTableView reloadData];
         
     }];
+}
+
+#pragma mark - 每一组cell的headerview的数据模型的数组的懒加载
+- (NSMutableArray<JQHeaderForTbCellModel *> *)headerForTbCellModels{
+    
+    if (!_headerForTbCellModels) {
+        _headerForTbCellModels = [NSMutableArray array];
+        
+        [_headerForTbCellModels addObject:[JQHeaderForTbCellModel headerForTbCellModelWithImgName:@"main_shop" title:@"热门店家"]];
+        [_headerForTbCellModels addObject:[JQHeaderForTbCellModel headerForTbCellModelWithImgName:@"main_food" title:@"推荐食物"]];
+    }
+    
+    return _headerForTbCellModels;
 }
 
 #pragma mark - 创建headView
 - (void)createHeadView {
     
     UIView *headView = [[UIView alloc] init];
-    headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 210 + SCREEN_WIDTH / 2);
+    headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 185 + SCREEN_WIDTH / 2);
 //    headView.backgroundColor = BackgroundColor;
     [self.view addSubview:headView];
     self.headView = headView;
@@ -90,7 +120,7 @@
 
 #pragma mark - 创建轮播器
 - (void)createAdView {
-    
+#warning 有时间用masonry
     // 从服务器中取(http最好不用)
     NSArray *imagesURL = @[
                            @"http://img1.hoto.cn//haodou//recipe_mobile_ad//2016//05//1463743688.jpg",
@@ -121,8 +151,10 @@
 #pragma mark - 创建横向滚动
 - (void)createLandscapeScrollView {
     
+#warning 有时间用masonry
     CGFloat w = self.view.bounds.size.width;
-    CGRect frame = CGRectMake(0,CGRectGetMaxY(self.adView.frame), w, 200);
+    
+    CGRect frame = CGRectMake(0,CGRectGetMaxY(self.adView.frame) + 3, w, LandscapeScrollViewH);
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:[[JQLineLayout alloc] init]];
     
     // 设置代理
@@ -140,24 +172,24 @@
 #pragma mark - createTableView
 - (void)createTableView {
     
-    UITableView *listTabelView = [[UITableView alloc] init];
-    self.listTableView = listTabelView;
+    UITableView *listTableView = [[UITableView alloc] init];
+    self.listTableView = listTableView;
 
     //将tableview添加到view上
-    [self.view addSubview:listTabelView];
+    [self.view addSubview:listTableView];
 
     // 设置一些属性
-    listTabelView.backgroundColor = BackgroundColor;
+    listTableView.backgroundColor = BackgroundColor;
 //    listTabelView.rowHeight = 150;
-    listTabelView.showsVerticalScrollIndicator = NO;
+    listTableView.showsVerticalScrollIndicator = NO;
 //    listTabelView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     // 设置数据源和代理
-    listTabelView.dataSource = self;
-    listTabelView.delegate = self;
+    listTableView.dataSource = self;
+    listTableView.delegate = self;
     
      // 添加约束
-    [listTabelView makeConstraints:^(MASConstraintMaker *make) {
+    [listTableView makeConstraints:^(MASConstraintMaker *make) {
 
         make.top.equalTo(self.view);
         make.leading.equalTo(self.view.leading);
@@ -165,9 +197,11 @@
         make.bottom.equalTo(self.view.bottom);
     }];
     
-    listTabelView.tableHeaderView = self.headView;
+    listTableView.tableHeaderView = self.headView;
     
-    [listTabelView registerClass:[JQACFoodTableViewCell class] forCellReuseIdentifier:ACCELLID];
+//    [listTableView registerClass:[JQACFoodTableViewCell class] forCellReuseIdentifier:ACCELLID];
+//    [listTableView registerClass:[JQACFoodTableViewCell class] forCellReuseIdentifier:LIKECELLID];
+    
 }
 
 #pragma mark - 加载json数据
@@ -178,26 +212,31 @@
 #warning 现在是模拟的json数据
         // 读取json数据
         // 获取json地址
-        NSString *dataFilePath =[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+        NSString *acFoodDataFilePath =[[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
         
         // 获取二进制数据
-        NSData *data = [NSData dataWithContentsOfFile:dataFilePath];
+        NSData *acFoodData = [NSData dataWithContentsOfFile:acFoodDataFilePath];
         
         // 转成字典
-        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:acFoodData options: NSJSONReadingAllowFragments error:nil];
         
         // 转成数组
         NSArray *feedArray = dataDictionary[@"feed"];
         NSMutableArray *feedArrayM = @[].mutableCopy;
         
-        // 这个直接用的枚举遍历，这里不使用这种方法，直接用MJExtension
-//        [feedArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//            
-//            [feedArrayM addObject:[XQFeedModel feedWithDictionary:obj]];
-//        }];
-        
         feedArrayM = [JQACFoodModel mj_objectArrayWithKeyValuesArray:feedArray];
         self.acFoodModelsFromJSON = feedArrayM;
+        
+        
+        NSString *hotShopdataFilePath =[[NSBundle mainBundle] pathForResource:@"hotShop" ofType:@"json"];
+        NSData *hotShopData = [NSData dataWithContentsOfFile:hotShopdataFilePath];
+        NSDictionary *hotShopDataDictionary = [NSJSONSerialization JSONObjectWithData:hotShopData options: NSJSONReadingAllowFragments error:nil];
+        
+        // 转成数组
+        NSArray *hotShopArray = hotShopDataDictionary[@"hotShop"];
+        NSMutableArray *hotShopArrayM = @[].mutableCopy;
+        hotShopArrayM =[JQHotShopModel mj_objectArrayWithKeyValuesArray:hotShopArray];
+        self.hotShopModelsFromJSON = hotShopArrayM;
         
         // 回到主线程
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -267,43 +306,78 @@
     return YES;
 }
 
-#pragma mark - tableview的数据源
+#pragma mark - tableview的数据源和代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    // 暂定3类（热门食物，猜你喜欢，精品活动）
-
-    return [self.acFoodModels count];
+    // 暂定2类（猜你喜欢，精品活动）
+    return [self.homeModels count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [self.acFoodModels[section] count];
+    
+    return [self.homeModels[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    JQACFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ACCELLID];
-//    JQLOG(@"%@", cell);
+    
+    if (indexPath.section == 1) {
+        
+        JQACFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ACCELLID];
+        [self setupModelOfCell:cell atIndexPath:indexPath];
+        return cell;
+    }
+    
+    JQHotShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HOTSHOPCELLID];
     [self setupModelOfCell:cell atIndexPath:indexPath];
-
     return cell;
+
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    JQHeaderForTableViewCell *headerTbCell = [JQHeaderForTableViewCell headerForTableViewCel];
+    
+    headerTbCell.headerForTbCellModel = self.headerForTbCellModels[section];
+    
+    return headerTbCell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 25;
 }
 
 #pragma mark - 设置cell的数据
-- (void)setupModelOfCell:(JQACFoodTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)setupModelOfCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     // 采用计算frame模式还是自动布局模式，默认为NO，自动布局模式
     //    cell.fd_enforceFrameLayout = NO;
+    if (indexPath.section == 1) {
+        JQACFoodTableViewCell *acCell = (JQACFoodTableViewCell *)cell;
+        acCell.acFoodModel = self.homeModels[indexPath.section][indexPath.row];
+    }else if (indexPath.section == 0) {
+        
+        JQHotShopTableViewCell *htCell = (JQHotShopTableViewCell *)cell;
+        htCell.hotShopModel = self.homeModels[indexPath.section][indexPath.row];
+    }
     
-    cell.acFoodModel = self.acFoodModels[indexPath.section][indexPath.row];
 }
 
 #pragma mark - 改变cell的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return [self.listTableView fd_heightForCellWithIdentifier:ACCELLID cacheByIndexPath:indexPath configuration:^(JQACFoodTableViewCell *cell) {
+
+    if (indexPath.section == 1) {
         
-        // 在这个block中，重新cell配置数据源
+        return [self.listTableView fd_heightForCellWithIdentifier:ACCELLID cacheByIndexPath:indexPath configuration:^(JQACFoodTableViewCell *cell) {
+            
+            // 在这个block中，重新cell配置数据源
+            [self setupModelOfCell:cell atIndexPath:indexPath];
+        }];
+    }
+    
+    return [self.listTableView fd_heightForCellWithIdentifier:HOTSHOPCELLID cacheByIndexPath:indexPath configuration:^(id cell) {
+       
         [self setupModelOfCell:cell atIndexPath:indexPath];
     }];
 }

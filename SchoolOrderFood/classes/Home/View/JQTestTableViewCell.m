@@ -1,17 +1,16 @@
 //
-//  JQACFoodTableViewCell.m
+//  JQTestTableViewCell.m
 //  SchoolOrderFood
 //
-//  Created by 乔谦 on 16/10/28.
+//  Created by 乔谦 on 16/10/29.
 //  Copyright © 2016年 wlr. All rights reserved.
 //
 
-#import "JQACFoodTableViewCell.h"
+#import "JQTestTableViewCell.h"
 #import "JQACFoodModel.h"
 
-NSString * const ACCELLID = @"ACCELLID";
-
-@interface JQACFoodTableViewCell ()
+NSString * const TESTID = @"TESTID";
+@interface JQTestTableViewCell ()
 
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *contentLabel;
@@ -21,7 +20,7 @@ NSString * const ACCELLID = @"ACCELLID";
 
 @end
 
-@implementation JQACFoodTableViewCell
+@implementation JQTestTableViewCell
 
 #pragma mark - cell必须重写这个方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -30,7 +29,7 @@ NSString * const ACCELLID = @"ACCELLID";
         
         [self createView];
         
-        [self setViewAtuoLayout];
+        [self setttingViewAtuoLayout];
     }
     
     return self;
@@ -64,7 +63,7 @@ NSString * const ACCELLID = @"ACCELLID";
 
 
 #pragma mark - 在此方法内使用 Masonry 设置控件的约束,设置约束不需要在layoutSubviews中设置，只需要在初始化的时候设置
-- (void) setViewAtuoLayout {
+- (void) setttingViewAtuoLayout {
     
     int magin = 4;
     int padding = 10;

@@ -28,6 +28,10 @@ NSString * const CETID = @"CETID";
     
     // 圆角
     self.layer.cornerRadius = 5;
+    self.mainImg.layer.cornerRadius = 3;
+    self.subImg1.layer.cornerRadius = 2;
+    self.subImg2.layer.cornerRadius = 2;
+    self.subImg2.layer.cornerRadius = 2;
 
 }
 
