@@ -1,0 +1,25 @@
+{
+    "acHotFood": [
+                {
+                "foodName": "骚敏敏骚",
+                "foodImgName": "hot_food03",
+                "foodIntro": "This is forkingdog team. Here's our logo?\nGithub: \"forkingdog\"",
+                "price": "20",
+                "location": "五食堂"
+                },
+                {
+                "foodName": "吊龙泉龙泉吊",
+                "foodImgName": "hot_food01",
+                "foodIntro": "人生若只如初见，何事秋风悲画扇。",
+                "price": "50",
+                "location": "一食堂"
+                },
+                {
+                "foodName": "吊威威吊",
+                "foodImgName": "hot_food02",
+                "foodIntro": "曾经沧海难为水，除却巫山不是云。",
+                "price": "10",
+                "location": "小吃街"
+                }
+                ]
+}

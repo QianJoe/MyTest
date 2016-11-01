@@ -54,7 +54,8 @@ static const CGFloat LineLayoutItemW = 200;
             adjustX = attrs.center.x - centerX;
         }
     }
-    return CGPointMake(proposedContentOffset.x +adjustX, proposedContentOffset.y);
+    
+    return CGPointMake(proposedContentOffset.x + adjustX, proposedContentOffset.y);
     
 }
 
@@ -78,6 +79,7 @@ static const CGFloat LineLayoutItemW = 200;
  *  意味着只要显示边界发生改变，是否重新布局：内部会重新调用layoutAttributesForElementsInRect方法获得所有cell的布局属性
  */
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    
     return YES;
 }
 

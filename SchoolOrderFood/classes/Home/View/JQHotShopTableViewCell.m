@@ -13,13 +13,15 @@ NSString * const HOTSHOPCELLID = @"HOTSHOPCELLID";
 @interface JQHotShopTableViewCell ()
 
 /**商家图片ImgView*/
-@property (nonatomic, weak) UIImageView *imgView;
+@property (nonatomic, weak) UIImageView *shopImgView;
 /**商家名称Label*/
 @property (nonatomic, weak) UILabel *shopNameLabel;
 /**商家简介Label*/
 @property (nonatomic, weak) UILabel *shopIntroLabel;
 /**平均价格Label*/
 @property (nonatomic, weak) UILabel *priceLabel;
+/**容器*/
+@property (nonatomic, weak) UIView *backGroundView;
 
 @end
 
@@ -39,72 +41,78 @@ NSString * const HOTSHOPCELLID = @"HOTSHOPCELLID";
 
 - (void)createUI {
     
-    UIImageView *imgView = [[UIImageView alloc] init];
-    [self.contentView addSubview:imgView];
-    self.imgView = imgView;
+    UIView *backGroundView = [[UIView alloc] init];
+    self.backGroundView = backGroundView;
+    [self.contentView addSubview:backGroundView];
+    
+    UIImageView *shopImgView = [[UIImageView alloc] init];
+    [self.backGroundView addSubview:shopImgView];
+    self.shopImgView = shopImgView;
     
     UILabel *shopNameLabel = [[UILabel alloc] init];
-    [self.contentView addSubview:shopNameLabel];
+    [self.backGroundView addSubview:shopNameLabel];
     self.shopNameLabel = shopNameLabel;
     
     UILabel *shopIntroLabel = [[UILabel alloc] init];
     shopIntroLabel.font = [UIFont systemFontOfSize:12.5];
     shopIntroLabel.textColor = [UIColor lightGrayColor];
     shopIntroLabel.numberOfLines = 0;
-    
-    [self.contentView addSubview:shopIntroLabel];
+    [self.backGroundView addSubview:shopIntroLabel];
     self.shopIntroLabel = shopIntroLabel;
     
     UILabel *priceLabel = [[UILabel alloc] init];
     priceLabel.textColor = JQHeavyGreen;
     priceLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    [self.contentView addSubview:priceLabel];
+    [self.backGroundView addSubview:priceLabel];
     self.priceLabel = priceLabel;
 }
 
 - (void)setViewAtuoLayout {
     
-    NSInteger margin = 8;
-
-    NSInteger bottomMargin = 3;
+    NSInteger margin = 5;
+    NSInteger bottomMargin = 8;
     NSInteger imgW = 105;
     NSInteger imgH = 80;
     
-    [self.imgView makeConstraints:^(MASConstraintMaker *make) {
+    UIEdgeInsets padding = UIEdgeInsetsMake(margin, margin, margin, margin);
+    [self.backGroundView makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.left.equalTo(self.contentView).offset(margin);
-//        make.bottom.equalTo(self.contentView.bottom).offset(-margin);
+        make.edges.equalTo(self.contentView).insets(padding);
+    }];
+    
+    [self.shopImgView makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.left.equalTo(self.backGroundView).offset(margin);
         make.width.equalTo(imgW);
         make.height.equalTo(imgH);
     }];
     
     [self.shopNameLabel makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.equalTo(self.imgView);
-        make.left.equalTo(self.imgView.right).offset(margin);
-        make.width.equalTo(230);
-        
-//        make.right.mas_equalTo(self.contentView).offset(-margin);
+        make.top.equalTo(self.shopImgView);
+        make.left.equalTo(self.shopImgView.right).offset(margin);
+        make.right.equalTo(self.backGroundView.right).offset(-30);
+
         
     }];
     
     [self.shopIntroLabel makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.equalTo(self.shopNameLabel.bottom).offset(margin - 1.5);
+        make.top.equalTo(self.shopNameLabel.bottom).offset(1);
         make.left.right.equalTo(self.shopNameLabel);
         
     }];
     
     [self.priceLabel makeConstraints:^(MASConstraintMaker *make) {
        
-        make.centerY.equalTo(self.imgView.bottom);
+        make.centerY.equalTo(self.shopImgView.bottom);
         make.left.equalTo(self.shopNameLabel.left);
 
     }];
     
-    [self.contentView updateConstraints:^(MASConstraintMaker *make) {
+    [self.backGroundView updateConstraints:^(MASConstraintMaker *make) {
         
-        make.bottom.equalTo(self.priceLabel.bottom).offset(bottomMargin);
+        make.bottom.equalTo(self.shopImgView.bottom).offset(bottomMargin);
     }];
 }
 
@@ -112,7 +120,7 @@ NSString * const HOTSHOPCELLID = @"HOTSHOPCELLID";
     
     _hotShopModel = hotShopModel;
     
-    self.imgView.image = [UIImage imageNamed:hotShopModel.shopImgName];
+    self.shopImgView.image = [UIImage imageNamed:hotShopModel.shopImgName];
     self.shopNameLabel.text = hotShopModel.shopName;
     self.shopIntroLabel.text = hotShopModel.shopIntro;
     self.priceLabel.text = [NSString stringWithFormat:@"￥%@", hotShopModel.price];

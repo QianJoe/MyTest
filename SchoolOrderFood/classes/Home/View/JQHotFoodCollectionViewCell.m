@@ -45,7 +45,7 @@ NSString * const CETID = @"CETID";
     _subImg3.image = [UIImage imageNamed:hotFoodModel.subImg3];
     
     _titleLabel.text = hotFoodModel.title;
-    _numLabel.text = hotFoodModel.number;
+    _numLabel.text = [NSString stringWithFormat:@"有%@道菜", hotFoodModel.number];
 }
 
 @end

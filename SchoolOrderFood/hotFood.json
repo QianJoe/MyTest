@@ -1,0 +1,28 @@
+{
+    "hotFood": [
+                  {
+                  "mainImg": "hot_food07",
+                  "subImg1": "hot_food03",
+                  "subImg2": "hot_food02",
+                  "subImg3": "hot_food01",
+                  "title": "五食堂牛批",
+                  "number": "30"
+                  },
+                  {
+                  "mainImg": "hot_food03",
+                  "subImg1": "hot_food05",
+                  "subImg2": "hot_food02",
+                  "subImg3": "hot_food04",
+                  "title": "一食堂老哥稳",
+                  "number": "50"
+                  },
+                  {
+                  "mainImg": "hot_food03",
+                  "subImg1": "hot_food04",
+                  "subImg2": "hot_food05",
+                  "subImg3": "hot_food04",
+                  "title": "小吃街修波车",
+                  "number": "50"
+                  }
+                  ]
+}
