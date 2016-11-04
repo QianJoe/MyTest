@@ -52,8 +52,10 @@
     //设置文字的样式
     NSMutableDictionary *textAttrs = [[NSMutableDictionary alloc]init];
     NSMutableDictionary *selectedtextAttrs = [[NSMutableDictionary alloc]init];
-    textAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
-    selectedtextAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    
+    textAttrs[NSForegroundColorAttributeName] = tabbarTitleColor;
+    selectedtextAttrs[NSForegroundColorAttributeName] = tabbarTitleSelectedColor;
+    
     [childVC.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [childVC.tabBarItem setTitleTextAttributes:selectedtextAttrs forState:UIControlStateSelected];
     

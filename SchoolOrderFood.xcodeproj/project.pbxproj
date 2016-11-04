@@ -7,42 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F0EB4CF1DC3321A00A967FB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F0EB4CE1DC3321A00A967FB /* data.json */; };
-		6F0EB4DB1DC3442700A967FB /* JQLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EB4DA1DC3442700A967FB /* JQLineLayout.m */; };
-		6F0EB4E11DC34B9200A967FB /* JQAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0EB4E01DC34B9200A967FB /* JQAdView.m */; };
-		6F1C1EB41DC75F7C00D30816 /* hotFood.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F1C1EB31DC75F7C00D30816 /* hotFood.json */; };
+		6F10A4BA1DCC81A90027C650 /* JQHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A49A1DCC81A90027C650 /* JQHomeTableViewController.m */; };
+		6F10A4BB1DCC81A90027C650 /* JQCategoryGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A49D1DCC81A90027C650 /* JQCategoryGoods.m */; };
+		6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A49F1DCC81A90027C650 /* JQGoods.m */; };
+		6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4A11DCC81A90027C650 /* JQHead.m */; };
+		6F10A4BE1DCC81A90027C650 /* JQHeadData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4A31DCC81A90027C650 /* JQHeadData.m */; };
+		6F10A4BF1DCC81A90027C650 /* JQHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4A51DCC81A90027C650 /* JQHeadLine.m */; };
+		6F10A4C01DCC81A90027C650 /* UIColor+JQHexColorToARGB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4A81DCC81A90027C650 /* UIColor+JQHexColorToARGB.m */; };
+		6F10A4C11DCC81A90027C650 /* JQHeadLineContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4AB1DCC81A90027C650 /* JQHeadLineContentView.m */; };
+		6F10A4C21DCC81A90027C650 /* JQHeadLinePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4AD1DCC81A90027C650 /* JQHeadLinePageView.m */; };
+		6F10A4C31DCC81A90027C650 /* JQHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4AF1DCC81A90027C650 /* JQHeadView.m */; };
+		6F10A4C41DCC81A90027C650 /* JQHomeCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4B11DCC81A90027C650 /* JQHomeCollectCell.m */; };
+		6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4B31DCC81A90027C650 /* JQHomeGoodsView.m */; };
+		6F10A4C61DCC81A90027C650 /* JQHotLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4B51DCC81A90027C650 /* JQHotLineView.m */; };
+		6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4B71DCC81A90027C650 /* JQPageScrollView.m */; };
+		6F10A4C81DCC81A90027C650 /* JQPriceLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4B91DCC81A90027C650 /* JQPriceLabel.m */; };
+		6F10A4CB1DCC82140027C650 /* collectData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F10A4C91DCC82140027C650 /* collectData.json */; };
+		6F10A4CC1DCC82140027C650 /* headData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F10A4CA1DCC82140027C650 /* headData.json */; };
+		6F10A4CF1DCC82800027C650 /* JQHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4CE1DCC82800027C650 /* JQHomeCategoryCell.m */; };
+		6F10A4D21DCC82A50027C650 /* JQHeadViewForCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4D11DCC82A50027C650 /* JQHeadViewForCollectCell.m */; };
 		6F30DA3C1DC1ABC8000824CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3B1DC1ABC8000824CE /* main.m */; };
 		6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */; };
 		6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA461DC1ABC8000824CE /* Assets.xcassets */; };
 		6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA481DC1ABC8000824CE /* LaunchScreen.storyboard */; };
 		6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */; };
 		6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */; };
-		6F30DA691DC1E502000824CE /* JQHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */; };
 		6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */; };
-		6FAA7A2C1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAA7A2A1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m */; };
-		6FAA7A2D1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAA7A2B1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib */; };
-		6FDBFC081DC47B7D00D4FD20 /* JQHotFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBFC071DC47B7D00D4FD20 /* JQHotFoodModel.m */; };
-		6FDBFC111DC49B4500D4FD20 /* JQHeaderForTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBFC101DC49B4500D4FD20 /* JQHeaderForTableViewCell.m */; };
-		6FDBFC131DC49B5700D4FD20 /* JQHeaderForTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDBFC121DC49B5700D4FD20 /* JQHeaderForTableViewCell.xib */; };
-		6FDBFC161DC5BAE100D4FD20 /* JQHeaderForTbCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBFC151DC5BAE100D4FD20 /* JQHeaderForTbCellModel.m */; };
-		6FDBFC191DC5C8DB00D4FD20 /* JQHotShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBFC181DC5C8DB00D4FD20 /* JQHotShopTableViewCell.m */; };
-		6FDBFC1C1DC5CD3400D4FD20 /* JQHotShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBFC1B1DC5CD3400D4FD20 /* JQHotShopModel.m */; };
-		6FDBFC1E1DC5D02700D4FD20 /* hotShop.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FDBFC1D1DC5D02700D4FD20 /* hotShop.json */; };
-		6FDF94651DC72C0600FF4C23 /* JQACHotFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF94641DC72C0600FF4C23 /* JQACHotFoodModel.m */; };
-		6FDF94681DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDF94671DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.m */; };
-		6FDF946A1DC732B500FF4C23 /* acHotFood.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FDF94691DC732B500FF4C23 /* acHotFood.json */; };
 		E35627C336C394EB6B498972 /* libPods-SchoolOrderFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		493A3DB52835B953AE9768FA /* Pods-SchoolOrderFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolOrderFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood.debug.xcconfig"; sourceTree = "<group>"; };
 		6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchoolOrderFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchoolOrderFood/Pods-SchoolOrderFood.release.xcconfig"; sourceTree = "<group>"; };
-		6F0EB4CE1DC3321A00A967FB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		6F0EB4D91DC3442700A967FB /* JQLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLineLayout.h; sourceTree = "<group>"; };
-		6F0EB4DA1DC3442700A967FB /* JQLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLineLayout.m; sourceTree = "<group>"; };
-		6F0EB4DF1DC34B9200A967FB /* JQAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQAdView.h; sourceTree = "<group>"; };
-		6F0EB4E01DC34B9200A967FB /* JQAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQAdView.m; sourceTree = "<group>"; };
-		6F1C1EB31DC75F7C00D30816 /* hotFood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotFood.json; sourceTree = "<group>"; };
+		6F10A4991DCC81A90027C650 /* JQHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeTableViewController.h; sourceTree = "<group>"; };
+		6F10A49A1DCC81A90027C650 /* JQHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeTableViewController.m; sourceTree = "<group>"; };
+		6F10A49C1DCC81A90027C650 /* JQCategoryGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQCategoryGoods.h; sourceTree = "<group>"; };
+		6F10A49D1DCC81A90027C650 /* JQCategoryGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQCategoryGoods.m; sourceTree = "<group>"; };
+		6F10A49E1DCC81A90027C650 /* JQGoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQGoods.h; sourceTree = "<group>"; };
+		6F10A49F1DCC81A90027C650 /* JQGoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQGoods.m; sourceTree = "<group>"; };
+		6F10A4A01DCC81A90027C650 /* JQHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHead.h; sourceTree = "<group>"; };
+		6F10A4A11DCC81A90027C650 /* JQHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHead.m; sourceTree = "<group>"; };
+		6F10A4A21DCC81A90027C650 /* JQHeadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadData.h; sourceTree = "<group>"; };
+		6F10A4A31DCC81A90027C650 /* JQHeadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadData.m; sourceTree = "<group>"; };
+		6F10A4A41DCC81A90027C650 /* JQHeadLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadLine.h; sourceTree = "<group>"; };
+		6F10A4A51DCC81A90027C650 /* JQHeadLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadLine.m; sourceTree = "<group>"; };
+		6F10A4A71DCC81A90027C650 /* UIColor+JQHexColorToARGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JQHexColorToARGB.h"; sourceTree = "<group>"; };
+		6F10A4A81DCC81A90027C650 /* UIColor+JQHexColorToARGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JQHexColorToARGB.m"; sourceTree = "<group>"; };
+		6F10A4AA1DCC81A90027C650 /* JQHeadLineContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadLineContentView.h; sourceTree = "<group>"; };
+		6F10A4AB1DCC81A90027C650 /* JQHeadLineContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadLineContentView.m; sourceTree = "<group>"; };
+		6F10A4AC1DCC81A90027C650 /* JQHeadLinePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadLinePageView.h; sourceTree = "<group>"; };
+		6F10A4AD1DCC81A90027C650 /* JQHeadLinePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadLinePageView.m; sourceTree = "<group>"; };
+		6F10A4AE1DCC81A90027C650 /* JQHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadView.h; sourceTree = "<group>"; };
+		6F10A4AF1DCC81A90027C650 /* JQHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadView.m; sourceTree = "<group>"; };
+		6F10A4B01DCC81A90027C650 /* JQHomeCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeCollectCell.h; sourceTree = "<group>"; };
+		6F10A4B11DCC81A90027C650 /* JQHomeCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeCollectCell.m; sourceTree = "<group>"; };
+		6F10A4B21DCC81A90027C650 /* JQHomeGoodsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeGoodsView.h; sourceTree = "<group>"; };
+		6F10A4B31DCC81A90027C650 /* JQHomeGoodsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeGoodsView.m; sourceTree = "<group>"; };
+		6F10A4B41DCC81A90027C650 /* JQHotLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotLineView.h; sourceTree = "<group>"; };
+		6F10A4B51DCC81A90027C650 /* JQHotLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotLineView.m; sourceTree = "<group>"; };
+		6F10A4B61DCC81A90027C650 /* JQPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPageScrollView.h; sourceTree = "<group>"; };
+		6F10A4B71DCC81A90027C650 /* JQPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPageScrollView.m; sourceTree = "<group>"; };
+		6F10A4B81DCC81A90027C650 /* JQPriceLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPriceLabel.h; sourceTree = "<group>"; };
+		6F10A4B91DCC81A90027C650 /* JQPriceLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPriceLabel.m; sourceTree = "<group>"; };
+		6F10A4C91DCC82140027C650 /* collectData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collectData.json; sourceTree = "<group>"; };
+		6F10A4CA1DCC82140027C650 /* headData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = headData.json; sourceTree = "<group>"; };
+		6F10A4CD1DCC82800027C650 /* JQHomeCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeCategoryCell.h; sourceTree = "<group>"; };
+		6F10A4CE1DCC82800027C650 /* JQHomeCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeCategoryCell.m; sourceTree = "<group>"; };
+		6F10A4D01DCC82A50027C650 /* JQHeadViewForCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadViewForCollectCell.h; sourceTree = "<group>"; };
+		6F10A4D11DCC82A50027C650 /* JQHeadViewForCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadViewForCollectCell.m; sourceTree = "<group>"; };
 		6F30DA371DC1ABC8000824CE /* SchoolOrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolOrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30DA3B1DC1ABC8000824CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,30 +87,8 @@
 		6F30DA5B1DC1D7F9000824CE /* JQBasicNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQBasicNaviController.h; sourceTree = "<group>"; };
 		6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQBasicNaviController.m; sourceTree = "<group>"; };
 		6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		6F30DA671DC1E501000824CE /* JQHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHomeTableViewController.h; sourceTree = "<group>"; };
-		6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeTableViewController.m; sourceTree = "<group>"; };
 		6F30DA6E1DC1F9CD000824CE /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
-		6FAA7A291DC3A45100F4252C /* JQHotFoodCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotFoodCollectionViewCell.h; sourceTree = "<group>"; };
-		6FAA7A2A1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotFoodCollectionViewCell.m; sourceTree = "<group>"; };
-		6FAA7A2B1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQHotFoodCollectionViewCell.xib; sourceTree = "<group>"; };
-		6FDBFC061DC47B7D00D4FD20 /* JQHotFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotFoodModel.h; sourceTree = "<group>"; };
-		6FDBFC071DC47B7D00D4FD20 /* JQHotFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotFoodModel.m; sourceTree = "<group>"; };
-		6FDBFC0F1DC49B4500D4FD20 /* JQHeaderForTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeaderForTableViewCell.h; sourceTree = "<group>"; };
-		6FDBFC101DC49B4500D4FD20 /* JQHeaderForTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeaderForTableViewCell.m; sourceTree = "<group>"; };
-		6FDBFC121DC49B5700D4FD20 /* JQHeaderForTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQHeaderForTableViewCell.xib; sourceTree = "<group>"; };
-		6FDBFC141DC5BAE100D4FD20 /* JQHeaderForTbCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeaderForTbCellModel.h; sourceTree = "<group>"; };
-		6FDBFC151DC5BAE100D4FD20 /* JQHeaderForTbCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeaderForTbCellModel.m; sourceTree = "<group>"; };
-		6FDBFC171DC5C8DB00D4FD20 /* JQHotShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotShopTableViewCell.h; sourceTree = "<group>"; };
-		6FDBFC181DC5C8DB00D4FD20 /* JQHotShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotShopTableViewCell.m; sourceTree = "<group>"; };
-		6FDBFC1A1DC5CD3400D4FD20 /* JQHotShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHotShopModel.h; sourceTree = "<group>"; };
-		6FDBFC1B1DC5CD3400D4FD20 /* JQHotShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHotShopModel.m; sourceTree = "<group>"; };
-		6FDBFC1D1DC5D02700D4FD20 /* hotShop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotShop.json; sourceTree = "<group>"; };
-		6FDF94631DC72C0600FF4C23 /* JQACHotFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQACHotFoodModel.h; sourceTree = "<group>"; };
-		6FDF94641DC72C0600FF4C23 /* JQACHotFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQACHotFoodModel.m; sourceTree = "<group>"; };
-		6FDF94661DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQACHotFoodTableViewCell.h; sourceTree = "<group>"; };
-		6FDF94671DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQACHotFoodTableViewCell.m; sourceTree = "<group>"; };
-		6FDF94691DC732B500FF4C23 /* acHotFood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = acHotFood.json; sourceTree = "<group>"; };
 		7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchoolOrderFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,6 +119,79 @@
 				6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6F10A4971DCC81A90027C650 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4981DCC81A90027C650 /* Controller */,
+				6F10A49B1DCC81A90027C650 /* Model */,
+				6F10A4A61DCC81A90027C650 /* Other */,
+				6F10A4A91DCC81A90027C650 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6F10A4981DCC81A90027C650 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4991DCC81A90027C650 /* JQHomeTableViewController.h */,
+				6F10A49A1DCC81A90027C650 /* JQHomeTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F10A49B1DCC81A90027C650 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A49C1DCC81A90027C650 /* JQCategoryGoods.h */,
+				6F10A49D1DCC81A90027C650 /* JQCategoryGoods.m */,
+				6F10A49E1DCC81A90027C650 /* JQGoods.h */,
+				6F10A49F1DCC81A90027C650 /* JQGoods.m */,
+				6F10A4A01DCC81A90027C650 /* JQHead.h */,
+				6F10A4A11DCC81A90027C650 /* JQHead.m */,
+				6F10A4A21DCC81A90027C650 /* JQHeadData.h */,
+				6F10A4A31DCC81A90027C650 /* JQHeadData.m */,
+				6F10A4A41DCC81A90027C650 /* JQHeadLine.h */,
+				6F10A4A51DCC81A90027C650 /* JQHeadLine.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F10A4A61DCC81A90027C650 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4A71DCC81A90027C650 /* UIColor+JQHexColorToARGB.h */,
+				6F10A4A81DCC81A90027C650 /* UIColor+JQHexColorToARGB.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6F10A4A91DCC81A90027C650 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4CD1DCC82800027C650 /* JQHomeCategoryCell.h */,
+				6F10A4CE1DCC82800027C650 /* JQHomeCategoryCell.m */,
+				6F10A4D01DCC82A50027C650 /* JQHeadViewForCollectCell.h */,
+				6F10A4D11DCC82A50027C650 /* JQHeadViewForCollectCell.m */,
+				6F10A4AA1DCC81A90027C650 /* JQHeadLineContentView.h */,
+				6F10A4AB1DCC81A90027C650 /* JQHeadLineContentView.m */,
+				6F10A4AC1DCC81A90027C650 /* JQHeadLinePageView.h */,
+				6F10A4AD1DCC81A90027C650 /* JQHeadLinePageView.m */,
+				6F10A4AE1DCC81A90027C650 /* JQHeadView.h */,
+				6F10A4AF1DCC81A90027C650 /* JQHeadView.m */,
+				6F10A4B01DCC81A90027C650 /* JQHomeCollectCell.h */,
+				6F10A4B11DCC81A90027C650 /* JQHomeCollectCell.m */,
+				6F10A4B21DCC81A90027C650 /* JQHomeGoodsView.h */,
+				6F10A4B31DCC81A90027C650 /* JQHomeGoodsView.m */,
+				6F10A4B41DCC81A90027C650 /* JQHotLineView.h */,
+				6F10A4B51DCC81A90027C650 /* JQHotLineView.m */,
+				6F10A4B61DCC81A90027C650 /* JQPageScrollView.h */,
+				6F10A4B71DCC81A90027C650 /* JQPageScrollView.m */,
+				6F10A4B81DCC81A90027C650 /* JQPriceLabel.h */,
+				6F10A4B91DCC81A90027C650 /* JQPriceLabel.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6F30DA2E1DC1ABC8000824CE = {
@@ -151,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				6F30DA541DC1D4FA000824CE /* Main */,
-				6F30DA5F1DC1E3F2000824CE /* Home(首页) */,
+				6F10A4971DCC81A90027C650 /* Home */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -169,10 +252,8 @@
 		6F30DA531DC1AD36000824CE /* other(资源和配置) */ = {
 			isa = PBXGroup;
 			children = (
-				6F0EB4CE1DC3321A00A967FB /* data.json */,
-				6F1C1EB31DC75F7C00D30816 /* hotFood.json */,
-				6FDBFC1D1DC5D02700D4FD20 /* hotShop.json */,
-				6FDF94691DC732B500FF4C23 /* acHotFood.json */,
+				6F10A4C91DCC82140027C650 /* collectData.json */,
+				6F10A4CA1DCC82140027C650 /* headData.json */,
 				6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */,
 				6F30DA461DC1ABC8000824CE /* Assets.xcassets */,
 				6F30DA3A1DC1ABC8000824CE /* Supporting Files */,
@@ -215,70 +296,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		6F30DA5F1DC1E3F2000824CE /* Home(首页) */ = {
-			isa = PBXGroup;
-			children = (
-				6F30DA631DC1E426000824CE /* Other */,
-				6F30DA601DC1E3F2000824CE /* Controller */,
-				6F30DA611DC1E3F2000824CE /* Model */,
-				6F30DA621DC1E3F2000824CE /* View */,
-			);
-			name = "Home(首页)";
-			path = Home;
-			sourceTree = "<group>";
-		};
-		6F30DA601DC1E3F2000824CE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6F30DA671DC1E501000824CE /* JQHomeTableViewController.h */,
-				6F30DA681DC1E502000824CE /* JQHomeTableViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6F30DA611DC1E3F2000824CE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6FDBFC141DC5BAE100D4FD20 /* JQHeaderForTbCellModel.h */,
-				6FDBFC151DC5BAE100D4FD20 /* JQHeaderForTbCellModel.m */,
-				6FDBFC061DC47B7D00D4FD20 /* JQHotFoodModel.h */,
-				6FDBFC071DC47B7D00D4FD20 /* JQHotFoodModel.m */,
-				6FDBFC1A1DC5CD3400D4FD20 /* JQHotShopModel.h */,
-				6FDBFC1B1DC5CD3400D4FD20 /* JQHotShopModel.m */,
-				6FDF94631DC72C0600FF4C23 /* JQACHotFoodModel.h */,
-				6FDF94641DC72C0600FF4C23 /* JQACHotFoodModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6F30DA621DC1E3F2000824CE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6F0EB4D91DC3442700A967FB /* JQLineLayout.h */,
-				6F0EB4DA1DC3442700A967FB /* JQLineLayout.m */,
-				6F0EB4DF1DC34B9200A967FB /* JQAdView.h */,
-				6F0EB4E01DC34B9200A967FB /* JQAdView.m */,
-				6FAA7A291DC3A45100F4252C /* JQHotFoodCollectionViewCell.h */,
-				6FAA7A2A1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m */,
-				6FAA7A2B1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib */,
-				6FDBFC0F1DC49B4500D4FD20 /* JQHeaderForTableViewCell.h */,
-				6FDBFC101DC49B4500D4FD20 /* JQHeaderForTableViewCell.m */,
-				6FDBFC121DC49B5700D4FD20 /* JQHeaderForTableViewCell.xib */,
-				6FDBFC171DC5C8DB00D4FD20 /* JQHotShopTableViewCell.h */,
-				6FDBFC181DC5C8DB00D4FD20 /* JQHotShopTableViewCell.m */,
-				6FDF94661DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.h */,
-				6FDF94671DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6F30DA631DC1E426000824CE /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		6F30DA6D1DC1F9A8000824CE /* Other */ = {
@@ -353,13 +370,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */,
-				6FDBFC1E1DC5D02700D4FD20 /* hotShop.json in Resources */,
-				6FDBFC131DC49B5700D4FD20 /* JQHeaderForTableViewCell.xib in Resources */,
-				6FAA7A2D1DC3A45100F4252C /* JQHotFoodCollectionViewCell.xib in Resources */,
-				6F0EB4CF1DC3321A00A967FB /* data.json in Resources */,
+				6F10A4CC1DCC82140027C650 /* headData.json in Resources */,
+				6F10A4CB1DCC82140027C650 /* collectData.json in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
-				6FDF946A1DC732B500FF4C23 /* acHotFood.json in Resources */,
-				6F1C1EB41DC75F7C00D30816 /* hotFood.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,22 +431,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FDBFC1C1DC5CD3400D4FD20 /* JQHotShopModel.m in Sources */,
 				6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */,
-				6F0EB4E11DC34B9200A967FB /* JQAdView.m in Sources */,
-				6F30DA691DC1E502000824CE /* JQHomeTableViewController.m in Sources */,
-				6FDBFC081DC47B7D00D4FD20 /* JQHotFoodModel.m in Sources */,
+				6F10A4BF1DCC81A90027C650 /* JQHeadLine.m in Sources */,
+				6F10A4BA1DCC81A90027C650 /* JQHomeTableViewController.m in Sources */,
+				6F10A4C81DCC81A90027C650 /* JQPriceLabel.m in Sources */,
+				6F10A4D21DCC82A50027C650 /* JQHeadViewForCollectCell.m in Sources */,
+				6F10A4C31DCC81A90027C650 /* JQHeadView.m in Sources */,
+				6F10A4BE1DCC81A90027C650 /* JQHeadData.m in Sources */,
 				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
-				6FDBFC191DC5C8DB00D4FD20 /* JQHotShopTableViewCell.m in Sources */,
-				6FDF94681DC72D5A00FF4C23 /* JQACHotFoodTableViewCell.m in Sources */,
-				6FDBFC161DC5BAE100D4FD20 /* JQHeaderForTbCellModel.m in Sources */,
-				6FDBFC111DC49B4500D4FD20 /* JQHeaderForTableViewCell.m in Sources */,
-				6FDF94651DC72C0600FF4C23 /* JQACHotFoodModel.m in Sources */,
-				6FAA7A2C1DC3A45100F4252C /* JQHotFoodCollectionViewCell.m in Sources */,
-				6F0EB4DB1DC3442700A967FB /* JQLineLayout.m in Sources */,
+				6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */,
+				6F10A4C21DCC81A90027C650 /* JQHeadLinePageView.m in Sources */,
+				6F10A4C41DCC81A90027C650 /* JQHomeCollectCell.m in Sources */,
+				6F10A4C61DCC81A90027C650 /* JQHotLineView.m in Sources */,
 				6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */,
+				6F10A4CF1DCC82800027C650 /* JQHomeCategoryCell.m in Sources */,
+				6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */,
+				6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */,
+				6F10A4C11DCC81A90027C650 /* JQHeadLineContentView.m in Sources */,
 				6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */,
+				6F10A4BB1DCC81A90027C650 /* JQCategoryGoods.m in Sources */,
+				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,
+				6F10A4C01DCC81A90027C650 /* UIColor+JQHexColorToARGB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
