@@ -153,10 +153,11 @@ static const NSInteger MaxImageViewCount = 3;
     [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width * 2, 0) animated:YES];
 }
 
+#pragma mark - 点击轮播器中图片的手势事件
 - (void)imageViewClick:(UITapGestureRecognizer *)tapGes{
-    //    if (self.clikeCall) {
-    //        self.clikeCall(HeadViewItemTypePage,tapGes.view.tag);
-    //    }
+    
+    NSString *imgURL = self.images[tapGes.view.tag];
+    JQLOG(@"轮询器被点击:%ld----%@", tapGes.view.tag, imgURL);
 }
 
 

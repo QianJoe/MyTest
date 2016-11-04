@@ -9,6 +9,7 @@
 #import "JQHeadLinePageView.h"
 #import "JQHeadLineContentView.h"
 #import "JQHeadLine.h"
+#import "JQHead.h"
 
 @interface JQHeadLinePageView () <UIScrollViewDelegate>
 
@@ -164,9 +165,10 @@ static const CGFloat MaxContentViewCount = 3;
 }
 
 #pragma mark - 点击其中一个调用
-- (void)contentViewClicked:(UITapGestureRecognizer *)tap{
+- (void)contentViewClicked:(UITapGestureRecognizer *)tap {
     
-    
+    NSString *headURL = self.headLine.headArr[tap.view.tag].content;
+    JQLOG(@"头条被点击:%ld----%@", tap.view.tag, headURL);
 }
 
 

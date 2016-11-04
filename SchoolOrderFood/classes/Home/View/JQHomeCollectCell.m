@@ -42,11 +42,14 @@ NSString * const HOMECOLLECTCELL = @"HOMECOLLECTCELL";
 
 - (void)createUI {
     
+    self.userInteractionEnabled = YES;
+    
     self.layer.borderWidth = 0.3;
     self.layer.borderColor = GrayColor.CGColor;
     
     UIImageView *goodsImageView = [[UIImageView alloc] init];
     [goodsImageView sd_setImageWithURL:[NSURL URLWithString:@"http://img01.bqstatic.com/upload/goods/201/603/1609/20160316094120_299780.jpg@200w_200h_90Q.jpg"] placeholderImage:[UIImage imageNamed:@"03"]];
+    goodsImageView.userInteractionEnabled = YES;
     self.goodsImageView = goodsImageView;
     [self addSubview:goodsImageView];
     
@@ -57,6 +60,7 @@ NSString * const HOMECOLLECTCELL = @"HOMECOLLECTCELL";
     [self addSubview:nameLabel];
 
     UIImageView *fineImageView = [[UIImageView alloc] init];
+    fineImageView.userInteractionEnabled = YES;
     fineImageView.image = [UIImage imageNamed:@"jingxuan.png"];
     self.fineImageView = fineImageView;
     [self addSubview:fineImageView];
