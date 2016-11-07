@@ -26,6 +26,14 @@
 		6F10A4CC1DCC82140027C650 /* headData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F10A4CA1DCC82140027C650 /* headData.json */; };
 		6F10A4CF1DCC82800027C650 /* JQHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4CE1DCC82800027C650 /* JQHomeCategoryCell.m */; };
 		6F10A4D21DCC82A50027C650 /* JQHeadViewForCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4D11DCC82A50027C650 /* JQHeadViewForCollectCell.m */; };
+		6F10A4DA1DCDB7B70027C650 /* JQMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4D91DCDB7B70027C650 /* JQMineViewController.m */; };
+		6F10A4DD1DCDBA2B0027C650 /* JQMineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4DC1DCDBA2B0027C650 /* JQMineHeadView.m */; };
+		6F10A4E01DCDC62C0027C650 /* JQOrderFoodHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4DF1DCDC62C0027C650 /* JQOrderFoodHeadView.m */; };
+		6F10A4E31DCDCA100027C650 /* JQMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4E21DCDCA100027C650 /* JQMenuView.m */; };
+		6F10A4E61DCDCD610027C650 /* JQTitleIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4E51DCDCD610027C650 /* JQTitleIconView.m */; };
+		6F10A4E91DCDD0D90027C650 /* JQTitleIconAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4E81DCDD0D90027C650 /* JQTitleIconAction.m */; };
+		6F10A4EC1DCDDC700027C650 /* JQPageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F10A4EB1DCDDC700027C650 /* JQPageData.m */; };
+		6F10A4F01DCDDD0A0027C650 /* MinePageData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F10A4EF1DCDDD0A0027C650 /* MinePageData.json */; };
 		6F30DA3C1DC1ABC8000824CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3B1DC1ABC8000824CE /* main.m */; };
 		6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */; };
 		6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA461DC1ABC8000824CE /* Assets.xcassets */; };
@@ -33,6 +41,10 @@
 		6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */; };
 		6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */; };
 		6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */; };
+		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
+		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
+		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
+		6FE571491DCF2024009BAD8E /* JQLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571481DCF2024009BAD8E /* JQLoginRegisterView.xib */; };
 		E35627C336C394EB6B498972 /* libPods-SchoolOrderFood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +87,21 @@
 		6F10A4CE1DCC82800027C650 /* JQHomeCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHomeCategoryCell.m; sourceTree = "<group>"; };
 		6F10A4D01DCC82A50027C650 /* JQHeadViewForCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQHeadViewForCollectCell.h; sourceTree = "<group>"; };
 		6F10A4D11DCC82A50027C650 /* JQHeadViewForCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHeadViewForCollectCell.m; sourceTree = "<group>"; };
+		6F10A4D81DCDB7B70027C650 /* JQMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQMineViewController.h; sourceTree = "<group>"; };
+		6F10A4D91DCDB7B70027C650 /* JQMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQMineViewController.m; sourceTree = "<group>"; };
+		6F10A4DB1DCDBA2B0027C650 /* JQMineHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQMineHeadView.h; sourceTree = "<group>"; };
+		6F10A4DC1DCDBA2B0027C650 /* JQMineHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQMineHeadView.m; sourceTree = "<group>"; };
+		6F10A4DE1DCDC62C0027C650 /* JQOrderFoodHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQOrderFoodHeadView.h; sourceTree = "<group>"; };
+		6F10A4DF1DCDC62C0027C650 /* JQOrderFoodHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQOrderFoodHeadView.m; sourceTree = "<group>"; };
+		6F10A4E11DCDCA100027C650 /* JQMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQMenuView.h; sourceTree = "<group>"; };
+		6F10A4E21DCDCA100027C650 /* JQMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQMenuView.m; sourceTree = "<group>"; };
+		6F10A4E41DCDCD610027C650 /* JQTitleIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQTitleIconView.h; sourceTree = "<group>"; };
+		6F10A4E51DCDCD610027C650 /* JQTitleIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQTitleIconView.m; sourceTree = "<group>"; };
+		6F10A4E71DCDD0D90027C650 /* JQTitleIconAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQTitleIconAction.h; sourceTree = "<group>"; };
+		6F10A4E81DCDD0D90027C650 /* JQTitleIconAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQTitleIconAction.m; sourceTree = "<group>"; };
+		6F10A4EA1DCDDC700027C650 /* JQPageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPageData.h; sourceTree = "<group>"; };
+		6F10A4EB1DCDDC700027C650 /* JQPageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPageData.m; sourceTree = "<group>"; };
+		6F10A4EF1DCDDD0A0027C650 /* MinePageData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MinePageData.json; sourceTree = "<group>"; };
 		6F30DA371DC1ABC8000824CE /* SchoolOrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolOrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30DA3B1DC1ABC8000824CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +116,12 @@
 		6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6F30DA6E1DC1F9CD000824CE /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
+		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
+		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		6FE571451DCF1FC2009BAD8E /* JQLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterView.h; sourceTree = "<group>"; };
+		6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterView.m; sourceTree = "<group>"; };
+		6FE571481DCF2024009BAD8E /* JQLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterView.xib; sourceTree = "<group>"; };
 		7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchoolOrderFood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,9 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				6F10A4A61DCC81A90027C650 /* Other */,
-				6F10A4981DCC81A90027C650 /* Controller */,
 				6F10A49B1DCC81A90027C650 /* Model */,
 				6F10A4A91DCC81A90027C650 /* View */,
+				6F10A4981DCC81A90027C650 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -194,6 +227,65 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6F10A4D31DCDB6DA0027C650 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4D61DCDB6DA0027C650 /* Other */,
+				6F10A4D51DCDB6DA0027C650 /* Model */,
+				6F10A4D71DCDB6DA0027C650 /* View */,
+				6F10A4D41DCDB6DA0027C650 /* Controller */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		6F10A4D41DCDB6DA0027C650 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4D81DCDB7B70027C650 /* JQMineViewController.h */,
+				6F10A4D91DCDB7B70027C650 /* JQMineViewController.m */,
+				6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */,
+				6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */,
+				6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F10A4D51DCDB6DA0027C650 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4E71DCDD0D90027C650 /* JQTitleIconAction.h */,
+				6F10A4E81DCDD0D90027C650 /* JQTitleIconAction.m */,
+				6F10A4EA1DCDDC700027C650 /* JQPageData.h */,
+				6F10A4EB1DCDDC700027C650 /* JQPageData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F10A4D61DCDB6DA0027C650 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6F10A4D71DCDB6DA0027C650 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F10A4DB1DCDBA2B0027C650 /* JQMineHeadView.h */,
+				6F10A4DC1DCDBA2B0027C650 /* JQMineHeadView.m */,
+				6F10A4DE1DCDC62C0027C650 /* JQOrderFoodHeadView.h */,
+				6F10A4DF1DCDC62C0027C650 /* JQOrderFoodHeadView.m */,
+				6F10A4E11DCDCA100027C650 /* JQMenuView.h */,
+				6F10A4E21DCDCA100027C650 /* JQMenuView.m */,
+				6F10A4E41DCDCD610027C650 /* JQTitleIconView.h */,
+				6F10A4E51DCDCD610027C650 /* JQTitleIconView.m */,
+				6FE571451DCF1FC2009BAD8E /* JQLoginRegisterView.h */,
+				6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */,
+				6FE571481DCF2024009BAD8E /* JQLoginRegisterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6F30DA2E1DC1ABC8000824CE = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +327,7 @@
 			children = (
 				6F30DA541DC1D4FA000824CE /* Main */,
 				6F10A4971DCC81A90027C650 /* Home */,
+				6F10A4D31DCDB6DA0027C650 /* Mine */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -254,6 +347,7 @@
 			children = (
 				6F10A4C91DCC82140027C650 /* collectData.json */,
 				6F10A4CA1DCC82140027C650 /* headData.json */,
+				6F10A4EF1DCDDD0A0027C650 /* MinePageData.json */,
 				6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */,
 				6F30DA461DC1ABC8000824CE /* Assets.xcassets */,
 				6F30DA3A1DC1ABC8000824CE /* Supporting Files */,
@@ -266,9 +360,9 @@
 			isa = PBXGroup;
 			children = (
 				6F30DA6D1DC1F9A8000824CE /* Other */,
-				6F30DA551DC1D4FA000824CE /* Controller */,
 				6F30DA561DC1D4FA000824CE /* Model */,
 				6F30DA571DC1D4FA000824CE /* View */,
+				6F30DA551DC1D4FA000824CE /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -371,8 +465,11 @@
 			files = (
 				6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */,
 				6F10A4CC1DCC82140027C650 /* headData.json in Resources */,
+				6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */,
 				6F10A4CB1DCC82140027C650 /* collectData.json in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
+				6FE571491DCF2024009BAD8E /* JQLoginRegisterView.xib in Resources */,
+				6F10A4F01DCDDD0A0027C650 /* MinePageData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,25 +528,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F10A4E01DCDC62C0027C650 /* JQOrderFoodHeadView.m in Sources */,
 				6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */,
 				6F10A4BF1DCC81A90027C650 /* JQHeadLine.m in Sources */,
+				6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */,
 				6F10A4BA1DCC81A90027C650 /* JQHomeTableViewController.m in Sources */,
+				6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */,
 				6F10A4C81DCC81A90027C650 /* JQPriceLabel.m in Sources */,
 				6F10A4D21DCC82A50027C650 /* JQHeadViewForCollectCell.m in Sources */,
 				6F10A4C31DCC81A90027C650 /* JQHeadView.m in Sources */,
 				6F10A4BE1DCC81A90027C650 /* JQHeadData.m in Sources */,
+				6F10A4DA1DCDB7B70027C650 /* JQMineViewController.m in Sources */,
 				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
+				6F10A4E91DCDD0D90027C650 /* JQTitleIconAction.m in Sources */,
 				6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */,
 				6F10A4C21DCC81A90027C650 /* JQHeadLinePageView.m in Sources */,
+				6F10A4E31DCDCA100027C650 /* JQMenuView.m in Sources */,
 				6F10A4C41DCC81A90027C650 /* JQHomeCollectCell.m in Sources */,
 				6F10A4C61DCC81A90027C650 /* JQHotLineView.m in Sources */,
 				6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */,
 				6F10A4CF1DCC82800027C650 /* JQHomeCategoryCell.m in Sources */,
 				6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */,
 				6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */,
+				6F10A4EC1DCDDC700027C650 /* JQPageData.m in Sources */,
 				6F10A4C11DCC81A90027C650 /* JQHeadLineContentView.m in Sources */,
 				6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */,
 				6F10A4BB1DCC81A90027C650 /* JQCategoryGoods.m in Sources */,
+				6F10A4E61DCDCD610027C650 /* JQTitleIconView.m in Sources */,
+				6F10A4DD1DCDBA2B0027C650 /* JQMineHeadView.m in Sources */,
 				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,
 				6F10A4C01DCC81A90027C650 /* UIColor+JQHexColorToARGB.m in Sources */,

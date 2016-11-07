@@ -9,7 +9,7 @@
 #import "JQBasicTabBarController.h"
 #import "JQBasicNaviController.h"
 #import "JQHomeTableViewController.h"
-
+#import "JQMineViewController.h"
 
 @interface JQBasicTabBarController ()
 
@@ -24,20 +24,20 @@
     self.view.backgroundColor = BackgroundColor;
     
     // 首页
-    JQHomeTableViewController *home = [[JQHomeTableViewController alloc] init];
-    [self createChildVCWithVC:home Title:@"首页" Image:@"home_normal" SelectedImage:@"home_pressed"];
+    JQHomeTableViewController *homeVC = [[JQHomeTableViewController alloc] init];
+    [self createChildVCWithVC:homeVC Title:@"首页" Image:@"home_normal" SelectedImage:@"home_pressed"];
     
     // 挑食（按分类选择）
-    UIViewController *food = [[UIViewController alloc] init];
-    [self createChildVCWithVC:food Title:@"挑食" Image:@"food_normal" SelectedImage:@"food_pressed"];
+    UIViewController *foodVC = [[UIViewController alloc] init];
+    [self createChildVCWithVC:foodVC Title:@"挑食" Image:@"food_normal" SelectedImage:@"food_pressed"];
     
     // 订单
-    UIViewController *order = [[UIViewController alloc] init];
-    [self createChildVCWithVC:order Title:@"订单" Image:@"order_normal" SelectedImage:@"order_pressed"];
+    UIViewController *orderVC = [[UIViewController alloc] init];
+    [self createChildVCWithVC:orderVC Title:@"订单" Image:@"order_normal" SelectedImage:@"order_pressed"];
     
     // 个人信息
-    UIViewController *mine = [[UIViewController alloc] init];
-    [self createChildVCWithVC:mine Title:@"我的" Image:@"mine_normal" SelectedImage:@"mine_pressed"];
+    JQMineViewController *mineVC = [[JQMineViewController alloc] init];
+    [self createChildVCWithVC:mineVC Title:@"我的" Image:@"mine_normal" SelectedImage:@"mine_pressed"];
 }
 
 #pragma mark - 创建tabBar对应的VC

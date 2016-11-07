@@ -32,13 +32,14 @@
 // tabbar的颜色
 #define tabbarTitleSelectedColor JQColor(254, 153, 54, 1.0)
 #define tabbarTitleColor JQColor(155, 155, 155, 1.0)
-// navigation的橙色
-#define naviColor JQColor(236, 160, 38, 1.0)
-#define naviColorAlp JQColor(243, 160, 39, 0.3)
+// navigation的黄色
+#define naviColor JQColor(255, 214, 0, 1.0)
+#define naviColorAlp JQColor(255, 214, 0, 0.3)
 #define foodColor JQColor(228, 241, 250, 1.0)
 // 背景颜色
 #define BackgroundColor JQColor(233, 233, 233, 1.0)
 #define PublicBgColor JQColor(252, 252, 252, 1.0)
 
+#define JQGrayColor JQColor(239, 239, 239, 1.0)
 #define JQFontColor JQColor(139, 84, 63, 1.0)
 #define JQHeavyGreen JQColor(124, 189, 64, 1.0)
