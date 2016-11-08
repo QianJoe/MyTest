@@ -48,6 +48,7 @@
     
     UIButton *settingBtn = [[UIButton alloc] init];
     [settingBtn setImage:[UIImage imageNamed:@"v2_my_settings_icon"] forState:UIControlStateNormal];
+    [settingBtn addTarget:self action:@selector(settingBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.settingBtn = settingBtn;
     [self addSubview:settingBtn];
     
@@ -119,6 +120,15 @@
     
 //    [self.navigationController presentViewController:naviVc animated:YES completion:nil];
     
+}
+
+#pragma mark - 设置的点击事件
+- (void)settingBtnClick {
+    
+    if ([self.delegate respondsToSelector:@selector(mineHeadViewClickSetting:)]) {
+        
+        [self.delegate mineHeadViewClickSetting:self];
+    }
 }
 
 

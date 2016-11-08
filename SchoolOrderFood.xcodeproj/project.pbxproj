@@ -44,6 +44,7 @@
 		6F9260831DD0697300DB2926 /* JQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260821DD0697300DB2926 /* JQTextField.m */; };
 		6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */; };
 		6F9260881DD0775600DB2926 /* JQPasswordConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */; };
+		6FA875D31DD1D2A200C7FF05 /* JQSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA875D21DD1D2A200C7FF05 /* JQSettingTableViewController.m */; };
 		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
 		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
 		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
@@ -124,6 +125,8 @@
 		6F9260841DD0775600DB2926 /* JQPasswordConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPasswordConfirmViewController.h; sourceTree = "<group>"; };
 		6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPasswordConfirmViewController.m; sourceTree = "<group>"; };
 		6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQPasswordConfirmViewController.xib; sourceTree = "<group>"; };
+		6FA875D11DD1D2A200C7FF05 /* JQSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQSettingTableViewController.h; sourceTree = "<group>"; };
+		6FA875D21DD1D2A200C7FF05 /* JQSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQSettingTableViewController.m; sourceTree = "<group>"; };
 		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 				6F9260841DD0775600DB2926 /* JQPasswordConfirmViewController.h */,
 				6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */,
 				6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */,
+				6FA875D11DD1D2A200C7FF05 /* JQSettingTableViewController.h */,
+				6FA875D21DD1D2A200C7FF05 /* JQSettingTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				6F9260831DD0697300DB2926 /* JQTextField.m in Sources */,
 				6F10A4E91DCDD0D90027C650 /* JQTitleIconAction.m in Sources */,
 				6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */,
+				6FA875D31DD1D2A200C7FF05 /* JQSettingTableViewController.m in Sources */,
 				6F10A4C21DCC81A90027C650 /* JQHeadLinePageView.m in Sources */,
 				6F10A4E31DCDCA100027C650 /* JQMenuView.m in Sources */,
 				6F10A4C41DCC81A90027C650 /* JQHomeCollectCell.m in Sources */,

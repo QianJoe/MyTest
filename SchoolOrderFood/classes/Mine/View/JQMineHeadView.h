@@ -13,6 +13,8 @@
 @protocol JQMineHeadViewDelegate <NSObject>
 @required
 - (void)mineHeadView:(JQMineHeadView *) mineHeadView clickWithTap:(UITapGestureRecognizer *)tap;
+- (void)mineHeadViewClickSetting:(JQMineHeadView *) mineHeadView;
+
 @end
 
 @interface JQMineHeadView : UIView

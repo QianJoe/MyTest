@@ -15,12 +15,35 @@
 
 @implementation JQBasicNaviController
 
+
++ (void)initialize{
+    
+    if (self == [JQBasicNaviController class]) {
+        
+        UIImage *navBackImg = [UIImage imageWithColor:naviColor];
+        // appearanceWhenContainedIn获取当前类的标志
+        UINavigationBar *bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
+        [bar setBackgroundImage:navBackImg forBarMetrics:UIBarMetricsDefault];
+        
+        [bar setTintColor:[UIColor whiteColor]];
+        // 设置导航条标题的字体和颜色
+        NSDictionary *titleAttr = @{
+                                    NSForegroundColorAttributeName:[UIColor whiteColor],
+                                    NSFontAttributeName:[UIFont boldSystemFontOfSize:22]
+                                    };
+        [bar setTitleTextAttributes:titleAttr];
+        
+//        // 把返回按钮的文字移除
+//        UIBarButtonItem *item = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[self]];
+//        // Position 位置
+//        [item setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
+    }
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    UIImage *navBackImg = [UIImage imageWithColor:naviColor];
     
-    [self.navigationBar setBackgroundImage:navBackImg forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma mark - 状态栏改成亮白色

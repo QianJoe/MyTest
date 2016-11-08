@@ -15,6 +15,7 @@
 #import "JQPageData.h"
 #import <MJExtension/MJExtension.h>
 #import "JQLoginRegisterViewController.h"
+#import "JQSettingTableViewController.h"
 
 @interface JQMineViewController () <JQMineHeadViewDelegate>
 
@@ -72,9 +73,11 @@
     return _mineMenus;
 }
 
-- (void)loadView {
-    [super loadView];
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    
 }
 
 - (void)viewDidLoad {
@@ -246,6 +249,14 @@
     JQLoginRegisterViewController *loginVC = [[JQLoginRegisterViewController alloc] init];
     
     [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+}
+
+- (void)mineHeadViewClickSetting:(JQMineHeadView *)mineHeadView {
+    
+    JQSettingTableViewController *settingTbVC = [[JQSettingTableViewController alloc] init];
+    settingTbVC.title = @"设置";
+    
+    [self.navigationController pushViewController:settingTbVC animated:YES];
 }
 
 @end
