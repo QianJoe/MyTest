@@ -41,6 +41,9 @@
 		6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA591DC1D6DB000824CE /* JQBasicTabBarController.m */; };
 		6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA5C1DC1D7F9000824CE /* JQBasicNaviController.m */; };
 		6F30DA701DC1F9CD000824CE /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */; };
+		6F9260831DD0697300DB2926 /* JQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260821DD0697300DB2926 /* JQTextField.m */; };
+		6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */; };
+		6F9260881DD0775600DB2926 /* JQPasswordConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */; };
 		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
 		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
 		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
@@ -116,6 +119,11 @@
 		6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6F30DA6E1DC1F9CD000824CE /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		6F30DA6F1DC1F9CD000824CE /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		6F9260811DD0697300DB2926 /* JQTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQTextField.h; sourceTree = "<group>"; };
+		6F9260821DD0697300DB2926 /* JQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQTextField.m; sourceTree = "<group>"; };
+		6F9260841DD0775600DB2926 /* JQPasswordConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPasswordConfirmViewController.h; sourceTree = "<group>"; };
+		6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPasswordConfirmViewController.m; sourceTree = "<group>"; };
+		6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQPasswordConfirmViewController.xib; sourceTree = "<group>"; };
 		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -246,6 +254,9 @@
 				6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */,
 				6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */,
 				6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */,
+				6F9260841DD0775600DB2926 /* JQPasswordConfirmViewController.h */,
+				6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */,
+				6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +290,8 @@
 				6F10A4E21DCDCA100027C650 /* JQMenuView.m */,
 				6F10A4E41DCDCD610027C650 /* JQTitleIconView.h */,
 				6F10A4E51DCDCD610027C650 /* JQTitleIconView.m */,
+				6F9260811DD0697300DB2926 /* JQTextField.h */,
+				6F9260821DD0697300DB2926 /* JQTextField.m */,
 				6FE571451DCF1FC2009BAD8E /* JQLoginRegisterView.h */,
 				6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */,
 				6FE571481DCF2024009BAD8E /* JQLoginRegisterView.xib */,
@@ -308,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				6F30DA531DC1AD36000824CE /* other(资源和配置) */,
-				6F30DA521DC1ACED000824CE /* enter(入口文件) */,
 				6F30DA511DC1ACE0000824CE /* classes */,
 			);
 			path = SchoolOrderFood;
@@ -345,6 +357,7 @@
 		6F30DA531DC1AD36000824CE /* other(资源和配置) */ = {
 			isa = PBXGroup;
 			children = (
+				6F30DA521DC1ACED000824CE /* enter(入口文件) */,
 				6F10A4C91DCC82140027C650 /* collectData.json */,
 				6F10A4CA1DCC82140027C650 /* headData.json */,
 				6F10A4EF1DCDDD0A0027C650 /* MinePageData.json */,
@@ -470,6 +483,7 @@
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
 				6FE571491DCF2024009BAD8E /* JQLoginRegisterView.xib in Resources */,
 				6F10A4F01DCDDD0A0027C650 /* MinePageData.json in Resources */,
+				6F9260881DD0775600DB2926 /* JQPasswordConfirmViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +554,7 @@
 				6F10A4BE1DCC81A90027C650 /* JQHeadData.m in Sources */,
 				6F10A4DA1DCDB7B70027C650 /* JQMineViewController.m in Sources */,
 				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
+				6F9260831DD0697300DB2926 /* JQTextField.m in Sources */,
 				6F10A4E91DCDD0D90027C650 /* JQTitleIconAction.m in Sources */,
 				6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */,
 				6F10A4C21DCC81A90027C650 /* JQHeadLinePageView.m in Sources */,
@@ -548,6 +563,7 @@
 				6F10A4C61DCC81A90027C650 /* JQHotLineView.m in Sources */,
 				6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */,
 				6F10A4CF1DCC82800027C650 /* JQHomeCategoryCell.m in Sources */,
+				6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */,
 				6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */,
 				6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */,
 				6F10A4EC1DCDDC700027C650 /* JQPageData.m in Sources */,

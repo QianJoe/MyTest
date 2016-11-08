@@ -6,6 +6,7 @@ pod "MJExtension"
 pod "MJRefresh"
 pod "SDWebImage"
 pod "UITableView+FDTemplateLayoutCell"
+pod "SVProgressHUD"
 
 target :'SchoolOrderFood' do
 

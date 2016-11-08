@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,22 +42,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4694C903B98D22591553710E4437680A</key>
+		<key>1B8CFC7D28D87A00C41F0F85DDD2D7BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50917CE6734117C033314732B4C0C109</key>
+		<key>2771E35C1051EEC3C69BFB33B231DE6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2EB4A8463F1481318092B14D7932E250</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43D1C6EBBFEDBAD17F5631CEE1B14F60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>55A9E9CA0DE81733D6D22FFF5A2631F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

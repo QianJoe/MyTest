@@ -67,7 +67,7 @@
     [self addSubview:headImgView];
     
     UILabel *userNameLabel = [[UILabel alloc] init];
-    userNameLabel.text = @"吊龙泉";
+    userNameLabel.text = @"未登录";
     userNameLabel.font = [UIFont systemFontOfSize:19.0];
     userNameLabel.textColor = [UIColor whiteColor];
     userNameLabel.textAlignment = NSTextAlignmentCenter;

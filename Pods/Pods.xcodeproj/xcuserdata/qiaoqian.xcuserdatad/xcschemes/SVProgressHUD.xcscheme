@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1B8CFC7D28D87A00C41F0F85DDD2D7BA'
-               BlueprintName = 'Pods-SchoolOrderFood'
+               BlueprintIdentifier = '2EB4A8463F1481318092B14D7932E250'
+               BlueprintName = 'SVProgressHUD'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-SchoolOrderFood.a'>
+               BuildableName = 'libSVProgressHUD.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

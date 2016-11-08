@@ -199,7 +199,7 @@
     
     [pageView makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(self.footerView);
+        make.top.equalTo(self.footerView).offset(6);
         make.left.equalTo(self.footerView).offset(10);
         make.right.equalTo(self.footerView).offset(-10);
         make.centerY.equalTo(self.footerView);

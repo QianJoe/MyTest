@@ -47,7 +47,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.84697971849999998" blue="0.88732749470000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="5Ka-CQ-jxm" firstAttribute="top" secondItem="k9k-3a-FWG" secondAttribute="top" id="0a9-E6-j8Q"/>
                         <constraint firstItem="Vuj-sI-2EN" firstAttribute="leading" secondItem="k9k-3a-FWG" secondAttribute="leading" constant="10" id="29g-0W-IfH"/>
@@ -59,20 +59,20 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgo-fU-yy8" userLabel="MID">
-                    <rect key="frame" x="0.0" y="115" width="750" height="350"/>
+                    <rect key="frame" x="0.0" y="115" width="1125" height="350"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="350" id="Gnb-q5-RXc"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.84697971849999998" blue="0.88732749470000005" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="k9k-3a-FWG" secondAttribute="trailing" id="DMH-Nd-3lH"/>
                 <constraint firstItem="Dgo-fU-yy8" firstAttribute="top" secondItem="k9k-3a-FWG" secondAttribute="bottom" constant="60" id="DN7-1b-QUB"/>
                 <constraint firstItem="k9k-3a-FWG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kgf-re-enI"/>
                 <constraint firstAttribute="trailing" secondItem="Dgo-fU-yy8" secondAttribute="trailing" id="acB-T6-rqZ"/>
-                <constraint firstItem="Dgo-fU-yy8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2" id="rWO-pL-Sg2"/>
+                <constraint firstItem="Dgo-fU-yy8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="3" id="rWO-pL-Sg2"/>
                 <constraint firstItem="k9k-3a-FWG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="uBk-ca-5Q7"/>
                 <constraint firstItem="Dgo-fU-yy8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v3T-Fd-7Ge"/>
             </constraints>
