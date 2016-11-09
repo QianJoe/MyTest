@@ -10,6 +10,7 @@
 #import "JQBasicNaviController.h"
 #import "JQHomeTableViewController.h"
 #import "JQMineViewController.h"
+#import "JQSelectFoodViewController.h"
 
 @interface JQBasicTabBarController ()
 
@@ -28,7 +29,7 @@
     [self createChildVCWithVC:homeVC Title:@"首页" Image:@"home_normal" SelectedImage:@"home_pressed"];
     
     // 挑食（按分类选择）
-    UIViewController *foodVC = [[UIViewController alloc] init];
+    JQSelectFoodViewController *foodVC = [[JQSelectFoodViewController alloc] init];
     [self createChildVCWithVC:foodVC Title:@"挑食" Image:@"food_normal" SelectedImage:@"food_pressed"];
     
     // 订单

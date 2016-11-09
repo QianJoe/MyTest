@@ -7,6 +7,7 @@ pod "MJRefresh"
 pod "SDWebImage"
 pod "UITableView+FDTemplateLayoutCell"
 pod "SVProgressHUD"
+pod "AFNetworking"
 
 target :'SchoolOrderFood' do
 
