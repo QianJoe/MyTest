@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JQBaseTableViewController.h"
 
-@interface JQSettingTableViewController : UITableViewController
+@interface JQSettingTableViewController : JQBaseTableViewController
 
 @end
