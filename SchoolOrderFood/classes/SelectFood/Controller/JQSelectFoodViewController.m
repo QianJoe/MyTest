@@ -11,6 +11,8 @@
 #import "JSDropDownMenu.h"
 #import "JQProvince.h"
 #import <MJExtension/MJExtension.h>
+#import "JQFoodTableViewCell.h"
+#import "JQFoodModel.h"
 
 #define menuIndicatorColor [UIColor colorWithRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0]
 #define menuSeparatorColor [UIColor colorWithRed:210.0f/255.0f green:210.0f/255.0f blue:210.0f/255.0f alpha:1.0]
@@ -27,7 +29,7 @@
 #define SECONDMENUDATAS @[@"智能排序", @"评价最高", @"最新发布", @"人气最高", @"价格最低", @"价格最高"]
 #define THRIDMENUDATAS @[@"早餐", @"午餐", @"晚餐", @"夜宵"]
 
-@interface JQSelectFoodViewController () <JQMultipleButtonViewDelegate, JSDropDownMenuDataSource, JSDropDownMenuDelegate>
+@interface JQSelectFoodViewController () <JQMultipleButtonViewDelegate, JSDropDownMenuDataSource, JSDropDownMenuDelegate, UITableViewDataSource, UITableViewDelegate>
 
 /**顶部下拉筛选菜单*/
 @property (nonatomic, strong) JSDropDownMenu *menu;
@@ -46,6 +48,12 @@
 /**存储省市模型的数组*/
 @property (nonatomic, strong) NSArray<JQProvince *> *provinces;
 
+/**tableview*/
+@property (nonatomic, weak) UITableView *tableView;
+
+/**foodModel的数组*/
+@property (nonatomic, strong) NSMutableArray<JQFoodModel *> *foodModels;
+
 @end
 
 @implementation JQSelectFoodViewController
@@ -61,10 +69,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    self.view.backgroundColor = JQGrayColor;
+    
     [self changeNav];
     
     [self setDropMenu];
+    
+    [self setTable];
+    
+    [self loadJSONData:^{
+       
+        [self.tableView registerClass:[JQFoodTableViewCell class] forCellReuseIdentifier:FOODTBCELL];
+        [self.tableView reloadData];
+        
+        JQLOG(@"foodModels:%@", self.foodModels);
+    }];
 
+}
+
+#pragma mark - 设置tableview
+- (void)setTable {
+    
+    UITableView *tableView = [[UITableView alloc] init];
+    self.tableView = tableView;
+    [self.view addSubview:tableView];
+    
+    tableView.rowHeight = 130;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    
+    [tableView makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(self.menu.bottom);
+        make.leading.equalTo(self.view.leading);
+        make.trailing.equalTo(self.view.trailing);
+        make.bottom.equalTo(self.view.bottom);
+    }];
+    
+    [tableView registerClass:[JQFoodTableViewCell class] forCellReuseIdentifier:FOODTBCELL];
 }
 
 #pragma mark - 下拉菜单
@@ -103,6 +147,65 @@
 - (void)multipleButtonView:(JQMultipleButtonView *)multipleBtn clickAtIndex:(NSInteger)index {
     
     JQLOG(@"multipleBtn:%ld", index);
+}
+
+
+#pragma mark - 加载json数据
+- (void) loadJSONData:(void(^)()) then {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+#warning 现在是模拟的json数据
+        // 读取json数据
+        // 获取json地址
+        NSString *foodDataFilePath =[[NSBundle mainBundle] pathForResource:@"foodData" ofType:@"json"];
+        
+        // 获取二进制数据
+        NSData *data = [NSData dataWithContentsOfFile:foodDataFilePath];
+        
+        // 转成字典
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+        
+        // 转成数组
+        NSArray *foodModelArr = dataDictionary[@"foodData"];
+        NSMutableArray *foodModelArrM = @[].mutableCopy;
+        
+        foodModelArrM = [JQFoodModel mj_objectArrayWithKeyValuesArray:foodModelArr];
+        self.foodModels = foodModelArrM;
+        JQLOG(@"foodModels:%@", self.foodModels);
+
+        // 回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            !then ? : then();
+        });
+    });
+}
+
+#pragma mark - tableview的数据源和代理方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.foodModels count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    JQFoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FOODTBCELL];
+    
+    cell.foodModel = self.foodModels[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - 下拉菜单的数据源方法JSDropDownMenuDataSource

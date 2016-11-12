@@ -25,6 +25,12 @@
 #define VIEWWIDTH self.frame.size.width
 // 通知
 
+// 字体
+#define oldPriceFont [UIFont systemFontOfSize:12.0]
+#define newPriceFont [UIFont systemFontOfSize:13.0]
+#define titleFont [UIFont systemFontOfSize:16.0]
+#define titleBoldFont [UIFont systemFontOfSize:16.0]
+
 // 颜色
 #define JQColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 #define colorFloat(colorInt) (colorInt)/255.0

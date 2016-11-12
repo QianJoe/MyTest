@@ -63,6 +63,11 @@
 		6FA876171DD3683000C7FF05 /* JQHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA876161DD3683000C7FF05 /* JQHttpTool.m */; };
 		6FA876191DD36ABD00C7FF05 /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA876181DD36ABD00C7FF05 /* ico_make.png */; };
 		6FA8761B1DD36AE100C7FF05 /* provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FA8761A1DD36AE100C7FF05 /* provinces.plist */; };
+		6FAD58D91DD40A37002CE15A /* JQFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD58D81DD40A37002CE15A /* JQFoodTableViewCell.m */; };
+		6FAD58DC1DD45664002CE15A /* JQFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD58DB1DD45664002CE15A /* JQFoodModel.m */; };
+		6FAD58DE1DD460AC002CE15A /* foodData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FAD58DD1DD460AC002CE15A /* foodData.json */; };
+		6FAD58E11DD71053002CE15A /* JQStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD58E01DD71053002CE15A /* JQStarView.m */; };
+		6FAD58E41DD7144F002CE15A /* JQStarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAD58E31DD7144F002CE15A /* JQStarView.xib */; };
 		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
 		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
 		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
@@ -179,6 +184,14 @@
 		6FA876161DD3683000C7FF05 /* JQHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQHttpTool.m; sourceTree = "<group>"; };
 		6FA876181DD36ABD00C7FF05 /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
 		6FA8761A1DD36AE100C7FF05 /* provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provinces.plist; sourceTree = "<group>"; };
+		6FAD58D71DD40A37002CE15A /* JQFoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQFoodTableViewCell.h; sourceTree = "<group>"; };
+		6FAD58D81DD40A37002CE15A /* JQFoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQFoodTableViewCell.m; sourceTree = "<group>"; };
+		6FAD58DA1DD45664002CE15A /* JQFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQFoodModel.h; sourceTree = "<group>"; };
+		6FAD58DB1DD45664002CE15A /* JQFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQFoodModel.m; sourceTree = "<group>"; };
+		6FAD58DD1DD460AC002CE15A /* foodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foodData.json; sourceTree = "<group>"; };
+		6FAD58DF1DD71053002CE15A /* JQStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQStarView.h; sourceTree = "<group>"; };
+		6FAD58E01DD71053002CE15A /* JQStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQStarView.m; sourceTree = "<group>"; };
+		6FAD58E31DD7144F002CE15A /* JQStarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQStarView.xib; sourceTree = "<group>"; };
 		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -569,6 +582,7 @@
 				6F10A4C91DCC82140027C650 /* collectData.json */,
 				6F10A4CA1DCC82140027C650 /* headData.json */,
 				6F10A4EF1DCDDD0A0027C650 /* MinePageData.json */,
+				6FAD58DD1DD460AC002CE15A /* foodData.json */,
 			);
 			name = "资源数据";
 			sourceTree = "<group>";
@@ -611,6 +625,8 @@
 				6FA876181DD36ABD00C7FF05 /* ico_make.png */,
 				6FA876121DD351D500C7FF05 /* JQProvince.h */,
 				6FA876131DD351D500C7FF05 /* JQProvince.m */,
+				6FAD58DA1DD45664002CE15A /* JQFoodModel.h */,
+				6FAD58DB1DD45664002CE15A /* JQFoodModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -629,6 +645,11 @@
 				6FA876101DD30DC800C7FF05 /* JSDropDownMenu.m */,
 				6FA8760C1DD3045C00C7FF05 /* JQMultipleButtonView.h */,
 				6FA8760D1DD3045C00C7FF05 /* JQMultipleButtonView.m */,
+				6FAD58D71DD40A37002CE15A /* JQFoodTableViewCell.h */,
+				6FAD58D81DD40A37002CE15A /* JQFoodTableViewCell.m */,
+				6FAD58DF1DD71053002CE15A /* JQStarView.h */,
+				6FAD58E01DD71053002CE15A /* JQStarView.m */,
+				6FAD58E31DD7144F002CE15A /* JQStarView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -699,7 +720,9 @@
 				6F10A4CC1DCC82140027C650 /* headData.json in Resources */,
 				6FA8761B1DD36AE100C7FF05 /* provinces.plist in Resources */,
 				6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */,
+				6FAD58E41DD7144F002CE15A /* JQStarView.xib in Resources */,
 				6F10A4CB1DCC82140027C650 /* collectData.json in Resources */,
+				6FAD58DE1DD460AC002CE15A /* foodData.json in Resources */,
 				6FA876191DD36ABD00C7FF05 /* ico_make.png in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
 				6FE571491DCF2024009BAD8E /* JQLoginRegisterView.xib in Resources */,
@@ -775,6 +798,7 @@
 				6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */,
 				6FA876111DD30DC800C7FF05 /* JSDropDownMenu.m in Sources */,
 				6F10A4C81DCC81A90027C650 /* JQPriceLabel.m in Sources */,
+				6FAD58DC1DD45664002CE15A /* JQFoodModel.m in Sources */,
 				6F10A4D21DCC82A50027C650 /* JQHeadViewForCollectCell.m in Sources */,
 				6F10A4C31DCC81A90027C650 /* JQHeadView.m in Sources */,
 				6F10A4BE1DCC81A90027C650 /* JQHeadData.m in Sources */,
@@ -798,6 +822,7 @@
 				6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */,
 				6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */,
 				6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */,
+				6FAD58E11DD71053002CE15A /* JQStarView.m in Sources */,
 				6F10A4EC1DCDDC700027C650 /* JQPageData.m in Sources */,
 				6F10A4C11DCC81A90027C650 /* JQHeadLineContentView.m in Sources */,
 				6FA8760E1DD3045C00C7FF05 /* JQMultipleButtonView.m in Sources */,
@@ -810,6 +835,7 @@
 				6FA876141DD351D500C7FF05 /* JQProvince.m in Sources */,
 				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
 				6FA875F31DD2D18B00C7FF05 /* JQAboutViewController.m in Sources */,
+				6FAD58D91DD40A37002CE15A /* JQFoodTableViewCell.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,
 				6F10A4C01DCC81A90027C650 /* UIColor+JQHexColorToARGB.m in Sources */,
 				6FA875DF1DD218BD00C7FF05 /* JQSettingTableViewCell.m in Sources */,
