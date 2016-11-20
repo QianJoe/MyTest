@@ -8,6 +8,7 @@ pod "SDWebImage"
 pod "UITableView+FDTemplateLayoutCell"
 pod "SVProgressHUD"
 pod "AFNetworking"
+pod "MXSegmentedPager"
 
 target :'SchoolOrderFood' do
 

@@ -9,12 +9,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MXPagerView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MXParallaxHeader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MXSegmentedPager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26CEAA71E1F6B270BF81FD117EC3F082</key>
+		<key>210D2BD370EFC8BE03F3E27D3F929F13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2AB49797D14D57FA43A345254AFB9F18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5399B1CF50139C76716D702EB20C0E3A</key>
+		<key>65FC464968B54AEEC9527E53FF8198E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>828946963A5514DA1C0C1C9BB19A40E0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8FCF2EAFA8ABF1034D66C62958117656</key>
+		<key>921FF67F542618A9D17FDC8C35614035</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -83,6 +103,26 @@
 			<true/>
 		</dict>
 		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF5B36BD22C406CDC3D18E893FFAA2DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B2DF64A92AFEAD7E80499C8284741D5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFD1785E1D85EAEA1A1965F9CC926534</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6AF46AC339C778C0C741DCAC571BEF8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

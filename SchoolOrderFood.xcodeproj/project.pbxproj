@@ -44,6 +44,12 @@
 		6F9260831DD0697300DB2926 /* JQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260821DD0697300DB2926 /* JQTextField.m */; };
 		6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */; };
 		6F9260881DD0775600DB2926 /* JQPasswordConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */; };
+		6F942FCC1DE028AA009B89BE /* JQShopIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F942FCA1DE028AA009B89BE /* JQShopIntroViewController.m */; };
+		6F942FCD1DE028AA009B89BE /* JQShopIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F942FCB1DE028AA009B89BE /* JQShopIntroViewController.xib */; };
+		6F942FD11DE09631009B89BE /* JQShopTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F942FD01DE09631009B89BE /* JQShopTotalViewController.m */; };
+		6F942FD71DE18C56009B89BE /* JQCommentHeadTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F942FD61DE18C56009B89BE /* JQCommentHeadTableView.m */; };
+		6F942FDA1DE19951009B89BE /* JQShopIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F942FD91DE19951009B89BE /* JQShopIntroView.m */; };
+		6F942FDC1DE19986009B89BE /* JQShopIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F942FDB1DE19986009B89BE /* JQShopIntroView.xib */; };
 		6FA875D31DD1D2A200C7FF05 /* JQSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA875D21DD1D2A200C7FF05 /* JQSettingTableViewController.m */; };
 		6FA875D61DD1FFFB00C7FF05 /* JQBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA875D51DD1FFFB00C7FF05 /* JQBaseTableViewController.m */; };
 		6FA875D91DD2134C00C7FF05 /* JQSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA875D81DD2134C00C7FF05 /* JQSettingGroup.m */; };
@@ -68,6 +74,13 @@
 		6FAD58DE1DD460AC002CE15A /* foodData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FAD58DD1DD460AC002CE15A /* foodData.json */; };
 		6FAD58E11DD71053002CE15A /* JQStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD58E01DD71053002CE15A /* JQStarView.m */; };
 		6FAD58E41DD7144F002CE15A /* JQStarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAD58E31DD7144F002CE15A /* JQStarView.xib */; };
+		6FAD58E71DD859B9002CE15A /* JQShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD58E61DD859B9002CE15A /* JQShopDetailViewController.m */; };
+		6FAD59541DD9C029002CE15A /* JQTiltleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD59531DD9C029002CE15A /* JQTiltleButton.m */; };
+		6FAD59571DD9C132002CE15A /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD59561DD9C132002CE15A /* UIView+frame.m */; };
+		6FAD595A1DD9C5D1002CE15A /* SCNavTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */; };
+		6FAD595D1DD9C73D002CE15A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD595C1DD9C73D002CE15A /* NSString+Extension.m */; };
+		6FAD59631DDAE4F3002CE15A /* JQCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD59621DDAE4F3002CE15A /* JQCommentViewController.m */; };
+		6FAD599B1DDB54F9002CE15A /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD599A1DDB54F9002CE15A /* UIImage+Blur.m */; };
 		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
 		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
 		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
@@ -148,6 +161,16 @@
 		6F9260841DD0775600DB2926 /* JQPasswordConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPasswordConfirmViewController.h; sourceTree = "<group>"; };
 		6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQPasswordConfirmViewController.m; sourceTree = "<group>"; };
 		6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQPasswordConfirmViewController.xib; sourceTree = "<group>"; };
+		6F942FC91DE028AA009B89BE /* JQShopIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQShopIntroViewController.h; sourceTree = "<group>"; };
+		6F942FCA1DE028AA009B89BE /* JQShopIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQShopIntroViewController.m; sourceTree = "<group>"; };
+		6F942FCB1DE028AA009B89BE /* JQShopIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQShopIntroViewController.xib; sourceTree = "<group>"; };
+		6F942FCF1DE09631009B89BE /* JQShopTotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQShopTotalViewController.h; sourceTree = "<group>"; };
+		6F942FD01DE09631009B89BE /* JQShopTotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQShopTotalViewController.m; sourceTree = "<group>"; };
+		6F942FD51DE18C56009B89BE /* JQCommentHeadTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQCommentHeadTableView.h; sourceTree = "<group>"; };
+		6F942FD61DE18C56009B89BE /* JQCommentHeadTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQCommentHeadTableView.m; sourceTree = "<group>"; };
+		6F942FD81DE19951009B89BE /* JQShopIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQShopIntroView.h; sourceTree = "<group>"; };
+		6F942FD91DE19951009B89BE /* JQShopIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQShopIntroView.m; sourceTree = "<group>"; };
+		6F942FDB1DE19986009B89BE /* JQShopIntroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQShopIntroView.xib; sourceTree = "<group>"; };
 		6FA875D11DD1D2A200C7FF05 /* JQSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQSettingTableViewController.h; sourceTree = "<group>"; };
 		6FA875D21DD1D2A200C7FF05 /* JQSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQSettingTableViewController.m; sourceTree = "<group>"; };
 		6FA875D41DD1FFFB00C7FF05 /* JQBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQBaseTableViewController.h; sourceTree = "<group>"; };
@@ -192,6 +215,20 @@
 		6FAD58DF1DD71053002CE15A /* JQStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQStarView.h; sourceTree = "<group>"; };
 		6FAD58E01DD71053002CE15A /* JQStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQStarView.m; sourceTree = "<group>"; };
 		6FAD58E31DD7144F002CE15A /* JQStarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQStarView.xib; sourceTree = "<group>"; };
+		6FAD58E51DD859B9002CE15A /* JQShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQShopDetailViewController.h; sourceTree = "<group>"; };
+		6FAD58E61DD859B9002CE15A /* JQShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQShopDetailViewController.m; sourceTree = "<group>"; };
+		6FAD59521DD9C029002CE15A /* JQTiltleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQTiltleButton.h; sourceTree = "<group>"; };
+		6FAD59531DD9C029002CE15A /* JQTiltleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQTiltleButton.m; sourceTree = "<group>"; };
+		6FAD59551DD9C132002CE15A /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
+		6FAD59561DD9C132002CE15A /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
+		6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavTabBar.m; sourceTree = "<group>"; };
+		6FAD59591DD9C5D1002CE15A /* SCNavTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavTabBar.h; sourceTree = "<group>"; };
+		6FAD595B1DD9C73D002CE15A /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		6FAD595C1DD9C73D002CE15A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		6FAD59611DDAE4F3002CE15A /* JQCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQCommentViewController.h; sourceTree = "<group>"; };
+		6FAD59621DDAE4F3002CE15A /* JQCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQCommentViewController.m; sourceTree = "<group>"; };
+		6FAD59991DDB54F9002CE15A /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Blur.h"; path = "../UIImage+Blur.h"; sourceTree = "<group>"; };
+		6FAD599A1DDB54F9002CE15A /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Blur.m"; path = "../UIImage+Blur.m"; sourceTree = "<group>"; };
 		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -464,6 +501,39 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		6F942FDD1DE19C8E009B89BE /* 食物 */ = {
+			isa = PBXGroup;
+			children = (
+				6F942FCF1DE09631009B89BE /* JQShopTotalViewController.h */,
+				6F942FD01DE09631009B89BE /* JQShopTotalViewController.m */,
+			);
+			name = "食物";
+			sourceTree = "<group>";
+		};
+		6F942FDE1DE19CCC009B89BE /* 点评 */ = {
+			isa = PBXGroup;
+			children = (
+				6F942FD51DE18C56009B89BE /* JQCommentHeadTableView.h */,
+				6F942FD61DE18C56009B89BE /* JQCommentHeadTableView.m */,
+				6FAD59611DDAE4F3002CE15A /* JQCommentViewController.h */,
+				6FAD59621DDAE4F3002CE15A /* JQCommentViewController.m */,
+			);
+			name = "点评";
+			sourceTree = "<group>";
+		};
+		6F942FDF1DE19D10009B89BE /* 商店 */ = {
+			isa = PBXGroup;
+			children = (
+				6F942FC91DE028AA009B89BE /* JQShopIntroViewController.h */,
+				6F942FCA1DE028AA009B89BE /* JQShopIntroViewController.m */,
+				6F942FCB1DE028AA009B89BE /* JQShopIntroViewController.xib */,
+				6F942FD81DE19951009B89BE /* JQShopIntroView.h */,
+				6F942FD91DE19951009B89BE /* JQShopIntroView.m */,
+				6F942FDB1DE19986009B89BE /* JQShopIntroView.xib */,
+			);
+			name = "商店";
+			sourceTree = "<group>";
+		};
 		6FA875EA1DD2274200C7FF05 /* tool（网络，文件，工具类） */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +682,7 @@
 		6FA876051DD3015E00C7FF05 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6FAD58E81DD95598002CE15A /* 商店细节 */,
 				6FA876091DD303B100C7FF05 /* JQSelectFoodViewController.h */,
 				6FA8760A1DD303B100C7FF05 /* JQSelectFoodViewController.m */,
 			);
@@ -634,6 +705,12 @@
 		6FA876071DD3015E00C7FF05 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				6FAD59551DD9C132002CE15A /* UIView+frame.h */,
+				6FAD59561DD9C132002CE15A /* UIView+frame.m */,
+				6FAD595B1DD9C73D002CE15A /* NSString+Extension.h */,
+				6FAD595C1DD9C73D002CE15A /* NSString+Extension.m */,
+				6FAD59991DDB54F9002CE15A /* UIImage+Blur.h */,
+				6FAD599A1DDB54F9002CE15A /* UIImage+Blur.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -641,6 +718,8 @@
 		6FA876081DD3015E00C7FF05 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */,
+				6FAD59591DD9C5D1002CE15A /* SCNavTabBar.h */,
 				6FA8760F1DD30DC800C7FF05 /* JSDropDownMenu.h */,
 				6FA876101DD30DC800C7FF05 /* JSDropDownMenu.m */,
 				6FA8760C1DD3045C00C7FF05 /* JQMultipleButtonView.h */,
@@ -650,8 +729,22 @@
 				6FAD58DF1DD71053002CE15A /* JQStarView.h */,
 				6FAD58E01DD71053002CE15A /* JQStarView.m */,
 				6FAD58E31DD7144F002CE15A /* JQStarView.xib */,
+				6FAD59521DD9C029002CE15A /* JQTiltleButton.h */,
+				6FAD59531DD9C029002CE15A /* JQTiltleButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6FAD58E81DD95598002CE15A /* 商店细节 */ = {
+			isa = PBXGroup;
+			children = (
+				6F942FDF1DE19D10009B89BE /* 商店 */,
+				6F942FDD1DE19C8E009B89BE /* 食物 */,
+				6F942FDE1DE19CCC009B89BE /* 点评 */,
+				6FAD58E51DD859B9002CE15A /* JQShopDetailViewController.h */,
+				6FAD58E61DD859B9002CE15A /* JQShopDetailViewController.m */,
+			);
+			name = "商店细节";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -722,7 +815,9 @@
 				6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */,
 				6FAD58E41DD7144F002CE15A /* JQStarView.xib in Resources */,
 				6F10A4CB1DCC82140027C650 /* collectData.json in Resources */,
+				6F942FCD1DE028AA009B89BE /* JQShopIntroViewController.xib in Resources */,
 				6FAD58DE1DD460AC002CE15A /* foodData.json in Resources */,
+				6F942FDC1DE19986009B89BE /* JQShopIntroView.xib in Resources */,
 				6FA876191DD36ABD00C7FF05 /* ico_make.png in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
 				6FE571491DCF2024009BAD8E /* JQLoginRegisterView.xib in Resources */,
@@ -795,6 +890,7 @@
 				6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */,
 				6F10A4BA1DCC81A90027C650 /* JQHomeTableViewController.m in Sources */,
 				6FA875FF1DD2D4FC00C7FF05 /* JQHelpViewController.m in Sources */,
+				6FAD59541DD9C029002CE15A /* JQTiltleButton.m in Sources */,
 				6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */,
 				6FA876111DD30DC800C7FF05 /* JSDropDownMenu.m in Sources */,
 				6F10A4C81DCC81A90027C650 /* JQPriceLabel.m in Sources */,
@@ -805,7 +901,10 @@
 				6F10A4DA1DCDB7B70027C650 /* JQMineViewController.m in Sources */,
 				6FA8760B1DD303B100C7FF05 /* JQSelectFoodViewController.m in Sources */,
 				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
+				6F942FD11DE09631009B89BE /* JQShopTotalViewController.m in Sources */,
 				6F9260831DD0697300DB2926 /* JQTextField.m in Sources */,
+				6F942FD71DE18C56009B89BE /* JQCommentHeadTableView.m in Sources */,
+				6FAD595A1DD9C5D1002CE15A /* SCNavTabBar.m in Sources */,
 				6F10A4E91DCDD0D90027C650 /* JQTitleIconAction.m in Sources */,
 				6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */,
 				6FA875D31DD1D2A200C7FF05 /* JQSettingTableViewController.m in Sources */,
@@ -817,11 +916,17 @@
 				6F10A4C61DCC81A90027C650 /* JQHotLineView.m in Sources */,
 				6F30DA5A1DC1D6DB000824CE /* JQBasicTabBarController.m in Sources */,
 				6FA875E21DD21A8900C7FF05 /* JQSettingArrowItem.m in Sources */,
+				6FAD59571DD9C132002CE15A /* UIView+frame.m in Sources */,
 				6FA876171DD3683000C7FF05 /* JQHttpTool.m in Sources */,
 				6F10A4CF1DCC82800027C650 /* JQHomeCategoryCell.m in Sources */,
 				6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */,
+				6FAD58E71DD859B9002CE15A /* JQShopDetailViewController.m in Sources */,
+				6F942FCC1DE028AA009B89BE /* JQShopIntroViewController.m in Sources */,
 				6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */,
+				6FAD599B1DDB54F9002CE15A /* UIImage+Blur.m in Sources */,
+				6FAD595D1DD9C73D002CE15A /* NSString+Extension.m in Sources */,
 				6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */,
+				6FAD59631DDAE4F3002CE15A /* JQCommentViewController.m in Sources */,
 				6FAD58E11DD71053002CE15A /* JQStarView.m in Sources */,
 				6F10A4EC1DCDDC700027C650 /* JQPageData.m in Sources */,
 				6F10A4C11DCC81A90027C650 /* JQHeadLineContentView.m in Sources */,
@@ -834,6 +939,7 @@
 				6F10A4DD1DCDBA2B0027C650 /* JQMineHeadView.m in Sources */,
 				6FA876141DD351D500C7FF05 /* JQProvince.m in Sources */,
 				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
+				6F942FDA1DE19951009B89BE /* JQShopIntroView.m in Sources */,
 				6FA875F31DD2D18B00C7FF05 /* JQAboutViewController.m in Sources */,
 				6FAD58D91DD40A37002CE15A /* JQFoodTableViewCell.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,

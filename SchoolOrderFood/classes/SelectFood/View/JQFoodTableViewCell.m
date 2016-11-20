@@ -63,7 +63,7 @@ NSString * const FOODTBCELL = @"FOODTBCELL";
         
         self.categoryFoodLabel.text = [NSString stringWithFormat:@"%@", categoryFoods[2]];
 
-    } else if ([foodModel.category isEqualToString:@"2"]) {
+    } else if ([foodModel.category isEqualToString:@"3"]) {
         
         self.categoryFoodLabel.text = [NSString stringWithFormat:@"%@", categoryFoods[3]];
     }

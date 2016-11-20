@@ -13,6 +13,8 @@
 #import <MJExtension/MJExtension.h>
 #import "JQFoodTableViewCell.h"
 #import "JQFoodModel.h"
+#import "JQShopDetailViewController.h"
+#import "UIImage+Image.h"
 
 #define menuIndicatorColor [UIColor colorWithRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0]
 #define menuSeparatorColor [UIColor colorWithRed:210.0f/255.0f green:210.0f/255.0f blue:210.0f/255.0f alpha:1.0]
@@ -64,6 +66,15 @@
         _provinces = [JQProvince mj_objectArrayWithFilename:@"provinces.plist"];
     }
     return _provinces;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBar.hidden = NO;
+    UIColor *color = JQColor(255, 214, 0, 1.0);
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:color] forBarMetrics:UIBarMetricsDefault];
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -206,6 +217,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    JQLOG(@"didSelectRowAtIndexPath:%ld", indexPath.row);
+    
+    JQShopDetailViewController *shopDetailVC = [[JQShopDetailViewController alloc] init];
+    
+    [self.navigationController pushViewController:shopDetailVC animated:YES];
 }
 
 #pragma mark - 下拉菜单的数据源方法JSDropDownMenuDataSource
@@ -260,7 +277,6 @@
     if (column == 0) { // 第0列返回（为按口味，炸的，煎的，煮的，蒸的...）的数据
         
         return self.currentFirstDataIndex;
-        
     }
     
     if (column == 1) { // 第1列返回（按人气，评价，智能排序））的数据

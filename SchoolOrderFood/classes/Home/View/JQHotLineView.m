@@ -39,14 +39,14 @@
     self.layer.borderColor = [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0].CGColor;
     self.layer.borderWidth = 1;
 
-    UIImageView *headlineImageView = [[UIImageView alloc]init];
+    UIImageView *headlineImageView = [[UIImageView alloc] init];
     headlineImageView.image = [UIImage imageNamed:@"hotheadtitle"];
 //    [headlineImageView sd_setImageWithURL:[NSURL URLWithString:] placeholderImage:[UIImage imageNamed:]];
     headlineImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.headlineImageView = headlineImageView;
     [self addSubview:headlineImageView];
     
-    UIView *line = [[UIView alloc]init];
+    UIView *line = [[UIView alloc] init];
     line.backgroundColor = BackgroundColor;
     self.line = line;
     [self addSubview:line];
