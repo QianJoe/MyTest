@@ -15,7 +15,9 @@
 #import "JQFoodModel.h"
 #import "JQShopIntroViewController.h"
 #import "JQShopTotalViewController.h"
-#import "JQCommentHeadTableView.h"
+#import "JQCommentViewController.h"
+#import "JQShopIntroModel.h"
+//#import "JQCommentHeadTableView.h"
 
 #define ShopDetailTitles @[@"食物", @"点评", @"商店"]
 @interface JQShopDetailViewController () <MXSegmentedPagerDelegate, MXSegmentedPagerDataSource>
@@ -30,12 +32,16 @@
 /**JQShopTotalViewController*/
 @property (nonatomic, weak) JQShopTotalViewController *firstChildVC;
 /**评论view*/
-@property (nonatomic, weak) JQCommentHeadTableView *commentHeadTableView;
-/**第三个控制器*/
+//@property (nonatomic, weak) JQCommentHeadTableView *commentHeadTableView;
+/**第二个控制器(评论)*/
+@property (nonatomic, weak) JQCommentViewController *secondChildVC;
+/**第三个控制器(商店详情)*/
 @property (nonatomic, weak) JQShopIntroViewController *thridChildVC;
 
 
-/**存放子控制器的数组*/
+/**存在子控制器的数组*/
+@property (nonatomic, strong) NSMutableArray *childVCArray;
+/**存放子控制器View的数组*/
 @property (nonatomic, strong) NSMutableArray *childVCViewArray;
 
 @end
@@ -70,20 +76,44 @@ NSString *ID = @"CELL";
     return _childVCViewArray;
 }
 
+- (NSMutableArray *)childVCArray{
+    
+    if (!_childVCArray) {
+        _childVCArray = [NSMutableArray array];
+    }
+    return _childVCArray;
+}
+
 #pragma mark - 初始化子控制器
 - (void)initAllChildVC {
     
     JQShopTotalViewController *firstChildVC = [[JQShopTotalViewController alloc] init];
     self.firstChildVC = firstChildVC;
     
+    //    JQCommentHeadTableView *commentHeadTableView = [[JQCommentHeadTableView alloc] init];
+    //    self.commentHeadTableView = commentHeadTableView;
+    
+    JQCommentViewController *secondChildVC = [[JQCommentViewController alloc] init];
+    self.secondChildVC = secondChildVC;
+    
     JQShopIntroViewController *thridChildVC = [[JQShopIntroViewController alloc] init];
     self.thridChildVC = thridChildVC;
     
-    JQCommentHeadTableView *commentHeadTableView = [[JQCommentHeadTableView alloc] init];
-    self.commentHeadTableView = commentHeadTableView;
+    JQShopIntroModel *siModel = [[JQShopIntroModel alloc] init];
+    siModel.phone = @"18888888888";
+    siModel.time = @"8:00-20:00";
+    siModel.location = @"第九食堂";
+    siModel.category = @"什么都做";
+    
+    thridChildVC.shopIntroModel = siModel;
+    
+    [self.childVCArray addObject:firstChildVC];
+    [self.childVCArray addObject:secondChildVC];
+    [self.childVCArray addObject:thridChildVC];
     
     [self.childVCViewArray addObject:firstChildVC.view];
-    [self.childVCViewArray addObject:commentHeadTableView];
+//    [self.childVCViewArray addObject:commentHeadTableView];
+    [self.childVCViewArray addObject:secondChildVC.view];
     [self.childVCViewArray addObject:thridChildVC.view];
 }
 

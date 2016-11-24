@@ -7,6 +7,7 @@
 //
 
 #import "JQShopIntroViewController.h"
+#import "JQShopIntroModel.h"
 
 @interface JQShopIntroViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
@@ -22,8 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.phoneNumLabel.text = _shopIntroModel.phone;
+    self.locationLabel.text = _shopIntroModel.location;
+    self.categoryLabel.text = _shopIntroModel.category;
+    self.timeLabel.text = _shopIntroModel.time;
 }
+
 
 
 @end

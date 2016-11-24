@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class JQShopIntroModel;
+
 @interface JQShopIntroViewController : UIViewController
+
+/**持有一个shopintromodel*/
+@property (nonatomic, strong) JQShopIntroModel *shopIntroModel;
 
 @end

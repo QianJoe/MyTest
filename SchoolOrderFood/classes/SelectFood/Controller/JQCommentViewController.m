@@ -7,6 +7,10 @@
 //
 
 #import "JQCommentViewController.h"
+#import "JQCommentModel.h"
+#import "JQCommentTableViewCell.h"
+#import <MJExtension/MJExtension.h>
+#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 
 @interface JQCommentViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -17,6 +21,9 @@
 
 /**评论的tableview*/
 @property (nonatomic, weak) UITableView *commentTableView;
+
+/**存放commentModel的数组*/
+@property (nonatomic, strong) NSMutableArray *commentModelArrMFromJSON;
 
 @end
 
@@ -29,8 +36,48 @@
     
     [self initTableView];
     
+    [self loadJSONData:^{
+      
+        [self.commentTableView registerClass:[JQCommentTableViewCell class] forCellReuseIdentifier:COMMENTTBCELL];
+        [self.commentTableView reloadData];
+    }];
+    
 }
 
+#pragma mark - 异步加载数据
+- (void)loadJSONData:(void(^)()) then {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+#warning 现在是模拟的json数据
+        // 读取json数据
+        // 获取json地址
+        NSString *commentDataFilePath =[[NSBundle mainBundle] pathForResource:@"commentData" ofType:@"json"];
+        
+        // 获取二进制数据
+        NSData *data = [NSData dataWithContentsOfFile:commentDataFilePath];
+        
+        // 转成字典
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+        
+        // 转成数组
+        NSArray *commentDataArr = dataDictionary[@"commentData"];
+        NSMutableArray *commentDataArrM = @[].mutableCopy;
+        
+        commentDataArrM = [JQCommentModel mj_objectArrayWithKeyValuesArray:commentDataArr];
+        weakSelf.commentModelArrMFromJSON = commentDataArrM;
+        
+        // 回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            !then ? : then();
+        });
+    });
+}
+
+#pragma mark - 初始化头view
 - (void)initHeadView {
     
     UIView *headView = [[UIView alloc] init];
@@ -88,8 +135,14 @@
 - (void)initTableView {
     
     UITableView *commentTableView = [[UITableView alloc] init];
+    
+//    commentTableView.rowHeight = 80;
+    // 去掉尾部多余的
+    commentTableView.tableFooterView = [[UIView alloc] init];
+    
     commentTableView.delegate = self;
     commentTableView.dataSource = self;
+    [commentTableView registerClass:[JQCommentTableViewCell class] forCellReuseIdentifier:COMMENTTBCELL];
     self.commentTableView = commentTableView;
     [self.view addSubview:commentTableView];
     
@@ -100,28 +153,43 @@
         make.bottom.equalTo(self.view.bottom);
     }];
     
-//    [commentTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:TESTID];
 }
 
 #pragma mark - tableview的数据源和代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 20;
+    return self.commentModelArrMFromJSON.count;
 }
 
-//NSString *TESTID = @"TESTID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"CellIdentifier";
+    JQCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:COMMENTTBCELL];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    [self setupModelOfCell:cell atIndexPath:indexPath];
     
-    cell.textLabel.text = @"xxxx";
+//    cell.commentModel = self.commentModelArrMFromJSON[indexPath.row];
     return cell;
+}
+
+#pragma mark - 设置cell的数据
+- (void)setupModelOfCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
+    // 采用计算frame模式还是自动布局模式，默认为NO，自动布局模式
+    //    cell.fd_enforceFrameLayout = NO;
+    JQCommentTableViewCell *ctvCell = (JQCommentTableViewCell *)cell;
+    ctvCell.commentModel = self.commentModelArrMFromJSON[indexPath.row];
+    
+}
+
+#pragma mark - 改变cell的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return [self.commentTableView fd_heightForCellWithIdentifier:COMMENTTBCELL cacheByIndexPath:indexPath configuration:^(id cell) {
+        
+        [self setupModelOfCell:cell atIndexPath:indexPath];
+    }];
 }
 
 @end
