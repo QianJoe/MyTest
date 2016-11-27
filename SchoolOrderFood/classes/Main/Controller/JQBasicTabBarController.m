@@ -11,6 +11,7 @@
 #import "JQHomeTableViewController.h"
 #import "JQMineViewController.h"
 #import "JQSelectFoodViewController.h"
+#import "JQOrderViewController.h"
 
 @interface JQBasicTabBarController ()
 
@@ -33,7 +34,7 @@
     [self createChildVCWithVC:foodVC Title:@"挑食" Image:@"food_normal" SelectedImage:@"food_pressed"];
     
     // 订单
-    UIViewController *orderVC = [[UIViewController alloc] init];
+    JQOrderViewController *orderVC = [[JQOrderViewController alloc] init];
     [self createChildVCWithVC:orderVC Title:@"订单" Image:@"order_normal" SelectedImage:@"order_pressed"];
     
     // 个人信息

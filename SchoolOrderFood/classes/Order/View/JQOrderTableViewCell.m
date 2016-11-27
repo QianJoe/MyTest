@@ -1,21 +1,22 @@
 //
-//  JQShopTotalTableViewCell.m
+//  JQOrderTableViewCell.m
 //  SchoolOrderFood
 //
-//  Created by 乔谦 on 16/11/21.
+//  Created by 乔谦 on 16/11/26.
 //  Copyright © 2016年 wlr. All rights reserved.
 //
 
-#import "JQShopTotalTableViewCell.h"
+#import "JQOrderTableViewCell.h"
 #import "JQFoodTotalModel.h"
 
-NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
-
-
-@interface JQShopTotalTableViewCell ()
+NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
+@interface JQOrderTableViewCell ()
 
 /**背景view*/
 @property (nonatomic, weak) UIView *bgView;
+
+/**最前面选中的按钮*/
+@property (nonatomic, weak) UIButton *selectedBtn;
 
 /**icon*/
 @property (nonatomic, weak) UIImageView *iconView;
@@ -38,19 +39,7 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 
 @end
 
-@implementation JQShopTotalTableViewCell
-
-- (void)setFoodTotalModel:(JQFoodTotalModel *)foodTotalModel {
-    
-    _foodTotalModel = foodTotalModel;
-    
-    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
-    self.nameLabel.text = foodTotalModel.name;
-    self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", foodTotalModel.money];
-    
-    self.countLabel.text = [NSString stringWithFormat:@"%zd", foodTotalModel.count];
-    self.minusBtn.hidden = !foodTotalModel.minus;
-}
+@implementation JQOrderTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -65,11 +54,26 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 
 - (void)createUI {
     
+    // 选中之后没有颜色
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     /**背景view*/
     UIView *bgView = [[UIView alloc] init];
     self.bgView = bgView;
     [self.contentView addSubview:bgView];
+
+    /**最前面选中的按钮*/
+    UIButton *selectedBtn = [[UIButton alloc] init];
+    // 默认为选中
+    selectedBtn.selected = YES;
+    [selectedBtn setImage:[UIImage imageNamed:@"v2_noselected"] forState:UIControlStateNormal];
+    [selectedBtn setImage:[UIImage imageNamed:@"v2_selected"] forState:UIControlStateSelected];
+    [selectedBtn addTarget:self action:@selector(selectedBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    self.selectedBtn = selectedBtn;
+    [self.bgView addSubview:selectedBtn];
+
+    /**icon*/
     UIImageView *iconView = [[UIImageView alloc] init];
     iconView.backgroundColor = [UIColor redColor];
     self.iconView = iconView;
@@ -86,28 +90,28 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     moneyLabel.font = [UIFont systemFontOfSize:12.0f];
     self.moneyLabel = moneyLabel;
     [self.bgView addSubview:moneyLabel];
-    
+
+    /**圆形加号按钮*/
     UIButton *plusBtn = [[UIButton alloc]init];
     self.plusBtn = plusBtn;
     [plusBtn setImage:[UIImage imageNamed:@"v2_increase"] forState:UIControlStateNormal];
     [plusBtn addTarget:self action:@selector(plusButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.bgView addSubview:plusBtn];
     
-    // 数量label
+    /**数量label*/
     UILabel *countLabel = [[UILabel alloc] init];
     self.countLabel = countLabel;
     countLabel.text = @"0";
     countLabel.textAlignment = NSTextAlignmentCenter;
     countLabel.font = [UIFont systemFontOfSize:13.0f];
     [self.bgView addSubview:countLabel];
-    
+
+    /**圆形减号按钮*/
     UIButton *minusBtn = [[UIButton alloc]init];
     self.minusBtn = minusBtn;
     [minusBtn setImage:[UIImage imageNamed:@"v2_reduce"] forState:UIControlStateNormal];
     [minusBtn addTarget:self action:@selector(minusButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.bgView addSubview:minusBtn];
-    
-    
 }
 
 - (void)setViewAutoLayout {
@@ -119,14 +123,21 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     
     UIEdgeInsets padding = UIEdgeInsetsMake(margin, margin, margin, margin);
     [self.bgView makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.edges.equalTo(self.contentView).insets(padding);
+    }];
+    
+    [self.selectedBtn makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.height.width.equalTo(15);
+        make.left.equalTo(self.bgView).offset(10);
+        make.centerY.equalTo(self.bgView);
     }];
     
     [self.iconView makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.equalTo(self.contentView).offset(horMargin);
-        make.top.equalTo(self.contentView).offset(horMargin);
+        make.left.equalTo(self.selectedBtn.right).offset(horMargin);
+        make.top.equalTo(self.bgView).offset(horMargin);
         make.height.equalTo(imgH);
         make.width.equalTo(imgW);
     }];
@@ -173,6 +184,28 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     }];
 }
 
+- (void)selectedBtnClick:(UIButton *)selectedBtn {
+    
+    if (selectedBtn.selected) {
+        
+        selectedBtn.selected = NO;
+
+        if ([self.delegate respondsToSelector:@selector(orderCellNoSelectedBtnClick:)]) {
+            
+            [self.delegate orderCellNoSelectedBtnClick:self];
+        }
+        
+    } else {
+      
+        selectedBtn.selected = YES;
+        
+        if ([self.delegate respondsToSelector:@selector(orderCellSelectedBtnClick:)]) {
+            
+            [self.delegate orderCellSelectedBtnClick:self];
+        }
+    }
+}
+
 - (void)plusButtonClick:(UIButton *)btn {
     
     // 先让减号变为可视
@@ -186,11 +219,10 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     self.countLabel.text = [NSString stringWithFormat:@"%zd", self.foodTotalModel.count];
     
     // 判断有没有实现代理方法
-    if ([self.delegate respondsToSelector:@selector(shopTotalCellPlusBtnClick:)]) {
+    if ([self.delegate respondsToSelector:@selector(orderCellPlusBtnClick:)]) {
         
-        [self.delegate shopTotalCellPlusBtnClick:self];
+        [self.delegate orderCellPlusBtnClick:self];
     }
-    
 }
 
 
@@ -204,11 +236,30 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     self.countLabel.text = [NSString stringWithFormat:@"%zd", self.foodTotalModel.count];
     
     // 判断有没有实现代理方法
-    if ([self.delegate respondsToSelector:@selector(shopTotalCellMinusBtnClick:)]) {
+    if ([self.delegate respondsToSelector:@selector(orderCellMinusBtnClick:)]) {
         
-        [self.delegate shopTotalCellMinusBtnClick:self];
+        [self.delegate orderCellMinusBtnClick:self];
     }
 }
 
+- (void)setFoodTotalModel:(JQFoodTotalModel *)foodTotalModel {
+    
+    _foodTotalModel = foodTotalModel;
+    
+    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
+    self.nameLabel.text = foodTotalModel.name;
+    self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", foodTotalModel.money];
+    
+    self.countLabel.text = [NSString stringWithFormat:@"%zd", foodTotalModel.count];
+    self.minusBtn.hidden = !foodTotalModel.minus;
+    
+    if (foodTotalModel.isChecked) { // 如果被选中
+        
+        self.selectedBtn.selected = YES;
+    } else {
+        
+        self.selectedBtn.selected = NO;
+    }
+}
 
 @end

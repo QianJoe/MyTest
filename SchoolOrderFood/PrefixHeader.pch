@@ -37,6 +37,9 @@
 #define JQColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 #define colorFloat(colorInt) (colorInt)/255.0
 
+// commit颜色
+#define CommitColor [UIColor colorWithRed:0.992 green:0.831 blue:0.192 alpha:1.000]
+
 // tabbar的颜色
 #define tabbarTitleSelectedColor JQColor(254, 153, 54, 1.0)
 #define tabbarTitleColor JQColor(155, 155, 155, 1.0)

@@ -157,7 +157,7 @@ NSString *ID = @"CELL";
     }];
     
     // 用sd赋值图片
-    [self.blurImageView sd_setImageWithURL:[NSURL URLWithString:self.foodModel.foodImgName]  placeholderImage:[UIImage imageNamed:@"hot_food02"]];
+    [self.blurImageView sd_setImageWithURL:[NSURL URLWithString:self.foodModel.foodImgName]  placeholderImage:[UIImage imageNamed:@"hot_food04"]];
     
     //    __weak typeof(self)weakSelf = self;
 //    [self.blurImageView sd_setImageWithURL:

@@ -89,7 +89,7 @@ NSString * const FOODTBCELL = @"FOODTBCELL";
 
 - (void)createUI {
     
-    UIView *backGroundView= [[UIView alloc] init];
+    UIView *backGroundView = [[UIView alloc] init];
     self.backGroundView = backGroundView;
     [self.contentView addSubview:backGroundView];
     

@@ -25,4 +25,7 @@
 /**是否减少*/
 @property (nonatomic, assign) NSInteger minus;
 
+/**是否被选中*/
+@property (nonatomic, assign, getter=isChecked) BOOL check;
+
 @end

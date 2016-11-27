@@ -89,6 +89,11 @@
 		6FAD595D1DD9C73D002CE15A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD595C1DD9C73D002CE15A /* NSString+Extension.m */; };
 		6FAD59631DDAE4F3002CE15A /* JQCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD59621DDAE4F3002CE15A /* JQCommentViewController.m */; };
 		6FAD599B1DDB54F9002CE15A /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD599A1DDB54F9002CE15A /* UIImage+Blur.m */; };
+		6FDEEB181DE81D1700A33B00 /* JQOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB171DE81D1700A33B00 /* JQOrderViewController.m */; };
+		6FDEEB1B1DE8216600A33B00 /* JQOrderDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB1A1DE8216600A33B00 /* JQOrderDefaultView.m */; };
+		6FDEEB1E1DE88B1000A33B00 /* JQOrderTableFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB1D1DE88B1000A33B00 /* JQOrderTableFootView.m */; };
+		6FDEEB211DE97BF000A33B00 /* JQOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB201DE97BF000A33B00 /* JQOrderTableViewCell.m */; };
+		6FDEEB231DEACF6600A33B00 /* OrderFoodData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FDEEB221DEACF6600A33B00 /* OrderFoodData.json */; };
 		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
 		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
 		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
@@ -251,6 +256,15 @@
 		6FAD59621DDAE4F3002CE15A /* JQCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQCommentViewController.m; sourceTree = "<group>"; };
 		6FAD59991DDB54F9002CE15A /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Blur.h"; path = "../UIImage+Blur.h"; sourceTree = "<group>"; };
 		6FAD599A1DDB54F9002CE15A /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Blur.m"; path = "../UIImage+Blur.m"; sourceTree = "<group>"; };
+		6FDEEB161DE81D1700A33B00 /* JQOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQOrderViewController.h; sourceTree = "<group>"; };
+		6FDEEB171DE81D1700A33B00 /* JQOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQOrderViewController.m; sourceTree = "<group>"; };
+		6FDEEB191DE8216600A33B00 /* JQOrderDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQOrderDefaultView.h; sourceTree = "<group>"; };
+		6FDEEB1A1DE8216600A33B00 /* JQOrderDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQOrderDefaultView.m; sourceTree = "<group>"; };
+		6FDEEB1C1DE88B1000A33B00 /* JQOrderTableFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQOrderTableFootView.h; sourceTree = "<group>"; };
+		6FDEEB1D1DE88B1000A33B00 /* JQOrderTableFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQOrderTableFootView.m; sourceTree = "<group>"; };
+		6FDEEB1F1DE97BF000A33B00 /* JQOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQOrderTableViewCell.h; sourceTree = "<group>"; };
+		6FDEEB201DE97BF000A33B00 /* JQOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQOrderTableViewCell.m; sourceTree = "<group>"; };
+		6FDEEB221DEACF6600A33B00 /* OrderFoodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OrderFoodData.json; sourceTree = "<group>"; };
 		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -278,6 +292,7 @@
 				7D55DEF4738F0A5FE3CFE78C /* libPods-SchoolOrderFood.a */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3929C1D0D3AC13F1D2E57060 /* Pods */ = {
@@ -287,9 +302,10 @@
 				6EF956FD5B4BCA2AACCF4980 /* Pods-SchoolOrderFood.release.xcconfig */,
 			);
 			name = Pods;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		6F10A4971DCC81A90027C650 /* Home */ = {
+		6F10A4971DCC81A90027C650 /* Home（首页） */ = {
 			isa = PBXGroup;
 			children = (
 				6F10A4A61DCC81A90027C650 /* Other */,
@@ -297,6 +313,7 @@
 				6F10A4A91DCC81A90027C650 /* View */,
 				6F10A4981DCC81A90027C650 /* Controller */,
 			);
+			name = "Home（首页）";
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -362,7 +379,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6F10A4D31DCDB6DA0027C650 /* Mine */ = {
+		6F10A4D31DCDB6DA0027C650 /* Mine（我的） */ = {
 			isa = PBXGroup;
 			children = (
 				6F10A4D61DCDB6DA0027C650 /* Other */,
@@ -370,6 +387,7 @@
 				6F10A4D71DCDB6DA0027C650 /* View */,
 				6F10A4D41DCDB6DA0027C650 /* Controller */,
 			);
+			name = "Mine（我的）";
 			path = Mine;
 			sourceTree = "<group>";
 		};
@@ -413,9 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				6F30DA391DC1ABC8000824CE /* SchoolOrderFood */,
-				6F30DA381DC1ABC8000824CE /* Products */,
-				3929C1D0D3AC13F1D2E57060 /* Pods */,
-				19AE1D46EC7CAFD44906A319 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -425,6 +440,7 @@
 				6F30DA371DC1ABC8000824CE /* SchoolOrderFood.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6F30DA391DC1ABC8000824CE /* SchoolOrderFood */ = {
@@ -447,10 +463,11 @@
 		6F30DA511DC1ACE0000824CE /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				6F30DA541DC1D4FA000824CE /* Main */,
-				6F10A4971DCC81A90027C650 /* Home */,
-				6F10A4D31DCDB6DA0027C650 /* Mine */,
-				6FA876041DD3015E00C7FF05 /* SelectFood */,
+				6F30DA541DC1D4FA000824CE /* Main（基础） */,
+				6F10A4971DCC81A90027C650 /* Home（首页） */,
+				6FA876041DD3015E00C7FF05 /* SelectFood（挑食） */,
+				6FDEEB111DE8121C00A33B00 /* Order（订单） */,
+				6F10A4D31DCDB6DA0027C650 /* Mine（我的） */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -468,17 +485,20 @@
 		6F30DA531DC1AD36000824CE /* other(资源和配置) */ = {
 			isa = PBXGroup;
 			children = (
+				6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */,
 				6FA875FC1DD2D24600C7FF05 /* 资源数据 */,
 				6FA875EA1DD2274200C7FF05 /* tool（网络，文件，工具类） */,
 				6F30DA521DC1ACED000824CE /* enter（入口文件） */,
-				6F30DA5E1DC1D88D000824CE /* PrefixHeader.pch */,
 				6F30DA3A1DC1ABC8000824CE /* Supporting Files */,
 				6F30DA4B1DC1ABC8000824CE /* Info.plist */,
+				3929C1D0D3AC13F1D2E57060 /* Pods */,
+				6F30DA381DC1ABC8000824CE /* Products */,
+				19AE1D46EC7CAFD44906A319 /* Frameworks */,
 			);
 			name = "other(资源和配置)";
 			sourceTree = "<group>";
 		};
-		6F30DA541DC1D4FA000824CE /* Main */ = {
+		6F30DA541DC1D4FA000824CE /* Main（基础） */ = {
 			isa = PBXGroup;
 			children = (
 				6F30DA6D1DC1F9A8000824CE /* Other */,
@@ -486,6 +506,7 @@
 				6F30DA571DC1D4FA000824CE /* View */,
 				6F30DA551DC1D4FA000824CE /* Controller */,
 			);
+			name = "Main（基础）";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -724,6 +745,7 @@
 				6FAD58DD1DD460AC002CE15A /* foodData.json */,
 				6F41B7B51DE436BE00A814FE /* foodTotalData.json */,
 				6F41B7BF1DE481E600A814FE /* commentData.json */,
+				6FDEEB221DEACF6600A33B00 /* OrderFoodData.json */,
 			);
 			name = "资源数据";
 			sourceTree = "<group>";
@@ -739,7 +761,7 @@
 			name = "帮助中心";
 			sourceTree = "<group>";
 		};
-		6FA876041DD3015E00C7FF05 /* SelectFood */ = {
+		6FA876041DD3015E00C7FF05 /* SelectFood（挑食） */ = {
 			isa = PBXGroup;
 			children = (
 				6FA876051DD3015E00C7FF05 /* Controller */,
@@ -747,6 +769,7 @@
 				6FA876071DD3015E00C7FF05 /* Other */,
 				6FA876081DD3015E00C7FF05 /* View */,
 			);
+			name = "SelectFood（挑食）";
 			path = SelectFood;
 			sourceTree = "<group>";
 		};
@@ -794,8 +817,8 @@
 			children = (
 				6F41B7B71DE4752400A814FE /* 点评 */,
 				6F942FE11DE2E633009B89BE /* 食物 */,
-				6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */,
 				6FAD59591DD9C5D1002CE15A /* SCNavTabBar.h */,
+				6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */,
 				6FA8760F1DD30DC800C7FF05 /* JSDropDownMenu.h */,
 				6FA876101DD30DC800C7FF05 /* JSDropDownMenu.m */,
 				6FA8760C1DD3045C00C7FF05 /* JQMultipleButtonView.h */,
@@ -821,6 +844,54 @@
 				6F942FDF1DE19D10009B89BE /* 商店 */,
 			);
 			name = "商店细节";
+			sourceTree = "<group>";
+		};
+		6FDEEB111DE8121C00A33B00 /* Order（订单） */ = {
+			isa = PBXGroup;
+			children = (
+				6FDEEB141DE8121C00A33B00 /* Other */,
+				6FDEEB131DE8121C00A33B00 /* Model */,
+				6FDEEB151DE8121C00A33B00 /* View */,
+				6FDEEB121DE8121C00A33B00 /* Controller */,
+			);
+			name = "Order（订单）";
+			path = Order;
+			sourceTree = "<group>";
+		};
+		6FDEEB121DE8121C00A33B00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6FDEEB161DE81D1700A33B00 /* JQOrderViewController.h */,
+				6FDEEB171DE81D1700A33B00 /* JQOrderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6FDEEB131DE8121C00A33B00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FDEEB141DE8121C00A33B00 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6FDEEB151DE8121C00A33B00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6FDEEB191DE8216600A33B00 /* JQOrderDefaultView.h */,
+				6FDEEB1A1DE8216600A33B00 /* JQOrderDefaultView.m */,
+				6FDEEB1C1DE88B1000A33B00 /* JQOrderTableFootView.h */,
+				6FDEEB1D1DE88B1000A33B00 /* JQOrderTableFootView.m */,
+				6FDEEB1F1DE97BF000A33B00 /* JQOrderTableViewCell.h */,
+				6FDEEB201DE97BF000A33B00 /* JQOrderTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -898,6 +969,7 @@
 				6F942FDC1DE19986009B89BE /* JQShopIntroView.xib in Resources */,
 				6FA876191DD36ABD00C7FF05 /* ico_make.png in Resources */,
 				6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */,
+				6FDEEB231DEACF6600A33B00 /* OrderFoodData.json in Resources */,
 				6FE571491DCF2024009BAD8E /* JQLoginRegisterView.xib in Resources */,
 				6F10A4F01DCDDD0A0027C650 /* MinePageData.json in Resources */,
 				6F9260881DD0775600DB2926 /* JQPasswordConfirmViewController.xib in Resources */,
@@ -978,6 +1050,7 @@
 				6F10A4D21DCC82A50027C650 /* JQHeadViewForCollectCell.m in Sources */,
 				6F10A4C31DCC81A90027C650 /* JQHeadView.m in Sources */,
 				6F10A4BE1DCC81A90027C650 /* JQHeadData.m in Sources */,
+				6FDEEB211DE97BF000A33B00 /* JQOrderTableViewCell.m in Sources */,
 				6F10A4DA1DCDB7B70027C650 /* JQMineViewController.m in Sources */,
 				6FA8760B1DD303B100C7FF05 /* JQSelectFoodViewController.m in Sources */,
 				6F30DA5D1DC1D7F9000824CE /* JQBasicNaviController.m in Sources */,
@@ -1005,8 +1078,10 @@
 				6FAD58E71DD859B9002CE15A /* JQShopDetailViewController.m in Sources */,
 				6F942FCC1DE028AA009B89BE /* JQShopIntroViewController.m in Sources */,
 				6F10A4C51DCC81A90027C650 /* JQHomeGoodsView.m in Sources */,
+				6FDEEB1B1DE8216600A33B00 /* JQOrderDefaultView.m in Sources */,
 				6FAD599B1DDB54F9002CE15A /* UIImage+Blur.m in Sources */,
 				6F942FE41DE2E662009B89BE /* JQShopTotalTableViewCell.m in Sources */,
+				6FDEEB181DE81D1700A33B00 /* JQOrderViewController.m in Sources */,
 				6FAD595D1DD9C73D002CE15A /* NSString+Extension.m in Sources */,
 				6F10A4BD1DCC81A90027C650 /* JQHead.m in Sources */,
 				6FAD59631DDAE4F3002CE15A /* JQCommentViewController.m in Sources */,
@@ -1021,6 +1096,7 @@
 				6F10A4E61DCDCD610027C650 /* JQTitleIconView.m in Sources */,
 				6FA875F01DD2CE5500C7FF05 /* JQPushSettingViewController.m in Sources */,
 				6F10A4DD1DCDBA2B0027C650 /* JQMineHeadView.m in Sources */,
+				6FDEEB1E1DE88B1000A33B00 /* JQOrderTableFootView.m in Sources */,
 				6FA876141DD351D500C7FF05 /* JQProvince.m in Sources */,
 				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
 				6F942FDA1DE19951009B89BE /* JQShopIntroView.m in Sources */,
