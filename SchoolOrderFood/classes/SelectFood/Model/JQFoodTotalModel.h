@@ -10,6 +10,9 @@
 
 @interface JQFoodTotalModel : NSObject
 
+/**id*/
+@property (nonatomic, assign) int food_id;
+
 /**image*/
 @property (nonatomic, copy) NSString *image;
 
@@ -19,7 +22,7 @@
 /**money*/
 @property (nonatomic, copy) NSString *money;
 
-/**数量*/
+/**购买的数量*/
 @property (nonatomic, assign) NSInteger count;
 
 /**是否减少*/

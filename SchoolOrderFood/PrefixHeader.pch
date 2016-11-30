@@ -26,6 +26,10 @@
 
 #define VIEWWIDTH self.frame.size.width
 // 通知
+#define JQNotification [NSNotificationCenter defaultCenter]
+
+#define JQFoodChangedNotification @"JQFoodChangedNotification"
+#define JQShopCarFoodRemoveNotification @"JQShopCarFoodRemoveNotification"
 
 // 字体
 #define oldPriceFont [UIFont systemFontOfSize:12.0]

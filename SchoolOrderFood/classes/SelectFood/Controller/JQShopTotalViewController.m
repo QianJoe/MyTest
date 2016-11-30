@@ -115,6 +115,7 @@
 
     // 当count为0 删除购物车中的模型
     if (!cell.foodTotalModel.count) {
+        JQLOG(@"-----------:%ld", cell.foodTotalModel.count);
         [self.buyFoodTotalArrayM removeObject:cell.foodTotalModel];
     }
     

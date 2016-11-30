@@ -1,51 +1,61 @@
 {
     "foodTotalData":[
-                       {
-                       "image":"eq",
-                       "name":"dasd",
-                       "money":"20"
-                       },
-                       {
-                       "image":"qe",
-                       "name":"qwe",
-                       "money":"32"
-                       },
-                       {
-                       "image":"qew",
-                       "name":"3131",
-                       "money":"13"
-                       },
-                       {
-                       "image":"eq",
-                       "name":"21134234",
-                       "money":"223"
-                       },
-                       {
-                       "image":"123",
-                       "name":"21134234",
-                       "money":"223"
-                       },
-                       {
-                       "image":"cccccc",
-                       "name":"ccc",
-                       "money":"223"
-                       },
-                       {
-                       "image":"12vvvew3",
-                       "name":"2113werw4234",
-                       "money":"2323"
-                       },
                      {
+                     "food_id":1,
+                     "image":"eq",
+                     "name":"dasd",
+                     "money":"20"
+                     },
+                     {
+                     "food_id":2,
+                     "image":"qe",
+                     "name":"qwe",
+                     "money":"10"
+                     },
+                     {
+                     "food_id":3,
+                     "image":"qew",
+                     "name":"3131",
+                     "money":"50"
+                     },
+                     {
+                     "food_id":4,
+                     "image":"eq",
+                     "name":"21134234",
+                     "money":"40"
+                     },
+                     {
+                     "food_id":5,
+                     "image":"123",
+                     "name":"21134234",
+                     "money":"150"
+                     },
+                     {
+                     "food_id":6,
+                     "image":"cccccc",
+                     "name":"ccc",
+                     "money":"223"
+                     },
+                     {
+                     "food_id":7,
+                     "image":"12vvvew3",
+                     "name":"2113werw4234",
+                     "money":"2323"
+                     },
+                     {
+                     "food_id":8,
                      "image":"6666666",
                      "name":"66666",
                      "money":"2323"
                      },
                      {
+                     "food_id":9,
                      "image":"777777",
                      "name":"3123123",
                      "money":"2323"
                      },
                      {
+                     "food_id":10,
                      "image":"8888888",
                      "name":"4444444",
                      "money":"2323"

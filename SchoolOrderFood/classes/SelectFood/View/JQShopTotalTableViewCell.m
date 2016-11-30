@@ -8,6 +8,7 @@
 
 #import "JQShopTotalTableViewCell.h"
 #import "JQFoodTotalModel.h"
+#import "JQShopCarTool.h"
 
 NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 
@@ -35,6 +36,8 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 /**数量label*/
 @property (nonatomic, weak) UILabel *countLabel;
 
+/**数量*/
+@property (nonatomic, assign) NSInteger tempCount;
 
 @end
 
@@ -175,6 +178,12 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 
 - (void)plusButtonClick:(UIButton *)btn {
     
+    // 将此model添加到购物车中
+    [[JQShopCarTool sharedInstance] addFoodToShopCar:self.foodTotalModel];
+    
+    // 发送购物车的数量改变的通知
+    [JQNotification postNotificationName:JQFoodChangedNotification object:nil];
+    
     // 先让减号变为可视
     if (self.minusBtn.hidden) {
         
@@ -182,26 +191,52 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
         self.minusBtn.hidden = !self.foodTotalModel.minus;
     }
     
-    self.foodTotalModel.count ++;
-    self.countLabel.text = [NSString stringWithFormat:@"%zd", self.foodTotalModel.count];
+//    for (JQFoodTotalModel *ftModel in [JQShopCarTool sharedInstance].shopCar) {
+//        
+//        if (self.foodTotalModel.food_id == ftModel.food_id) { // 用food_id判断是否已存在购物车中
+//            
+//            self.countLabel.text = [NSString stringWithFormat:@"%zd", ftModel.count];
+//        }
+//    }
+    
+//    self.foodTotalModel.count ++;
+    self.tempCount ++;
+    self.countLabel.text = [NSString stringWithFormat:@"%zd", self.tempCount];
+    
     
     // 判断有没有实现代理方法
     if ([self.delegate respondsToSelector:@selector(shopTotalCellPlusBtnClick:)]) {
         
         [self.delegate shopTotalCellPlusBtnClick:self];
     }
-    
 }
-
 
 - (void)minusButtonClick:(UIButton *)btn {
     
-    self.foodTotalModel.count --;
-    self.foodTotalModel.minus = (self.foodTotalModel.count > 0);
+    // 将此model添加到购物车中
+    [[JQShopCarTool sharedInstance] removeFromFoodShopCar:self.foodTotalModel];
+    
+    // 发送购物车的数量改变的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:JQFoodChangedNotification object:nil];
+    
+//    self.foodTotalModel.count --;
+//    for (JQFoodTotalModel *ftModel in [JQShopCarTool sharedInstance].shopCar) {
+//        
+//        if (self.foodTotalModel.food_id == ftModel.food_id) { // 用food_id判断是否已存在购物车中
+//            
+//            self.countLabel.text = [NSString stringWithFormat:@"%zd", ftModel.count];
+//        }
+//    }
+    
+    self.tempCount --;
+
+    self.countLabel.text = [NSString stringWithFormat:@"%zd", self.tempCount];
+    JQLOG(@"self.foodTotalModel.count:%ld", self.foodTotalModel.count);
+//    self.foodTotalModel.minus = (self.foodTotalModel.count > 0);
+    self.foodTotalModel.minus = (self.tempCount > 0); // 用临时的就减不到最后
     self.minusBtn.hidden = !self.foodTotalModel.minus;
     
     
-    self.countLabel.text = [NSString stringWithFormat:@"%zd", self.foodTotalModel.count];
     
     // 判断有没有实现代理方法
     if ([self.delegate respondsToSelector:@selector(shopTotalCellMinusBtnClick:)]) {

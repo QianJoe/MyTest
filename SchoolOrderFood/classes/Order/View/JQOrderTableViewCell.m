@@ -8,6 +8,7 @@
 
 #import "JQOrderTableViewCell.h"
 #import "JQFoodTotalModel.h"
+#import "JQShopCarTool.h"
 
 NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
 @interface JQOrderTableViewCell ()
@@ -208,6 +209,12 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
 
 - (void)plusButtonClick:(UIButton *)btn {
     
+    // 将此model添加到购物车中
+    [[JQShopCarTool sharedInstance] addFoodToShopCar:self.foodTotalModel];
+    
+    // 发送购物车的数量改变的通知
+    [JQNotification postNotificationName:JQFoodChangedNotification object:nil];
+    
     // 先让减号变为可视
     if (self.minusBtn.hidden) {
         
@@ -215,7 +222,7 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
         self.minusBtn.hidden = !self.foodTotalModel.minus;
     }
     
-    self.foodTotalModel.count ++;
+//    self.foodTotalModel.count ++;
     self.countLabel.text = [NSString stringWithFormat:@"%zd", self.foodTotalModel.count];
     
     // 判断有没有实现代理方法
@@ -225,10 +232,15 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
     }
 }
 
-
 - (void)minusButtonClick:(UIButton *)btn {
     
-    self.foodTotalModel.count --;
+    // 将此model添加到购物车中
+    [[JQShopCarTool sharedInstance] removeFromFoodShopCar:self.foodTotalModel];
+    
+    // 发送购物车的数量改变的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:JQFoodChangedNotification object:nil];
+    
+//    self.foodTotalModel.count --;
     self.foodTotalModel.minus = (self.foodTotalModel.count > 0);
     self.minusBtn.hidden = !self.foodTotalModel.minus;
     

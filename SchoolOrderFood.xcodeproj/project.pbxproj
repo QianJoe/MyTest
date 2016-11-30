@@ -94,6 +94,7 @@
 		6FDEEB1E1DE88B1000A33B00 /* JQOrderTableFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB1D1DE88B1000A33B00 /* JQOrderTableFootView.m */; };
 		6FDEEB211DE97BF000A33B00 /* JQOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB201DE97BF000A33B00 /* JQOrderTableViewCell.m */; };
 		6FDEEB231DEACF6600A33B00 /* OrderFoodData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FDEEB221DEACF6600A33B00 /* OrderFoodData.json */; };
+		6FDEEB261DEB137600A33B00 /* JQShopCarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEEB251DEB137600A33B00 /* JQShopCarTool.m */; };
 		6FE571431DCF123D009BAD8E /* JQLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */; };
 		6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */; };
 		6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE571461DCF1FC2009BAD8E /* JQLoginRegisterView.m */; };
@@ -265,6 +266,8 @@
 		6FDEEB1F1DE97BF000A33B00 /* JQOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQOrderTableViewCell.h; sourceTree = "<group>"; };
 		6FDEEB201DE97BF000A33B00 /* JQOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQOrderTableViewCell.m; sourceTree = "<group>"; };
 		6FDEEB221DEACF6600A33B00 /* OrderFoodData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OrderFoodData.json; sourceTree = "<group>"; };
+		6FDEEB241DEB137600A33B00 /* JQShopCarTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQShopCarTool.h; sourceTree = "<group>"; };
+		6FDEEB251DEB137600A33B00 /* JQShopCarTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQShopCarTool.m; sourceTree = "<group>"; };
 		6FE571401DCF123D009BAD8E /* JQLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6FE571411DCF123D009BAD8E /* JQLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6FE571421DCF123D009BAD8E /* JQLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQLoginRegisterViewController.xib; sourceTree = "<group>"; };
@@ -571,6 +574,35 @@
 			name = "商店";
 			sourceTree = "<group>";
 		};
+		6F90F9C61DED717A00973237 /* 主要的 */ = {
+			isa = PBXGroup;
+			children = (
+				6FAD59591DD9C5D1002CE15A /* SCNavTabBar.h */,
+				6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */,
+				6FA8760F1DD30DC800C7FF05 /* JSDropDownMenu.h */,
+				6FA876101DD30DC800C7FF05 /* JSDropDownMenu.m */,
+				6FA8760C1DD3045C00C7FF05 /* JQMultipleButtonView.h */,
+				6FA8760D1DD3045C00C7FF05 /* JQMultipleButtonView.m */,
+				6FAD58D71DD40A37002CE15A /* JQFoodTableViewCell.h */,
+				6FAD58D81DD40A37002CE15A /* JQFoodTableViewCell.m */,
+				6FAD58DF1DD71053002CE15A /* JQStarView.h */,
+				6FAD58E01DD71053002CE15A /* JQStarView.m */,
+				6FAD58E31DD7144F002CE15A /* JQStarView.xib */,
+				6FAD59521DD9C029002CE15A /* JQTiltleButton.h */,
+				6FAD59531DD9C029002CE15A /* JQTiltleButton.m */,
+			);
+			name = "主要的";
+			sourceTree = "<group>";
+		};
+		6F90F9C71DED71BF00973237 /* 主要的 */ = {
+			isa = PBXGroup;
+			children = (
+				6FA876091DD303B100C7FF05 /* JQSelectFoodViewController.h */,
+				6FA8760A1DD303B100C7FF05 /* JQSelectFoodViewController.m */,
+			);
+			name = "主要的";
+			sourceTree = "<group>";
+		};
 		6F942FDD1DE19C8E009B89BE /* 食物 */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +663,8 @@
 				6FA875EC1DD2275700C7FF05 /* JQFileTool.m */,
 				6FA876151DD3683000C7FF05 /* JQHttpTool.h */,
 				6FA876161DD3683000C7FF05 /* JQHttpTool.m */,
+				6FDEEB241DEB137600A33B00 /* JQShopCarTool.h */,
+				6FDEEB251DEB137600A33B00 /* JQShopCarTool.m */,
 			);
 			name = "tool（网络，文件，工具类）";
 			sourceTree = "<group>";
@@ -776,8 +810,7 @@
 		6FA876051DD3015E00C7FF05 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6FA876091DD303B100C7FF05 /* JQSelectFoodViewController.h */,
-				6FA8760A1DD303B100C7FF05 /* JQSelectFoodViewController.m */,
+				6F90F9C71DED71BF00973237 /* 主要的 */,
 				6FAD58E81DD95598002CE15A /* 商店细节 */,
 			);
 			path = Controller;
@@ -815,21 +848,9 @@
 		6FA876081DD3015E00C7FF05 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F90F9C61DED717A00973237 /* 主要的 */,
 				6F41B7B71DE4752400A814FE /* 点评 */,
 				6F942FE11DE2E633009B89BE /* 食物 */,
-				6FAD59591DD9C5D1002CE15A /* SCNavTabBar.h */,
-				6FAD59581DD9C5D1002CE15A /* SCNavTabBar.m */,
-				6FA8760F1DD30DC800C7FF05 /* JSDropDownMenu.h */,
-				6FA876101DD30DC800C7FF05 /* JSDropDownMenu.m */,
-				6FA8760C1DD3045C00C7FF05 /* JQMultipleButtonView.h */,
-				6FA8760D1DD3045C00C7FF05 /* JQMultipleButtonView.m */,
-				6FAD58D71DD40A37002CE15A /* JQFoodTableViewCell.h */,
-				6FAD58D81DD40A37002CE15A /* JQFoodTableViewCell.m */,
-				6FAD58DF1DD71053002CE15A /* JQStarView.h */,
-				6FAD58E01DD71053002CE15A /* JQStarView.m */,
-				6FAD58E31DD7144F002CE15A /* JQStarView.xib */,
-				6FAD59521DD9C029002CE15A /* JQTiltleButton.h */,
-				6FAD59531DD9C029002CE15A /* JQTiltleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1098,6 +1119,7 @@
 				6F10A4DD1DCDBA2B0027C650 /* JQMineHeadView.m in Sources */,
 				6FDEEB1E1DE88B1000A33B00 /* JQOrderTableFootView.m in Sources */,
 				6FA876141DD351D500C7FF05 /* JQProvince.m in Sources */,
+				6FDEEB261DEB137600A33B00 /* JQShopCarTool.m in Sources */,
 				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
 				6F942FDA1DE19951009B89BE /* JQShopIntroView.m in Sources */,
 				6FA875F31DD2D18B00C7FF05 /* JQAboutViewController.m in Sources */,

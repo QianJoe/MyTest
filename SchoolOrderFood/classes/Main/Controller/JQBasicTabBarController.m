@@ -12,6 +12,7 @@
 #import "JQMineViewController.h"
 #import "JQSelectFoodViewController.h"
 #import "JQOrderViewController.h"
+#import "JQShopCarTool.h"
 
 @interface JQBasicTabBarController ()
 
@@ -24,6 +25,12 @@
     
     // 设置背景颜色
     self.view.backgroundColor = BackgroundColor;
+    
+    [self initChildVC];
+    [self addNotification];
+}
+
+- (void)initChildVC {
     
     // 首页
     JQHomeTableViewController *homeVC = [[JQHomeTableViewController alloc] init];
@@ -91,10 +98,32 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 添加通知
+
+- (void)addNotification{
+    
+    [JQNotification addObserver:self selector:@selector(increaseShoppingCar) name:JQFoodChangedNotification object:nil];
 }
 
+#pragma mark - badge红点提示
+- (void)increaseShoppingCar {
+    
+    UIViewController *orderVC = self.childViewControllers[2];
+    
+    NSInteger foodNumber = [[JQShopCarTool sharedInstance] getShopCarFoodNumber];
+    
+    if (foodNumber == 0) {
+        
+        orderVC.tabBarItem.badgeValue = nil;
+        return;
+    }
+    
+    orderVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%zd", foodNumber];
+}
+
+#pragma mark - 程序结束，移除通知
+- (void)dealloc {
+    [JQNotification removeObserver:self];
+}
 
 @end

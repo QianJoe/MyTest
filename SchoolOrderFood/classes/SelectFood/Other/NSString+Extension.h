@@ -17,4 +17,8 @@
  *  @param maxSize 最大尺寸
  */
 - (CGRect)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
+
+/**qingning*/
+- (NSString *)cleanDecimalPointZear;
+
 @end
