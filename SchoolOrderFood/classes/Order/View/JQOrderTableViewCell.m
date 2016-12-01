@@ -205,6 +205,10 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
             [self.delegate orderCellSelectedBtnClick:self];
         }
     }
+    
+    // 发送一个通知
+    [JQNotification postNotificationName:JQFoodChangedNotification object:nil];
+
 }
 
 - (void)plusButtonClick:(UIButton *)btn {

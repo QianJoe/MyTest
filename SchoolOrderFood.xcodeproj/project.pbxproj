@@ -46,6 +46,9 @@
 		6F41B7BE1DE47E1500A814FE /* JQCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F41B7BD1DE47E1500A814FE /* JQCommentModel.m */; };
 		6F41B7C01DE481E600A814FE /* commentData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F41B7BF1DE481E600A814FE /* commentData.json */; };
 		6F41B7C41DE4861F00A814FE /* JQShopIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F41B7C31DE4861F00A814FE /* JQShopIntroModel.m */; };
+		6F90F9D01DF0175C00973237 /* JQChoosedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F90F9CE1DF0175C00973237 /* JQChoosedViewController.m */; };
+		6F90F9D11DF0175C00973237 /* JQChoosedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F90F9CF1DF0175C00973237 /* JQChoosedViewController.xib */; };
+		6F90F9D41DF04E3F00973237 /* JQDateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F90F9D31DF04E3F00973237 /* JQDateTextField.m */; };
 		6F9260831DD0697300DB2926 /* JQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260821DD0697300DB2926 /* JQTextField.m */; };
 		6F9260871DD0775600DB2926 /* JQPasswordConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9260851DD0775600DB2926 /* JQPasswordConfirmViewController.m */; };
 		6F9260881DD0775600DB2926 /* JQPasswordConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9260861DD0775600DB2926 /* JQPasswordConfirmViewController.xib */; };
@@ -178,6 +181,11 @@
 		6F41B7BF1DE481E600A814FE /* commentData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commentData.json; sourceTree = "<group>"; };
 		6F41B7C21DE4861F00A814FE /* JQShopIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQShopIntroModel.h; sourceTree = "<group>"; };
 		6F41B7C31DE4861F00A814FE /* JQShopIntroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQShopIntroModel.m; sourceTree = "<group>"; };
+		6F90F9CD1DF0175C00973237 /* JQChoosedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQChoosedViewController.h; sourceTree = "<group>"; };
+		6F90F9CE1DF0175C00973237 /* JQChoosedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQChoosedViewController.m; sourceTree = "<group>"; };
+		6F90F9CF1DF0175C00973237 /* JQChoosedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQChoosedViewController.xib; sourceTree = "<group>"; };
+		6F90F9D21DF04E3F00973237 /* JQDateTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQDateTextField.h; sourceTree = "<group>"; };
+		6F90F9D31DF04E3F00973237 /* JQDateTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQDateTextField.m; sourceTree = "<group>"; };
 		6F9260811DD0697300DB2926 /* JQTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQTextField.h; sourceTree = "<group>"; };
 		6F9260821DD0697300DB2926 /* JQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQTextField.m; sourceTree = "<group>"; };
 		6F9260841DD0775600DB2926 /* JQPasswordConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQPasswordConfirmViewController.h; sourceTree = "<group>"; };
@@ -603,6 +611,25 @@
 			name = "主要的";
 			sourceTree = "<group>";
 		};
+		6F90F9C81DEF0E1F00973237 /* 选好后 */ = {
+			isa = PBXGroup;
+			children = (
+				6F90F9CD1DF0175C00973237 /* JQChoosedViewController.h */,
+				6F90F9CE1DF0175C00973237 /* JQChoosedViewController.m */,
+				6F90F9CF1DF0175C00973237 /* JQChoosedViewController.xib */,
+			);
+			name = "选好后";
+			sourceTree = "<group>";
+		};
+		6F90F9CC1DEF0E6D00973237 /* 主要的 */ = {
+			isa = PBXGroup;
+			children = (
+				6FDEEB161DE81D1700A33B00 /* JQOrderViewController.h */,
+				6FDEEB171DE81D1700A33B00 /* JQOrderViewController.m */,
+			);
+			name = "主要的";
+			sourceTree = "<group>";
+		};
 		6F942FDD1DE19C8E009B89BE /* 食物 */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,8 +909,8 @@
 		6FDEEB121DE8121C00A33B00 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6FDEEB161DE81D1700A33B00 /* JQOrderViewController.h */,
-				6FDEEB171DE81D1700A33B00 /* JQOrderViewController.m */,
+				6F90F9CC1DEF0E6D00973237 /* 主要的 */,
+				6F90F9C81DEF0E1F00973237 /* 选好后 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -905,6 +932,8 @@
 		6FDEEB151DE8121C00A33B00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F90F9D21DF04E3F00973237 /* JQDateTextField.h */,
+				6F90F9D31DF04E3F00973237 /* JQDateTextField.m */,
 				6FDEEB191DE8216600A33B00 /* JQOrderDefaultView.h */,
 				6FDEEB1A1DE8216600A33B00 /* JQOrderDefaultView.m */,
 				6FDEEB1C1DE88B1000A33B00 /* JQOrderTableFootView.h */,
@@ -978,6 +1007,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F30DA4A1DC1ABC8000824CE /* LaunchScreen.storyboard in Resources */,
+				6F90F9D11DF0175C00973237 /* JQChoosedViewController.xib in Resources */,
 				6F10A4CC1DCC82140027C650 /* headData.json in Resources */,
 				6FA8761B1DD36AE100C7FF05 /* provinces.plist in Resources */,
 				6FE571441DCF123D009BAD8E /* JQLoginRegisterViewController.xib in Resources */,
@@ -1079,6 +1109,7 @@
 				6F9260831DD0697300DB2926 /* JQTextField.m in Sources */,
 				6F942FD71DE18C56009B89BE /* JQCommentHeadTableView.m in Sources */,
 				6FAD595A1DD9C5D1002CE15A /* SCNavTabBar.m in Sources */,
+				6F90F9D01DF0175C00973237 /* JQChoosedViewController.m in Sources */,
 				6F10A4E91DCDD0D90027C650 /* JQTitleIconAction.m in Sources */,
 				6F10A4BC1DCC81A90027C650 /* JQGoods.m in Sources */,
 				6FA875D31DD1D2A200C7FF05 /* JQSettingTableViewController.m in Sources */,
@@ -1123,6 +1154,7 @@
 				6F10A4C71DCC81A90027C650 /* JQPageScrollView.m in Sources */,
 				6F942FDA1DE19951009B89BE /* JQShopIntroView.m in Sources */,
 				6FA875F31DD2D18B00C7FF05 /* JQAboutViewController.m in Sources */,
+				6F90F9D41DF04E3F00973237 /* JQDateTextField.m in Sources */,
 				6FAD58D91DD40A37002CE15A /* JQFoodTableViewCell.m in Sources */,
 				6F30DA3C1DC1ABC8000824CE /* main.m in Sources */,
 				6F10A4C01DCC81A90027C650 /* UIColor+JQHexColorToARGB.m in Sources */,

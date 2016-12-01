@@ -141,6 +141,14 @@
     return self.shopCar.count == 0;
 }
 
+- (void)addShopCarAllFoodToBuyedArray {
+    
+    [self.shopCar enumerateObjectsUsingBlock:^(JQFoodTotalModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+       
+        [self.buyFoodArrayM addObject:obj];
+    }];
+}
+
 - (NSMutableArray<JQFoodTotalModel *> *)shopCar {
     
     if (!_shopCar) {
@@ -149,4 +157,5 @@
     }
     return  _shopCar;
 }
+
 @end

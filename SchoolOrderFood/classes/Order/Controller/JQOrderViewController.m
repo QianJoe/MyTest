@@ -15,6 +15,7 @@
 #import "JQFoodTotalModel.h"
 #import "JQShopCarTool.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "JQChoosedViewController.h"
 
 @interface JQOrderViewController () <UITableViewDataSource, UITableViewDelegate, JQOrderTableViewCellDeleagte, JQOrderTableFootViewDelegate>
 
@@ -38,7 +39,7 @@
 @property (nonatomic, assign) NSInteger totalPrice;
 
 /**食物的数组*/
-@property (nonatomic, strong) NSArray *dataList;
+@property (nonatomic, strong) NSMutableArray *dataList;
 
 /**存放购买的临时食物*/
 @property (nonatomic, strong) NSMutableArray<JQFoodTotalModel *> *buyFoodTotalTempArray;
@@ -50,7 +51,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+        
+    self.navigationController.navigationBar.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+
     if ([[JQShopCarTool sharedInstance] isEmpty]) {
         
         self.defaultView.hidden = NO;
@@ -261,14 +265,17 @@
     
     // 添加进去
 //    [self.buyFoodTotalArrayM addObject:cell.foodTotalModel];
-    [self.buyFoodTotalTempArray addObject:cell.foodTotalModel];
-
+//    [self.buyFoodTotalTempArray addObject:cell.foodTotalModel];
+    
+    [self.dataList addObject:cell.foodTotalModel];
+    
     NSInteger money = [cell.foodTotalModel.money integerValue];
     money = money * cell.foodTotalModel.count;
     self.totalPrice += money;
     // 显示在footview上
     self.footView.totalPrice = self.totalPrice;
-    JQLOG(@"选中.....总结:%ld, %@", self.totalPrice, self.buyFoodTotalTempArray);
+    
+    JQLOG(@"选中.....总结:%ld, %@", self.totalPrice, self.dataList);
 
 }
 
@@ -279,24 +286,29 @@
     
     // 直接将它移除
 //    [self.buyFoodTotalArrayM removeObject:cell.foodTotalModel];
-    [self.buyFoodTotalTempArray removeObject:cell.foodTotalModel];
+//    [self.buyFoodTotalTempArray removeObject:cell.foodTotalModel];
+    [self.dataList removeObject:cell.foodTotalModel];
 
     NSInteger money = [cell.foodTotalModel.money integerValue];
     money = money * cell.foodTotalModel.count;
     self.totalPrice -= money;
     // 显示在footview上
     self.footView.totalPrice = self.totalPrice;
-    JQLOG(@"未选中.....总结:%ld, %@", self.totalPrice, self.buyFoodTotalTempArray);
+    JQLOG(@"未选中.....总结:%ld, %@", self.totalPrice, self.dataList);
 
 }
 
 #pragma mark - JQOrderTableFootViewDelegate
 - (void)tableFootViewDidCommit:(JQOrderTableFootView *)orderTableFootView {
     
-    for (JQFoodTotalModel *foodModel in self.buyFoodTotalArrayM) {
-        
-        JQLOG(@"买了%@:共%ld个", foodModel.name, foodModel.count);
-    }
+//    for (JQFoodTotalModel *foodModel in self.buyFoodTotalArrayM) {
+//        
+//        JQLOG(@"买了%@:共%ld个", foodModel.name, foodModel.count);
+//    }
+    
+    JQChoosedViewController *choosedVC = [[JQChoosedViewController alloc] init];
+    choosedVC.buyFoodDataList = self.dataList;
+    [self.navigationController pushViewController:choosedVC animated:YES];
 }
 
 #pragma mark - 懒加载

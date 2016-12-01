@@ -48,7 +48,7 @@
 
 @implementation JQShopDetailViewController
 
-NSString *ID = @"CELL";
+//NSString *ID = @"CELL";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

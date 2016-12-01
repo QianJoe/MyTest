@@ -12,7 +12,10 @@
 @interface JQShopCarTool : NSObject
 
 /**存放foodtotalmodel的可变数组*/
-@property (nonatomic, strong) NSMutableArray <JQFoodTotalModel *> *shopCar;
+@property (nonatomic, strong) NSMutableArray<JQFoodTotalModel *> *shopCar;
+
+/**已经购买的*/
+@property (nonatomic, strong) NSMutableArray<JQFoodTotalModel *> *buyFoodArrayM;
 
 /**单例*/
 + (instancetype)sharedInstance;
@@ -31,5 +34,8 @@
 
 /**购物车是否为空*/
 - (BOOL)isEmpty;
+
+/**将购物车里的食物添加到已经购买的*/
+- (void)addShopCarAllFoodToBuyedArray;
 
 @end
