@@ -8,7 +8,6 @@
 
 #import "JQHomeTableViewController.h"
 #import <MJExtension/MJExtension.h>
-
 #import "JQHomeCategoryCell.h"
 #import "JQHomeCollectCell.h"
 #import "JQCategoryGoods.h"
@@ -17,6 +16,7 @@
 #import "JQHead.h"
 #import "JQHeadLine.h"
 #import "JQHeadData.h"
+#import "JQWeatherViewController.h"
 
 @interface JQHomeTableViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -41,6 +41,12 @@
 
 @implementation JQHomeTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.tabBarController.tabBar.hidden = NO;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -112,6 +118,9 @@
 - (void)rightClick {
     
     JQLOGFUNC;
+    
+    JQWeatherViewController *vc = [[JQWeatherViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - searchBar的代理

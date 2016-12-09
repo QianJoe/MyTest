@@ -21,7 +21,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="领餐时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZC-NO-jiw">
                     <rect key="frame" x="192" y="165" width="85" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="大概的领餐时间" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="01V-n6-3MH" customClass="JQDateTextField">
@@ -32,7 +32,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否要求代领：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctt-3S-ju4">
                     <rect key="frame" x="175" y="210" width="119" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jzA-DM-Mjr">
@@ -41,17 +41,38 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="领餐地点：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Bt-MGc">
                     <rect key="frame" x="192" y="120" width="85" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第5食堂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i63-E0-wMk">
                     <rect key="frame" x="279" y="120" width="61.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bln-yv-ZMj">
+                    <rect key="frame" x="284" y="394.5" width="33" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.申请代领有可能需要一定的金额，请您注意。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2L-hB-WVZ">
+                    <rect key="frame" x="133" y="439.5" width="335" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="335" id="BGw-PZ-24K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.点击完成请到我的里面的我的点餐中查看您的点餐信息。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-9K-jwR">
+                    <rect key="frame" x="133" y="474" width="335" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-m0-L1B">
-                    <rect key="frame" x="150" y="265" width="300" height="44"/>
+                    <rect key="frame" x="150" y="300.5" width="300" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Adi-kX-Q6e"/>
                         <constraint firstAttribute="width" constant="300" id="lrb-03-nvV"/>
@@ -61,27 +82,6 @@
                         <action selector="finshBtnClick:" destination="-1" eventType="touchUpInside" id="zLL-RJ-WPt"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bln-yv-ZMj">
-                    <rect key="frame" x="284" y="359" width="33" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.申请代领有可能需要一定的金额，请您注意。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2L-hB-WVZ">
-                    <rect key="frame" x="133" y="404" width="335" height="19.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="335" id="BGw-PZ-24K"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.点击完成请到我的里面的我的点餐中查看您的点餐信息。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssg-9K-jwR">
-                    <rect key="frame" x="133" y="438.5" width="335" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -93,7 +93,7 @@
                 <constraint firstItem="01V-n6-3MH" firstAttribute="centerY" secondItem="PZC-NO-jiw" secondAttribute="centerY" id="BLN-dX-dZ5"/>
                 <constraint firstItem="jzA-DM-Mjr" firstAttribute="leading" secondItem="Ctt-3S-ju4" secondAttribute="trailing" constant="19" id="GDA-Aq-y0N"/>
                 <constraint firstItem="i63-E0-wMk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="N0O-OD-w7w"/>
-                <constraint firstItem="iIZ-m0-L1B" firstAttribute="top" secondItem="Ctt-3S-ju4" secondAttribute="bottom" constant="35" id="Uoh-rF-SkU"/>
+                <constraint firstItem="iIZ-m0-L1B" firstAttribute="top" secondItem="Ctt-3S-ju4" secondAttribute="bottom" constant="70" id="Uoh-rF-SkU"/>
                 <constraint firstItem="ssg-9K-jwR" firstAttribute="leading" secondItem="Z2L-hB-WVZ" secondAttribute="leading" id="XCM-1n-Vw0"/>
                 <constraint firstItem="Z2L-hB-WVZ" firstAttribute="centerX" secondItem="bln-yv-ZMj" secondAttribute="centerX" id="af4-MR-mdN"/>
                 <constraint firstItem="jzA-DM-Mjr" firstAttribute="centerY" secondItem="Ctt-3S-ju4" secondAttribute="centerY" id="bqj-km-geb"/>

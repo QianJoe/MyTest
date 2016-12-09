@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+//@class JQMineShopModel;
 
 @interface JQMineViewController : UIViewController
-
+/**我的餐厅的数据模型*/
+//@property (nonatomic, strong) JQMineShopModel *mineShopModel;
 @end

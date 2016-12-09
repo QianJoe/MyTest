@@ -10,8 +10,7 @@
 
 @implementation UIImage (Image)
 
-+ (UIImage *)imageWithColor:(UIColor *)color
-{
++ (UIImage *)imageWithColor:(UIColor *)color {
     // 描述矩形
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     
@@ -58,8 +57,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     CGContextRestoreGState(context);
 }
 
-+ (id)createRoundedRectImage:(UIImage*)image size:(CGSize)size radius:(NSInteger)r
-{
++ (id)createRoundedRectImage:(UIImage*)image size:(CGSize)size radius:(NSInteger)r {
     // the size of CGContextRef
     int w = size.width;
     int h = size.height;
@@ -85,7 +83,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 }
 
 
-+ (UIImage *)imageWithBorder:(CGFloat)borderW color:(UIColor *)borderColor image:(UIImage *)image{
++ (UIImage *)imageWithBorder:(CGFloat)borderW color:(UIColor *)borderColor image:(UIImage *)image {
     
     //0.加载图片
     //UIImage *image = [UIImage imageNamed:@"阿狸头像"];

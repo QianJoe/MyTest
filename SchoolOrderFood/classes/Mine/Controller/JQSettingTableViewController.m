@@ -69,7 +69,7 @@
     // 第0组
     JQSettingArrowItem *item = [JQSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreAbout"] title:_totalSizeStr];
     
-    item.operation = ^(NSIndexPath *indexPath){
+    item.operation = ^(NSIndexPath *indexPath) {
         
         [SVProgressHUD showWithStatus:@"正在清理缓存..."];
         

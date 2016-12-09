@@ -149,6 +149,14 @@
     }];
 }
 
+- (NSMutableArray<JQFoodTotalModel *> *)buyFoodArrayM{
+    
+    if (!_buyFoodArrayM) {
+        _buyFoodArrayM = [NSMutableArray array];
+    }
+    return _buyFoodArrayM;
+}
+
 - (NSMutableArray<JQFoodTotalModel *> *)shopCar {
     
     if (!_shopCar) {

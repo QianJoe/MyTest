@@ -10,4 +10,7 @@
 
 @interface JQDateTextField : UITextField
 
+/**获取unix时间戳*/
+- (NSInteger)getUnixTime;
+
 @end

@@ -9,8 +9,18 @@
 #import "JQMenuView.h"
 #import "JQTitleIconView.h"
 #import "JQTitleIconAction.h"
+#import "JQwaitForTakeFoodViewController.h"
+#import "JQWaitCommentViewController.h"
+#import "JQWeekListViewController.h"
+#import "JQMineInsteadTakeViewController.h"
+#import "JQInsteadTakeViewController.h"
+#import "JQAdviseViewController.h"
+#import "JQMyShopViewController.h"
+#import "JQShareFriendsViewController.h"
+#import "JQHelpViewController.h"
+#import "JQMineViewController.h"
 
-static const NSInteger DefaultRowNumbers = 2;
+static const NSInteger DefaultRowNumbers = 3;
 
 @interface JQMenuView ()
 
@@ -68,6 +78,47 @@ static const NSInteger DefaultRowNumbers = 2;
 - (void)titleIconViewClick:(UITapGestureRecognizer *)tap {
 
     JQLOG(@"titleIconViewClick:%ld",tap.view.tag);
+    
+    switch (tap.view.tag) {
+        case 0:
+            [self.menus[0].controller.navigationController pushViewController:[[JQwaitForTakeFoodViewController alloc] init] animated:YES];
+            break;
+            
+        case 1:
+            [self.menus[1].controller.navigationController pushViewController:[[JQWaitCommentViewController alloc] init] animated:YES];
+            break;
+            
+        case 2:
+            [self.menus[2].controller.navigationController pushViewController:[[JQWeekListViewController alloc] init] animated:YES];
+            break;
+            
+        case 3:
+            [self.menus[0].controller.navigationController pushViewController:[[JQMineInsteadTakeViewController alloc] init] animated:YES];
+            break;
+            
+        case 4:
+            [self.menus[1].controller.navigationController pushViewController:[[JQInsteadTakeViewController alloc] init] animated:YES];
+            break;
+            
+        case 5:
+            [self.menus[2].controller.navigationController pushViewController:[[JQAdviseViewController alloc] init] animated:YES];
+            break;
+            
+        case 6:{
+            JQMyShopViewController *myShopVC = [[JQMyShopViewController alloc] init];
+//            myShopVC.mineShopModel = ((JQMineViewController *)self.menus[3].controller).mineShopModel;
+            [self.menus[3].controller.navigationController pushViewController:myShopVC animated:YES];
+                }
+            break;
+            
+        case 7:
+            [self.menus[4].controller.navigationController pushViewController:[[JQShareFriendsViewController alloc] init] animated:YES];
+            break;
+            
+        case 8:
+            [self.menus[5].controller.navigationController pushViewController:[[JQHelpViewController alloc] init] animated:YES];
+            break;
+    }
 }
 
 @end

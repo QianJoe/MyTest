@@ -9,6 +9,8 @@
 #import "JQChoosedViewController.h"
 #import "JQDateTextField.h"
 #import "JQShopCarTool.h"
+#import "JQFoodTotalModel.h"
+#import "JQTimeTool.h"
 
 @interface JQChoosedViewController () <UITextFieldDelegate>
 
@@ -16,13 +18,38 @@
 @property (weak, nonatomic) IBOutlet UISwitch *insteadTakeSwitch;
 @property (weak, nonatomic) IBOutlet JQDateTextField *takeFoodTimeLabel;
 
+/**取餐时间戳*/
+@property (nonatomic, assign) NSInteger takeFoodTimeSp;
+
 @end
 
 @implementation JQChoosedViewController
 
 - (IBAction)finshBtnClick:(UIButton *)sender {
     
+    // 获取选择的时间
+    self.takeFoodTimeSp = [self.takeFoodTimeLabel getUnixTime];
+//    JQLOG(@"takeFoodTimeSp:%ld", self.takeFoodTimeSp);
+    
     // 向服务器异步提交
+    
+    // 获取现在时间
+    // 获取当前unix时间戳
+//    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
+    NSInteger currentTimeSp = [JQTimeTool getCurrentTimeSp];
+    for (JQFoodTotalModel *model in self.buyFoodDataList) {
+        
+        model.orderFoodTime = currentTimeSp;
+        model.takeFoodTime = self.takeFoodTimeSp;
+        
+        if (self.insteadTakeSwitch.isOn) { // 是否允许帮带
+            
+            model.allowTake = YES;
+        } else {
+            
+            model.allowTake = NO;
+        }
+    }
     
     // 先将购物车里面的数据添加到已经购买的数组中
     [[JQShopCarTool sharedInstance] addShopCarAllFoodToBuyedArray];
@@ -41,7 +68,6 @@
     [super viewWillAppear:animated];
     
     self.tabBarController.tabBar.hidden = YES;
-    
 }
 
 - (void)viewDidLoad {
@@ -52,6 +78,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
     
     // 取消编辑
     [self.takeFoodTimeLabel endEditing:YES];

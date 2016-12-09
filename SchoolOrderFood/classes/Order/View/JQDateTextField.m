@@ -8,6 +8,13 @@
 
 #import "JQDateTextField.h"
 
+@interface JQDateTextField ()
+
+/**unix时间戳*/
+@property (nonatomic, assign) NSInteger unixTimeSp;
+
+@end
+
 @implementation JQDateTextField
 
 - (void)awakeFromNib {
@@ -36,14 +43,23 @@
     self.inputView = dp;
 }
 
-- (void)dateChanged: (UIDatePicker *)dp {
+- (void)dateChanged:(UIDatePicker *)dp {
+    
+    // 先将date转为时间戳
+    NSInteger timeSp = (NSInteger)[dp.date timeIntervalSince1970] * 1000;
+//    JQLOG(@"timeSp：%ld", timeSp);
+    self.unixTimeSp = timeSp;
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     
 //    df.dateFormat = @"yyyy-MM-dd";
     df.dateFormat = @"HH点mm分";
-    
     self.text = [df stringFromDate:dp.date];
+}
+
+- (NSInteger)getUnixTime {
+    
+    return _unixTimeSp;
 }
 
 @end

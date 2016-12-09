@@ -12,7 +12,6 @@
 
 NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 
-
 @interface JQShopTotalTableViewCell ()
 
 /**背景view*/

@@ -9,6 +9,7 @@
 #import "JQOrderTableViewCell.h"
 #import "JQFoodTotalModel.h"
 #import "JQShopCarTool.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
 @interface JQOrderTableViewCell ()
@@ -262,7 +263,8 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
     
     _foodTotalModel = foodTotalModel;
     
-    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
+//    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image]placeholderImage:[UIImage imageNamed:@"hot_food05"]];
     self.nameLabel.text = foodTotalModel.name;
     self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", foodTotalModel.money];
     

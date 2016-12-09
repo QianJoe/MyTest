@@ -16,6 +16,7 @@
 #import <MJExtension/MJExtension.h>
 #import "JQLoginRegisterViewController.h"
 #import "JQSettingTableViewController.h"
+#import "JQMineShopModel.h"
 
 @interface JQMineViewController () <JQMineHeadViewDelegate>
 
@@ -42,7 +43,6 @@
 /**pagedata*/
 @property (nonatomic, strong) JQPageData *pageData;
 
-
 @end
 
 @implementation JQMineViewController
@@ -52,8 +52,9 @@
     
     if (!_orderMenus) {
         _orderMenus = @[
-                       [JQTitleIconAction titleIconWith:@"待取餐" icon:[UIImage imageNamed:@"icon_daishouhuo"] controller:nil tag:0],
-                       [JQTitleIconAction titleIconWith:@"待评价" icon:[UIImage imageNamed:@"icon_daipingjia"] controller:nil tag:1],
+                       [JQTitleIconAction titleIconWith:@"待取餐" icon:[UIImage imageNamed:@"icon_daishouhuo"] controller:self tag:0],
+                       [JQTitleIconAction titleIconWith:@"待评价" icon:[UIImage imageNamed:@"icon_daipingjia"] controller:self tag:1],
+                       [JQTitleIconAction titleIconWith:@"星期单" icon:[UIImage imageNamed:@"icon_bangdai"] controller:self tag:2]
                         ];
     }
     return _orderMenus;
@@ -64,10 +65,12 @@
     
     if (!_mineMenus) {
         _mineMenus = @[
-                       [JQTitleIconAction titleIconWith:@"外卖地址" icon:[UIImage imageNamed:@"v2_my_address_icon"] controller:nil tag:2],
-                       [JQTitleIconAction titleIconWith:@"我的餐店" icon:[UIImage imageNamed:@"icon_mystore"] controller:nil tag:3],
-                       [JQTitleIconAction titleIconWith:@"意见反馈" icon:[UIImage imageNamed:@"v2_my_feedback_icon"] controller:nil tag:4],
-                       [JQTitleIconAction titleIconWith:@"帮助中心" icon:[UIImage imageNamed:@"icon_help"] controller:nil tag:5],
+                       [JQTitleIconAction titleIconWith:@"我的代送" icon:[UIImage imageNamed:@"v2_my_address_icon"] controller:self tag:3],
+                       [JQTitleIconAction titleIconWith:@"代送列表" icon:[UIImage imageNamed:@"icon_daisong_list"] controller:self tag:4],
+                       [JQTitleIconAction titleIconWith:@"意见反馈" icon:[UIImage imageNamed:@"v2_my_feedback_icon"] controller:self tag:5],
+                       [JQTitleIconAction titleIconWith:@"我的餐店" icon:[UIImage imageNamed:@"icon_mystore"] controller:self tag:6],
+                       [JQTitleIconAction titleIconWith:@"分享给朋友" icon:[UIImage imageNamed:@"icon_share"] controller:self tag:7],
+                       [JQTitleIconAction titleIconWith:@"帮助中心" icon:[UIImage imageNamed:@"icon_help"] controller:self tag:8]
                         ];
     }
     return _mineMenus;
@@ -98,8 +101,6 @@
 //        JQLOG(@"%@", self.pageData.imgs);
         self.pageView.images = self.pageData.imgs;
     }];
-    
-
 }
 
 #pragma mark - 创建headview
@@ -210,9 +211,7 @@
         make.height.equalTo(self.footerView.width).multipliedBy(0.37);
         
     }];
-
 }
-
 
 #pragma mark - 异步加载数据
 - (void)loadJSONData:(void(^)()) then {
@@ -222,6 +221,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
 #warning 现在是模拟的json数据
+        /********************************滚动条*****************************************/
         // 读取json数据
         NSString *pageDataFilePath =[[NSBundle mainBundle] pathForResource:@"MinePageData" ofType:@"json"];
         
@@ -233,8 +233,20 @@
 
         JQPageData *pageDataModel = [JQPageData mj_objectWithKeyValues:pageDataDict];
         weakSelf.pageData = pageDataModel;
-//        JQLOG(@"xxxxxxxxx%@", self.pageData.imgs);
+
         
+        /****************************我的餐厅**********************************************/
+//        NSString *mineShopDataFilePath =[[NSBundle mainBundle] pathForResource:@"MineShopData" ofType:@"json"];
+//        
+//        // 获取二进制数据
+//        NSData *mineShopData = [NSData dataWithContentsOfFile:mineShopDataFilePath];
+//        
+//        // 转成字典
+//        NSDictionary *mineShopDataDictionary = [NSJSONSerialization JSONObjectWithData:mineShopData options: NSJSONReadingAllowFragments error:nil];
+//
+//        JQMineShopModel *msModel = [JQMineShopModel mj_objectWithKeyValues:mineShopDataDictionary];
+//        
+//        weakSelf.mineShopModel = msModel;
         
         // 回到主线程
         dispatch_async(dispatch_get_main_queue(), ^{

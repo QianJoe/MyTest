@@ -17,6 +17,7 @@
 #define MAS_SHORTHAND
 #define MAS_SHORTHAND_GLOBALS
 #import <Masonry/Masonry.h>
+#import <MJRefresh/MJRefresh.h>
 
 #define JQLOGFUNC JQLOG(@"%s", __func__)
 
@@ -25,11 +26,19 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #define VIEWWIDTH self.frame.size.width
+#define IMP_BLOCK_SELF(type) __weak type *block_self=self;
 // 通知
 #define JQNotification [NSNotificationCenter defaultCenter]
-
 #define JQFoodChangedNotification @"JQFoodChangedNotification"
 #define JQShopCarFoodRemoveNotification @"JQShopCarFoodRemoveNotification"
+#define JQTableViewRemoveModelNotification @"JQTableViewRemoveModelNotification"
+// 待取餐的section的headtitle
+#define waitForTakeFoodHeadTitleArray @[@"已取餐的", @"待取餐的"]
+#define waitForTakeFoodHeadColorArray @[@"F38631", @"20B1FA"]
+
+// 早中晚的section的headtitle
+#define weekHeadTitleArray @[@"早餐", @"午餐", @"晚餐", @"早餐", @"午餐", @"晚餐"]
+#define weekHeadColorArray @[@"F38631", @"20B1FA", @"FF3319", @"F38631", @"20B1FA", @"FF3319"]
 
 // 字体
 #define oldPriceFont [UIFont systemFontOfSize:12.0]

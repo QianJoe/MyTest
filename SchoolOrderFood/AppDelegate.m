@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "JQBasicTabBarController.h"
+#import "JQStartManager.h"
+#import "AppConfig.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +22,9 @@
     
     // 设置根控制器
     [self setRootVC];
+    
+    // 初始化配置
+    [self initConfig];
     
     return YES;
 }
@@ -41,7 +46,11 @@
     [self.window makeKeyAndVisible];
 }
 
-
+- (void)initConfig {
+    
+    [JQStartManager sharedInstance];
+    [AppConfig sharedInstance];
+}
 
 # pragma mark - 主代理方法的其他一些方法
 - (void)applicationWillResignActive:(UIApplication *)application {
