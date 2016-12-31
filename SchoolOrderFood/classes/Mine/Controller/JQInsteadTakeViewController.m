@@ -27,15 +27,18 @@
 
 @implementation JQInsteadTakeViewController
 
+#pragma mark - 加载view
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:naviColor] forBarMetrics:UIBarMetricsDefault];
     
-    [self loadJSONData:^{
-       
-        [self.tableView reloadData];
-    }];
+//    [self loadJSONData:^{
+//       
+//        [self.tableView reloadData];
+//    }];
+    
+    [self refreshSet];
 }
 
 - (void)viewDidLoad {
@@ -44,6 +47,26 @@
     self.title = @"代送列表";
     
     [self initTableView];
+}
+
+#pragma mark - 刷新数据
+- (void)refreshSet {
+    
+    // 防止循环引用
+    IMP_BLOCK_SELF(JQInsteadTakeViewController);
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [block_self loadJSONData:^{
+            
+            [block_self.tableView reloadData];
+            
+            [block_self.tableView.mj_header endRefreshing];
+            
+        }];
+    }];
+    
+    // 马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
 }
 
 #pragma mark - 初始化tableview

@@ -90,7 +90,7 @@
         
         JQGoods *goods = categoryGoods.goodsArr[i];
 
-        if ([goods.isHot isEqualToString:@"1"]) {
+        if ([goods.isHot integerValue]) {
             
             [hotGoodsArrMTem addObject:goods];
         }

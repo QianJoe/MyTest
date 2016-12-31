@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -19,7 +19,7 @@
                         <constraint firstAttribute="height" constant="100" id="aUe-cd-Fhj"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名或者邮箱" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lKV-UQ-VwD">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6-12位字母数字的用户名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lKV-UQ-VwD">
                     <rect key="frame" x="45" y="40" width="285" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
@@ -84,7 +84,7 @@
                         <constraint firstAttribute="height" constant="100" id="oCT-GA-GfD"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邮箱" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nOF-Fw-tpK">
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入6-12位非纯数字用户名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nOF-Fw-tpK">
                     <rect key="frame" x="45" y="40" width="285" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
@@ -150,22 +150,52 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhj-Wc-swO">
-                    <rect key="frame" x="40" y="150" width="295" height="44"/>
+                    <rect key="frame" x="40" y="194" width="295" height="44"/>
                     <state key="normal" title="完           成" backgroundImage="btn_full"/>
                     <connections>
                         <action selector="finshRegisterClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bbz-md-cke"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKY-TW-CDk" customClass="RadioButton">
+                    <rect key="frame" x="40" y="148" width="92" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="普通用户" image="unchecked">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="checked"/>
+                    <connections>
+                        <action selector="checkUserOrShop:" destination="iN0-l3-epB" eventType="touchUpInside" id="TSh-hh-p5C"/>
+                        <outletCollection property="groupButtons" destination="FGH-uy-dlc" id="svt-md-DUV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGH-uy-dlc" customClass="RadioButton">
+                    <rect key="frame" x="253" y="148" width="82" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="商      家" image="unchecked">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="checked"/>
+                    <connections>
+                        <action selector="checkUserOrShop:" destination="iN0-l3-epB" eventType="touchUpInside" id="gAo-U2-VHh"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="gVl-U8-Tai" firstAttribute="leading" secondItem="2Od-4B-59G" secondAttribute="leading" constant="40" id="0uJ-P7-Nir"/>
+                <constraint firstItem="FGH-uy-dlc" firstAttribute="trailing" secondItem="gVl-U8-Tai" secondAttribute="trailing" id="96N-eL-6NP"/>
+                <constraint firstItem="MKY-TW-CDk" firstAttribute="leading" secondItem="gVl-U8-Tai" secondAttribute="leading" id="Dyw-xF-e3k"/>
                 <constraint firstItem="rhj-Wc-swO" firstAttribute="height" secondItem="gVl-U8-Tai" secondAttribute="height" id="c6H-Pp-V8A"/>
+                <constraint firstItem="MKY-TW-CDk" firstAttribute="top" secondItem="gVl-U8-Tai" secondAttribute="bottom" constant="24" id="eEl-H9-byv"/>
                 <constraint firstAttribute="trailing" secondItem="gVl-U8-Tai" secondAttribute="trailing" constant="40" id="ejT-Fn-uBd"/>
                 <constraint firstAttribute="trailing" secondItem="Ekf-OL-Kp5" secondAttribute="trailing" constant="40" id="fmM-wZ-fn1"/>
                 <constraint firstItem="gVl-U8-Tai" firstAttribute="top" secondItem="2Od-4B-59G" secondAttribute="top" constant="80" id="jbi-gH-EQE"/>
                 <constraint firstItem="rhj-Wc-swO" firstAttribute="width" secondItem="gVl-U8-Tai" secondAttribute="width" id="jsP-DU-p69"/>
+                <constraint firstItem="rhj-Wc-swO" firstAttribute="top" secondItem="MKY-TW-CDk" secondAttribute="bottom" constant="22" id="kNg-Hk-mZ3"/>
                 <constraint firstItem="Ekf-OL-Kp5" firstAttribute="leading" secondItem="2Od-4B-59G" secondAttribute="leading" constant="40" id="l10-PB-KLC"/>
+                <constraint firstItem="FGH-uy-dlc" firstAttribute="centerY" secondItem="MKY-TW-CDk" secondAttribute="centerY" id="nZU-dv-TyG"/>
                 <constraint firstItem="rhj-Wc-swO" firstAttribute="top" secondItem="gVl-U8-Tai" secondAttribute="bottom" constant="26" id="oEN-FQ-3YK"/>
                 <constraint firstItem="rhj-Wc-swO" firstAttribute="width" secondItem="gVl-U8-Tai" secondAttribute="width" id="sqC-qk-Zik"/>
                 <constraint firstItem="rhj-Wc-swO" firstAttribute="trailing" secondItem="gVl-U8-Tai" secondAttribute="trailing" id="uw2-ub-l85"/>
@@ -174,6 +204,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="oEN-FQ-3YK"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="passwordTextF" destination="gVl-U8-Tai" id="VlH-YT-o9k"/>
             </connections>
@@ -182,7 +217,9 @@
     </objects>
     <resources>
         <image name="btn_full" width="300" height="45"/>
+        <image name="checked" width="24" height="24"/>
         <image name="login_register_textfield_bg" width="266" height="92"/>
+        <image name="unchecked" width="24" height="24"/>
         <image name="v2_my_avatar_bg" width="375" height="150"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "JQMineHeadView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface JQMineHeadView ()
 
@@ -98,7 +99,7 @@
     
     [self.userNameLabel makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.equalTo(self.headImgView.bottom);
+        make.top.equalTo(self.headImgView.bottom).offset(8);
 //        make.left.equalTo(self.headImgView.right).offset(5);
         make.centerX.equalTo(self.headImgView);
         make.height.equalTo(30);
@@ -131,5 +132,18 @@
     }
 }
 
+- (void)setUsername:(NSString *)username {
+    
+    _username = username;
+    
+    self.userNameLabel.text = username;
+}
+
+- (void)setHeadImgUrl:(NSString *)headImgUrl {
+    
+    _headImgUrl = headImgUrl;
+    
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrl] placeholderImage:[UIImage imageNamed:@"v2_my_avatar"]];
+}
 
 @end

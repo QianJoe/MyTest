@@ -11,6 +11,10 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 //#import "JQPasswordConfirmViewController.h"
 //#import "JQBasicNaviController.h"
+#import "PCH.h"
+#import "JQUserTool.h"
+#import "JQUser.h"
+#import <MJExtension/MJExtension.h>
 
 @interface JQLoginRegisterViewController () <JQLoginRegisterViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *middleView;
@@ -35,15 +39,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)clickRegister:(UIButton *)sender {
+#pragma mark - 点击注册
+- (IBAction)clickRegister:(UIButton *)button {
     
-    sender.selected = !sender.selected;
+    button.selected = !button.selected;
 
-    // 平移中间view
+    // 平移中间view，改变左边的约束
     _middleLeadingCons.constant = _middleLeadingCons.constant == 0? - self.middleView.frame.size.width * 0.3333 : 0;
     
     [UIView animateWithDuration:0.3 animations:^{
         
+        // 重新布局
         [self.view layoutIfNeeded];
     }];
 }
@@ -107,9 +113,9 @@
     
     if (tag) { // 1为注册
         
-        if (![self isValidateEmail:username]) { // 账号是否是邮箱
+        if (![self isValidateUserName:username]) { // 账号是否符合规则
             
-            [SVProgressHUD showErrorWithStatus:@"邮箱格式错误，请好好检查邮箱格式"];
+            [SVProgressHUD showErrorWithStatus:@"用户名格式错误，请好好检查用户名格式"];
             
             return;
         }
@@ -123,14 +129,6 @@
         
         self.username = username;
         self.password = pwd;
-        
-//        JQPasswordConfirmViewController *pwdConVC= [[JQPasswordConfirmViewController alloc] init];
-        
-//        [self presentViewController:pwdConVC animated:YES completion:nil];
-//        JQBasicNaviController *naviVc = [[JQBasicNaviController alloc] initWithRootViewController:pwdConVC];
-        
-        
-//        [self.navigationController :naviVc animated:YES completion:nil];
         
         // 平移到完成界面
         self.middleLeadingCons.constant = - self.middleView.frame.size.width * 0.6666;
@@ -147,24 +145,71 @@
         // 提交登录
 //        JQLOG(@"%@----%@----%ld", username, pwd, tag);
         
-        [SVProgressHUD showWithStatus:@"正在登录"];
+        [SVProgressHUD showWithStatus:@"正在登录..."];
+
+#warning 向服务器提交登录
+        NSMutableDictionary *loginDict = [NSMutableDictionary dictionary];
+        [loginDict setValue:username forKey:@"account"];
+        [loginDict setValue:pwd forKey:@"pwd"];
         
-        
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//           
-//            
-//            
-//        });
-        
-        // afn本身就是异步，就不需要自己在写异步了
-//        [self dismissViewControllerAnimated:YES completion:nil];
+        JQHttpRequestTool *tool = [JQHttpRequestTool shareHttpRequestTool];
+
+        [tool requestWithMethod:POST andUrlString:JQOrderSchoolFoodLoginURL andParameters:loginDict andFinished:^(id response, NSError *error) {
+            
+            NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            JQLOG(@"result:%@", result);
+            
+            // string转为json
+            NSMutableDictionary *resultDict = [result dictionaryWithJsonString:result].mutableCopy;
+            
+            if (resultDict[@"success"]) { // 如果返回值为1，就是登录成功
+                
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                
+                // 返回信息转成数据模型
+                resultDict[@"account"] = username;
+                resultDict[@"pwd"] = pwd;
+                JQUser *user = [JQUser mj_objectWithKeyValues:resultDict];
+                
+                // 归档保存信息
+                [JQUserTool saveUserWithArchive:user];
+                
+                // 1s后消失
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [SVProgressHUD dismiss];
+                    
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                });
+                
+            } else if (resultDict[@"success"] == 0) {
+                
+                [SVProgressHUD showErrorWithStatus:@"登录失败，账号或者密码错误，请重新输入账号密码..."];
+                // 1s之后，结束提示
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [SVProgressHUD dismiss];
+                    
+                });
+                
+            } else {
+                
+                [SVProgressHUD showErrorWithStatus:@"发生神秘的未知错误，请稍后重试..."];
+                // 1s之后，结束提示
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [SVProgressHUD dismiss];
+                    
+                });
+            }
+        }];
     }
 }
 
 // 提交注册
-- (void)loginRegisterView:(JQLoginRegisterView *)loginRegisterView finshiRegisterWithConfirmPwd:(NSString *)confirmPwd {
+- (void)loginRegisterView:(JQLoginRegisterView *)loginRegisterView finshiRegisterWithConfirmPwd:(NSString *)confirmPwd withUserOrShopTag:(NSInteger)selectedTag {
     
-//    JQLOG(@"------%@", confirmPwd);
+//    JQLOG(@"------%ld", selectedTag);
     
     if (![confirmPwd isEqualToString:self.password]) { // 如果两次密码不一致
         
@@ -173,18 +218,73 @@
         return;
     }
     
-    // 提交注册
+#warning 提交注册
+    NSDictionary *registerDict = [NSMutableDictionary dictionary];
+    [registerDict setValue:self.username forKey:@"account"];
+    [registerDict setValue:self.password forKey:@"pwd"];
+    [registerDict setValue:confirmPwd forKey:@"pwded"];
+    [registerDict setValue:[NSString stringWithFormat:@"%ld", selectedTag] forKey:@"isSeller"];
     
-    
+    // 向服务器提交
+    JQHttpRequestTool *httpTool = [JQHttpRequestTool shareHttpRequestTool];
+    [httpTool requestWithMethod:POST andUrlString:JQOrderSchoolFoodRegisterURL andParameters:registerDict andFinished:^(id response, NSError *error) {
+        
+        NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+//        JQLOG(@"result:%@", result);
 
+        // string转为json
+        NSDictionary *resultDict = [result dictionaryWithJsonString:result];
+        
+//        JQLOG(@"success:%@", resultDict[@"success"]);
+        
+        if (resultDict[@"success"]) { // 如果返回值为1，就是注册成功
+            
+            [SVProgressHUD showSuccessWithStatus:@"注册成功，请去登录"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+            
+        } else if (resultDict[@"success"] == 0) {
+            
+            [SVProgressHUD showErrorWithStatus:@"注册失败，请更换新的账号密码..."];
+            // 1s之后，结束提示
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
+                
+            });
+            
+        } else {
+            
+            [SVProgressHUD showErrorWithStatus:@"发生神秘的未知错误，请稍后重试..."];
+            // 1s之后，结束提示
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [SVProgressHUD dismiss];
+                
+            });
+        }
+        
+        [SVProgressHUD showSuccessWithStatus:@"注册成功，请去登录..."];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [SVProgressHUD dismiss];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+    }];
 }
 
-// 判断 email 是否合理
-- (BOOL)isValidateEmail:(NSString *)email {
+// 判断 用户名 是否合理
+- (BOOL)isValidateUserName:(NSString *)userName {
     
-    NSString *emailRegex = @"[A-Z0-9a-z_]{6,11}@[A-Za-z0-9-]{1,15}\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:email];
+    NSString *unRegex = @"^(?![0-9]+$)[0-9A-Za-z]{6,12}$";
+    NSPredicate *unTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", unRegex];
+    return [unTest evaluateWithObject:userName];
 }
 
 // 判断密码是否合理

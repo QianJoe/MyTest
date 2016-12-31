@@ -21,5 +21,8 @@
 
 /**代理*/
 @property (nonatomic, weak) id<JQMineHeadViewDelegate> delegate;
-
+/**名称*/
+@property (nonatomic, copy) NSString *username;
+/**头像url*/
+@property (nonatomic, copy) NSString *headImgUrl;
 @end

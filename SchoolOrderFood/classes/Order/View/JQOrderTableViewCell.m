@@ -77,12 +77,12 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
 
     /**icon*/
     UIImageView *iconView = [[UIImageView alloc] init];
-    iconView.backgroundColor = [UIColor redColor];
+//    iconView.backgroundColor = [UIColor redColor];
     self.iconView = iconView;
     [self.bgView addSubview:iconView];
     
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.backgroundColor = [UIColor greenColor];
+//    nameLabel.backgroundColor = [UIColor greenColor];
     self.nameLabel = nameLabel;
     [self.bgView addSubview:nameLabel];
     
@@ -119,8 +119,8 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
 - (void)setViewAutoLayout {
     
     NSInteger margin = 5;
-    NSInteger imgW = 105;
-    NSInteger imgH = 80;
+    NSInteger imgW = 90;
+    NSInteger imgH = 90;
     NSInteger horMargin = 10;
     
     UIEdgeInsets padding = UIEdgeInsetsMake(margin, margin, margin, margin);
@@ -263,8 +263,8 @@ NSString * const ORDERTABLEVIEWCELLID = @"ORDERTABLEVIEWCELLID";
     
     _foodTotalModel = foodTotalModel;
     
-//    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image]placeholderImage:[UIImage imageNamed:@"hot_food05"]];
+    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image]placeholderImage:[UIImage imageNamed:@"hot_food05"]];
     self.nameLabel.text = foodTotalModel.name;
     self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", foodTotalModel.money];
     

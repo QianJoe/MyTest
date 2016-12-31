@@ -82,8 +82,10 @@
     //    [self addChildViewController:viewController];
 }
 
+#pragma mark - 初始化view
 - (void)viewInit {
     
+    // 顶部自定义滚动tabbar
     _navTabBar = [[JQNavTabBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH , 64)];
     _navTabBar.backgroundColor = [UIColor whiteColor];
     _navTabBar.delegate = self;
@@ -104,7 +106,6 @@
     UIView *linev = [[UIView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 1)];
     linev.backgroundColor = [UIColor colorWithRed:216/255.0f green:216/255.0f blue:216/255.0f alpha:1];
     [self.view addSubview:linev];
-    
 }
 
 //-(void)weatherClick

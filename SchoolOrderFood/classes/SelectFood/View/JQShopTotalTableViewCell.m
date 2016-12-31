@@ -46,6 +46,7 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     
     _foodTotalModel = foodTotalModel;
     
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image] placeholderImage:[UIImage imageNamed:@"hot_food02"]];
     self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
     self.nameLabel.text = foodTotalModel.name;
     self.moneyLabel.text = [NSString stringWithFormat:@"￥%@", foodTotalModel.money];
@@ -67,18 +68,20 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
 
 - (void)createUI {
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     /**背景view*/
     UIView *bgView = [[UIView alloc] init];
     self.bgView = bgView;
     [self.contentView addSubview:bgView];
     
     UIImageView *iconView = [[UIImageView alloc] init];
-    iconView.backgroundColor = [UIColor redColor];
+//    iconView.backgroundColor = [UIColor redColor];
     self.iconView = iconView;
     [self.bgView addSubview:iconView];
     
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.backgroundColor = [UIColor greenColor];
+//    nameLabel.backgroundColor = [UIColor greenColor];
     self.nameLabel = nameLabel;
     [self.bgView addSubview:nameLabel];
     
@@ -108,15 +111,13 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     [minusBtn setImage:[UIImage imageNamed:@"v2_reduce"] forState:UIControlStateNormal];
     [minusBtn addTarget:self action:@selector(minusButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.bgView addSubview:minusBtn];
-    
-    
 }
 
 - (void)setViewAutoLayout {
     
     NSInteger margin = 5;
-    NSInteger imgW = 105;
-    NSInteger imgH = 80;
+    NSInteger imgW = 90;
+    NSInteger imgH = 90;
     NSInteger horMargin = 10;
     
     UIEdgeInsets padding = UIEdgeInsetsMake(margin, margin, margin, margin);
@@ -146,7 +147,7 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
         make.bottom.equalTo(self.iconView.bottom);
     }];
     
-    [self.plusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.plusBtn makeConstraints:^(MASConstraintMaker *make) {
         
         make.right.equalTo(self.contentView.right).offset(-5);
         make.centerY.equalTo(self.contentView.centerY);
@@ -154,14 +155,14 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
         make.height.equalTo(40);
     }];
     
-    [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.countLabel makeConstraints:^(MASConstraintMaker *make) {
         
         make.right.equalTo(self.plusBtn.left).offset(-5);
         make.width.equalTo(20);
         make.centerY.equalTo(self.plusBtn.centerY);
     }];
     
-    [self.minusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.minusBtn makeConstraints:^(MASConstraintMaker *make) {
         
         make.right.equalTo(self.countLabel.left).offset(-5);
         make.centerY.equalTo(self.plusBtn.centerY);
@@ -190,14 +191,6 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
         self.minusBtn.hidden = !self.foodTotalModel.minus;
     }
     
-//    for (JQFoodTotalModel *ftModel in [JQShopCarTool sharedInstance].shopCar) {
-//        
-//        if (self.foodTotalModel.food_id == ftModel.food_id) { // 用food_id判断是否已存在购物车中
-//            
-//            self.countLabel.text = [NSString stringWithFormat:@"%zd", ftModel.count];
-//        }
-//    }
-    
 //    self.foodTotalModel.count ++;
     self.tempCount ++;
     self.countLabel.text = [NSString stringWithFormat:@"%zd", self.tempCount];
@@ -218,24 +211,14 @@ NSString * const SHOPTOTALTABLEVIEWCELLID = @"SHOPTOTALTABLEVIEWCELLID";
     // 发送购物车的数量改变的通知
     [[NSNotificationCenter defaultCenter] postNotificationName:JQFoodChangedNotification object:nil];
     
-//    self.foodTotalModel.count --;
-//    for (JQFoodTotalModel *ftModel in [JQShopCarTool sharedInstance].shopCar) {
-//        
-//        if (self.foodTotalModel.food_id == ftModel.food_id) { // 用food_id判断是否已存在购物车中
-//            
-//            self.countLabel.text = [NSString stringWithFormat:@"%zd", ftModel.count];
-//        }
-//    }
-    
     self.tempCount --;
 
     self.countLabel.text = [NSString stringWithFormat:@"%zd", self.tempCount];
     JQLOG(@"self.foodTotalModel.count:%ld", self.foodTotalModel.count);
 //    self.foodTotalModel.minus = (self.foodTotalModel.count > 0);
     self.foodTotalModel.minus = (self.tempCount > 0); // 用临时的就减不到最后
+    // 判断减号是否显示
     self.minusBtn.hidden = !self.foodTotalModel.minus;
-    
-    
     
     // 判断有没有实现代理方法
     if ([self.delegate respondsToSelector:@selector(shopTotalCellMinusBtnClick:)]) {

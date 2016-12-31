@@ -157,7 +157,7 @@
     }];
     
     // 用sd赋值图片
-    [self.blurImageView sd_setImageWithURL:[NSURL URLWithString:self.foodModel.foodImgName]  placeholderImage:[UIImage imageNamed:@"hot_food04"]];
+    [self.blurImageView sd_setImageWithURL:[NSURL URLWithString:self.foodModel.foodImgName]  placeholderImage:[UIImage imageNamed:@"haodada"]];
     
     //    __weak typeof(self)weakSelf = self;
 //    [self.blurImageView sd_setImageWithURL:

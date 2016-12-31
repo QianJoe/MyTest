@@ -17,6 +17,9 @@
 #import "JQLoginRegisterViewController.h"
 #import "JQSettingTableViewController.h"
 #import "JQMineShopModel.h"
+#import "PCH.h"
+#import "JQUserTool.h"
+#import "JQUser.h"
 
 @interface JQMineViewController () <JQMineHeadViewDelegate>
 
@@ -42,6 +45,11 @@
 
 /**pagedata*/
 @property (nonatomic, strong) JQPageData *pageData;
+
+/**昵称*/
+@property (nonatomic, copy) NSString *username;
+/**头像url*/
+@property (nonatomic, copy) NSString *headImgUrl;
 
 @end
 
@@ -79,8 +87,41 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
+    
+    IMP_BLOCK_SELF(JQMineViewController);
+    
+    [self loadHeadData:^{
+        
+        block_self.headView.username = block_self.username;
+    }];
+    
+//    [self loadJSONData:^{
+    
+    // 发送get请求
+    JQHttpRequestTool *httpTool = [JQHttpRequestTool shareHttpRequestTool];
+    
+    // get头热门和首页轮播器图片的数据
+    [httpTool requestWithMethod:GET andUrlString:JQOrderSchoolFoodMinePageDataURL andParameters:nil andFinished:^(id response, NSError *error) {
+        
+        NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+        JQLOG(@"%@", result);
+        
+        // 转成字典
+        NSDictionary *dataDictionary = [result dictionaryWithJsonString:result];
+        
+        NSDictionary *pageDataDict = dataDictionary[@"pageData"];
+        
+        JQPageData *pageDataModel = [JQPageData mj_objectWithKeyValues:pageDataDict];
+        block_self.pageData = pageDataModel;
+        
+        block_self.pageView.images = block_self.pageData.imgs;
+        
+    }];
+    
+//    }];
 }
 
 - (void)viewDidLoad {
@@ -95,12 +136,12 @@
     // 创建底部轮播器
     [self buildFooterView];
     
-    // 加载数据
-    [self loadJSONData:^{
-       
-//        JQLOG(@"%@", self.pageData.imgs);
-        self.pageView.images = self.pageData.imgs;
-    }];
+//    // 加载数据
+//    [self loadJSONData:^{
+//       
+////        JQLOG(@"%@", self.pageData.imgs);
+//        self.pageView.images = self.pageData.imgs;
+//    }];
 }
 
 #pragma mark - 创建headview
@@ -197,7 +238,7 @@
                           @"",
                           @""
                           ];
-    JQPageScrollView *pageView = [JQPageScrollView pageScroller:pageImgs placeHolderImage:[UIImage imageNamed:@"01"]];
+    JQPageScrollView *pageView = [JQPageScrollView pageScroller:pageImgs placeHolderImage:[UIImage imageNamed:@"lunboqi"]];
     
     self.pageView = pageView;
     [self.footerView addSubview:pageView];
@@ -211,6 +252,31 @@
         make.height.equalTo(self.footerView.width).multipliedBy(0.37);
         
     }];
+}
+
+#pragma mark - 异步加载用户数据
+- (void)loadHeadData:(void(^)()) then {
+    
+    IMP_BLOCK_SELF(JQMineViewController);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        JQUser *user = [JQUserTool getUserWithUnarchive];
+        
+        if (user != nil) {
+            
+            block_self.username = user.account;
+        } else {
+            
+            block_self.username = @"未登录";
+        }
+        
+        // 回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            !then ? : then();
+        });
+    });
 }
 
 #pragma mark - 异步加载数据
@@ -230,23 +296,23 @@
         NSDictionary *pageDataDictionary = [NSJSONSerialization JSONObjectWithData:pageData options: NSJSONReadingAllowFragments error:nil];
         
         NSDictionary *pageDataDict = pageDataDictionary[@"pageData"];
-
+        
         JQPageData *pageDataModel = [JQPageData mj_objectWithKeyValues:pageDataDict];
         weakSelf.pageData = pageDataModel;
-
+        
         
         /****************************我的餐厅**********************************************/
-//        NSString *mineShopDataFilePath =[[NSBundle mainBundle] pathForResource:@"MineShopData" ofType:@"json"];
-//        
-//        // 获取二进制数据
-//        NSData *mineShopData = [NSData dataWithContentsOfFile:mineShopDataFilePath];
-//        
-//        // 转成字典
-//        NSDictionary *mineShopDataDictionary = [NSJSONSerialization JSONObjectWithData:mineShopData options: NSJSONReadingAllowFragments error:nil];
-//
-//        JQMineShopModel *msModel = [JQMineShopModel mj_objectWithKeyValues:mineShopDataDictionary];
-//        
-//        weakSelf.mineShopModel = msModel;
+        //        NSString *mineShopDataFilePath =[[NSBundle mainBundle] pathForResource:@"MineShopData" ofType:@"json"];
+        //
+        //        // 获取二进制数据
+        //        NSData *mineShopData = [NSData dataWithContentsOfFile:mineShopDataFilePath];
+        //
+        //        // 转成字典
+        //        NSDictionary *mineShopDataDictionary = [NSJSONSerialization JSONObjectWithData:mineShopData options: NSJSONReadingAllowFragments error:nil];
+        //
+        //        JQMineShopModel *msModel = [JQMineShopModel mj_objectWithKeyValues:mineShopDataDictionary];
+        //
+        //        weakSelf.mineShopModel = msModel;
         
         // 回到主线程
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -259,9 +325,15 @@
 #pragma mark - JQMineHeadViewDelegate
 - (void)mineHeadView:(JQMineHeadView *)mineHeadView clickWithTap:(UITapGestureRecognizer *)tap {
     
-    JQLoginRegisterViewController *loginVC = [[JQLoginRegisterViewController alloc] init];
+    if ([self.headView.username isEqualToString:@"未登录"]) {
+        
+        JQLoginRegisterViewController *loginVC = [[JQLoginRegisterViewController alloc] init];
+        
+        [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    }
     
-    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    return;
+    
 }
 
 - (void)mineHeadViewClickSetting:(JQMineHeadView *)mineHeadView {

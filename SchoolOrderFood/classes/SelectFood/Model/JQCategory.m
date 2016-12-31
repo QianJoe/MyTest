@@ -1,19 +1,19 @@
 //
-//  JQPronvice.m
+//  JQCategory.m
 //  SchoolOrderFood
 //
-//  Created by 乔谦 on 16/11/9.
+//  Created by 乔谦 on 16/12/29.
 //  Copyright © 2016年 wlr. All rights reserved.
 //
 
-#import "JQProvince.h"
+#import "JQCategory.h"
 #import <MJExtension/MJExtension.h>
 
-@implementation JQProvince
+@implementation JQCategory
 
 + (NSDictionary *)mj_objectClassInArray {
-
-    return @{@"cities" : @"NSString"};
+    
+    return @{@"category" : @"NSString"};
 }
 
 @end

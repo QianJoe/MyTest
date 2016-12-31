@@ -203,7 +203,8 @@ NSString * const WEEKTABLEVIEWCELLID = @"WEEKTABLEVIEWCELLID";
     
     _foodTotalModel = foodTotalModel;
     
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image]placeholderImage:[UIImage imageNamed:@"hot_food04"]];
+    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image]placeholderImage:[UIImage imageNamed:@"hot_food04"]];
     self.nameLabel.text = foodTotalModel.name;
     self.totalCountLabel.text = [NSString stringWithFormat:@"剩余 %zd 份", foodTotalModel.count];
     self.moneyLabel.text = [NSString stringWithFormat:@"单价:￥%@", foodTotalModel.money];

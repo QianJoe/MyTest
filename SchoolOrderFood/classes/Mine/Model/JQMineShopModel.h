@@ -11,6 +11,8 @@
 
 @interface JQMineShopModel : NSObject
 
+/**id*/
+@property (nonatomic, assign) int shop_id;
 /**店名*/
 @property (nonatomic, copy) NSString *shopName;
 
@@ -26,7 +28,7 @@
 /**分类*/
 @property (nonatomic, copy) NSString *category;
 
-/**运营开始时间*/
+/**运营开始时间(unix时间戳)*/
 @property (nonatomic, copy) NSString *startTime;
 
 /**运营结束时间*/

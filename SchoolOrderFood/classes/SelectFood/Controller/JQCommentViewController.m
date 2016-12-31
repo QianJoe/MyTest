@@ -36,12 +36,26 @@
     
     [self initTableView];
     
-    [self loadJSONData:^{
-      
-        [self.commentTableView registerClass:[JQCommentTableViewCell class] forCellReuseIdentifier:COMMENTTBCELL];
-        [self.commentTableView reloadData];
+    [self initRefresh];
+}
+
+#pragma mark - 初始化上拉刷新
+- (void)initRefresh {
+    
+    IMP_BLOCK_SELF(JQCommentViewController);
+    self.commentTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        
+        [block_self loadJSONData:^{
+            
+            [block_self.commentTableView reloadData];
+            
+            block_self.avgPointLabel.text = @"4.7";
+            
+            [block_self.commentTableView.mj_footer endRefreshing];
+        }];
     }];
     
+    [self.commentTableView.mj_footer beginRefreshing];
 }
 
 #pragma mark - 异步加载数据

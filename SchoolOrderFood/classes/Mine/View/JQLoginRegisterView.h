@@ -14,7 +14,7 @@
 - (void)loginRegisterView:(JQLoginRegisterView *)loginRegisterView clickLoginRegisterWithUserName:(NSString *)username withPwd:(NSString *)pwd withTag:(NSInteger)tag;
 
 @optional
-- (void)loginRegisterView:(JQLoginRegisterView *)loginRegisterView finshiRegisterWithConfirmPwd:(NSString *)confirmPwd;
+- (void)loginRegisterView:(JQLoginRegisterView *)loginRegisterView finshiRegisterWithConfirmPwd:(NSString *)confirmPwd withUserOrShopTag:(NSInteger)selectedTag;
 
 @end
 

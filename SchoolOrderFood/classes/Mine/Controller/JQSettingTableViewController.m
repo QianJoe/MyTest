@@ -57,6 +57,7 @@
     
     [self setupGroup2];
     
+    [self setupGroup3];
 }
 
 - (void)dealloc {
@@ -156,6 +157,60 @@
     
     // 创建组模型
     JQSettingGroup *group = [JQSettingGroup groupWithItems:@[item1, item2, item3]];
+    
+    // 添加到总数组中
+    [self.groups addObject:group];
+}
+
+- (void)setupGroup3 {
+    
+    // 第3组
+    JQSettingItem *item1 = [JQSettingArrowItem itemWithImage:nil title:@"退出登录"];
+    
+    IMP_BLOCK_SELF(JQSettingTableViewController);
+    
+    item1.operation = ^(NSIndexPath *indexPath){
+        
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"是否退出登录?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            
+            JQLOG(@"点击了取消");
+        }];
+        
+        UIAlertAction *certainAction = [UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+#warning 退出登录
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+            NSString *filePath = [cachePath stringByAppendingPathComponent:@"user.plist"];
+            
+            if ([fileManager removeItemAtPath:filePath error:NULL]) {
+                
+                [SVProgressHUD showSuccessWithStatus:@"退出成功..."];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [SVProgressHUD dismiss];
+                    [block_self.navigationController popViewControllerAnimated:YES];
+                });
+            } else {
+                
+                [SVProgressHUD showErrorWithStatus:@"退出失败，未知错误"];
+            }
+            
+            
+        }];
+        
+        [ac addAction:cancelAction];
+        [ac addAction:certainAction];
+        
+        // 显示出弹窗
+        [self presentViewController:ac animated:YES completion:nil];
+
+    };
+    
+    // 创建组模型
+    JQSettingGroup *group = [JQSettingGroup groupWithItems:@[item1]];
     
     // 添加到总数组中
     [self.groups addObject:group];

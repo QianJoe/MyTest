@@ -29,19 +29,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-
-//    [self loadJSONData:^{
-//        
-//        
-//    }];
-    
+    [self refreshSet];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self initTableView];
-    [self refreshSet];
     [JQNotification addObserver:self selector:@selector(mynotification) name:@"星期日" object:nil];
 }
 
@@ -50,11 +44,14 @@
 - (void)refreshSet {
     
     // 防止循环引用
-    __weak __typeof(self) weakSelf = self;
+    IMP_BLOCK_SELF(JQWeekDetailViewController);
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf loadJSONData:^{
-            [self.tableView reloadData];
+        [block_self loadJSONData:^{
+            
+            [block_self.tableView reloadData];
+            
+            [block_self.tableView.mj_header endRefreshing];
         }];
     }];
     
@@ -150,6 +147,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
+        [weakSelf.dataListM removeAllObjects];
 #warning 现在是模拟的json数据
         // 读取json数据
         // 获取json地址

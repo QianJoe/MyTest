@@ -17,6 +17,7 @@
 #import "JQHeadLine.h"
 #import "JQHeadData.h"
 #import "JQWeatherViewController.h"
+#import "PCH.h"
 
 @interface JQHomeTableViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -36,16 +37,15 @@
 //@property (nonatomic, strong) JQHeadLine *headLine;
 @property (nonatomic, strong) JQHeadData *headData;
 
-
 @end
 
 @implementation JQHomeTableViewController
 
+#pragma mark - 系统加载view
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.tabBarController.tabBar.hidden = NO;
-
 }
 
 - (void)viewDidLoad {
@@ -65,18 +65,81 @@
     // 创建头view
     [self buildHomeHeadView];
     
+    [self initRefresh];
+    
     // 异步加载数据的block方法
-    [self loadCollectJSONData:^{
+//    [self loadCollectJSONData:^{
+//        
+////        self.homeHeadView.head = self.head;
+////        self.homeHeadView.headLine = self.headLine;
+//        
+//        self.homeHeadView.headData = self.headData;
+//        
+//        [self.collectView registerClass:[JQHomeCategoryCell class] forCellWithReuseIdentifier:HOMECACELL];
+//        [self.collectView reloadData];
+//    }];
+}
+
+#pragma mark - 初始化下拉刷新
+- (void)initRefresh {
+    
+    IMP_BLOCK_SELF(JQHomeTableViewController);
+    self.collectView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+       
+        // 发送get请求
+        JQHttpRequestTool *httpTool = [JQHttpRequestTool shareHttpRequestTool];
         
-//        self.homeHeadView.head = self.head;
-//        self.homeHeadView.headLine = self.headLine;
+        // get头热门和首页轮播器图片的数据
+        [httpTool requestWithMethod:GET andUrlString:JQOrderSchoolFoodHomeHeadAndPageDataURL andParameters:nil andFinished:^(id response, NSError *error) {
+            
+//            NSData *homeHeadData = [response dataUsingEncoding:NSUTF8StringEncoding];
+            //            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:homeHeadData options: NSJSONReadingAllowFragments error:nil];
+            NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            JQLOG(@"%@", result);
+            
+            // 转成字典
+            NSDictionary *dataDictionary = [result dictionaryWithJsonString:result];
+
+            NSDictionary *headDataDict = dataDictionary[@"headData"];
+            
+//            JQLOG(@"dict:%@", headDataDict);
+            JQHeadData *headDataModel = [JQHeadData mj_objectWithKeyValues:headDataDict];
+            block_self.headData = headDataModel;
+            
+            block_self.homeHeadView.headData = block_self.headData;
+            
+        }];
         
-        self.homeHeadView.headData = self.headData;
+        // get推荐食物数据
+        [httpTool requestWithMethod:GET andUrlString:JQOrderSchoolFoodHomeRecommendDataURL andParameters:nil andFinished:^(id response, NSError *error) {
+            
+            NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            JQLOG(@"111:%@", result);
+            // 转成字典
+            NSDictionary *dataDictionary = [result dictionaryWithJsonString:result];
+            
+            // 转成数组
+            NSArray *categoryGoodsDataArr = dataDictionary[@"categoryGoods"];
+            NSMutableArray *categoryDataArrM = @[].mutableCopy;
+            
+            categoryDataArrM = [JQCategoryGoods mj_objectArrayWithKeyValuesArray:categoryGoodsDataArr];
+            block_self.categoryGoodsModelsFromJSON = categoryDataArrM;
+            
+            [block_self.collectView reloadData];
+            [block_self.collectView.mj_header endRefreshing];
+        }];
         
-        [self.collectView registerClass:[JQHomeCategoryCell class] forCellWithReuseIdentifier:HOMECACELL];
-        [self.collectView reloadData];
+//        [block_self loadCollectJSONData:^{
+//           
+//            [block_self.collectView reloadData];
+//            
+//            block_self.homeHeadView.headData = block_self.headData;
+//            
+//            [block_self.collectView.mj_header endRefreshing];
+//        }];
     }];
     
+    [self.collectView.mj_header beginRefreshing];
 }
 
 #pragma mark - 设置导航条
@@ -131,65 +194,6 @@
     return YES;
 }
 
-#pragma mark - 异步加载数据
-- (void)loadCollectJSONData:(void(^)()) then {
-    
-    __weak typeof(self) weakSelf = self;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-#warning 现在是模拟的json数据
-        // 读取json数据
-        // 获取json地址
-        NSString *acFoodDataFilePath =[[NSBundle mainBundle] pathForResource:@"collectData" ofType:@"json"];
-        
-        // 获取二进制数据
-        NSData *data = [NSData dataWithContentsOfFile:acFoodDataFilePath];
-        
-        // 转成字典
-        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
-        
-        // 转成数组
-        NSArray *categoryGoodsDataArr = dataDictionary[@"categoryGoods"];
-        NSMutableArray *categoryDataArrM = @[].mutableCopy;
-        
-        categoryDataArrM = [JQCategoryGoods mj_objectArrayWithKeyValuesArray:categoryGoodsDataArr];
-        weakSelf.categoryGoodsModelsFromJSON = categoryDataArrM;
-        
-//        NSString *headLineFilePath =[[NSBundle mainBundle] pathForResource:@"headLine" ofType:@"json"];
-        
-        // 获取二进制数据
-//        NSData *headLineData = [NSData dataWithContentsOfFile:headLineFilePath];
-        
-        // 转成字典
-//        NSDictionary *headLineDataDictionary = [NSJSONSerialization JSONObjectWithData:headLineData options: NSJSONReadingAllowFragments error:nil];
-//         JQHead *head = [JQHead mj_objectWithKeyValues:headLineDataDictionary];
-        
-//        weakSelf.head = head;
-//        NSDictionary *headLineDict = headLineDataDictionary[@"headLine"];
-//        JQHeadLine *headLine = [JQHeadLine mj_objectWithKeyValues:headLineDict];
-//        weakSelf.headLine = headLine;
-        
-        NSString *headDataFilePath =[[NSBundle mainBundle] pathForResource:@"headData" ofType:@"json"];
-        
-        NSData *headData = [NSData dataWithContentsOfFile:headDataFilePath];
-        
-        NSDictionary *headDataDictionary = [NSJSONSerialization JSONObjectWithData:headData options: NSJSONReadingAllowFragments error:nil];
-        
-        NSDictionary *headDataDict = headDataDictionary[@"headData"];
-//        JQLOG(@"dict:%@", headDataDict);
-        JQHeadData *headDataModel = [JQHeadData mj_objectWithKeyValues:headDataDict];
-        weakSelf.headData = headDataModel;
-
-        
-        // 回到主线程
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            !then ? : then();
-        });
-    });
-}
-
 #pragma mark - 创建UICollectView
 - (void)buildCollectionView{
     
@@ -217,6 +221,7 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     //    JQLOG(@"%ld", [self.hotFoodModelsFromJSON count]);
     //    return [self.hotFoodModelsFromJSON count];
@@ -261,7 +266,8 @@
 
 #pragma mark - 监视头view高度的改变的一个通知
 - (void)addNotification{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HomeHeadViewHeightDidChange:) name:@"HomeHeadViewHeightDidChange" object:nil];
+    
+    [JQNotification addObserver:self selector:@selector(HomeHeadViewHeightDidChange:) name:@"HomeHeadViewHeightDidChange" object:nil];
 }
 
 #pragma mark - 头view改变后从头view最后一个子控件获取高度大小
@@ -275,6 +281,64 @@
     self.homeHeadView.frame = CGRectMake(0, -height - room, SCREEN_WIDTH, height);
     self.collectView.contentInset = UIEdgeInsetsMake(height + room, 0, 50, 0);
     self.collectView.contentOffset = CGPointMake(0, -height - room);
+}
+
+#pragma mark - 异步加载数据
+- (void)loadCollectJSONData:(void(^)()) then {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+#warning 现在是模拟的json数据
+        // 读取json数据
+        // 获取json地址
+        NSString *acFoodDataFilePath =[[NSBundle mainBundle] pathForResource:@"collectData" ofType:@"json"];
+        
+        // 获取二进制数据
+        NSData *data = [NSData dataWithContentsOfFile:acFoodDataFilePath];
+        
+        // 转成字典
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
+        
+        // 转成数组
+        NSArray *categoryGoodsDataArr = dataDictionary[@"categoryGoods"];
+        NSMutableArray *categoryDataArrM = @[].mutableCopy;
+        
+        categoryDataArrM = [JQCategoryGoods mj_objectArrayWithKeyValuesArray:categoryGoodsDataArr];
+        weakSelf.categoryGoodsModelsFromJSON = categoryDataArrM;
+        
+        //        NSString *headLineFilePath =[[NSBundle mainBundle] pathForResource:@"headLine" ofType:@"json"];
+        
+        // 获取二进制数据
+        //        NSData *headLineData = [NSData dataWithContentsOfFile:headLineFilePath];
+        
+        // 转成字典
+        //        NSDictionary *headLineDataDictionary = [NSJSONSerialization JSONObjectWithData:headLineData options: NSJSONReadingAllowFragments error:nil];
+        //         JQHead *head = [JQHead mj_objectWithKeyValues:headLineDataDictionary];
+        
+        //        weakSelf.head = head;
+        //        NSDictionary *headLineDict = headLineDataDictionary[@"headLine"];
+        //        JQHeadLine *headLine = [JQHeadLine mj_objectWithKeyValues:headLineDict];
+        //        weakSelf.headLine = headLine;
+        
+        NSString *headDataFilePath =[[NSBundle mainBundle] pathForResource:@"headData" ofType:@"json"];
+        
+        NSData *headData = [NSData dataWithContentsOfFile:headDataFilePath];
+        
+        NSDictionary *headDataDictionary = [NSJSONSerialization JSONObjectWithData:headData options: NSJSONReadingAllowFragments error:nil];
+        
+        NSDictionary *headDataDict = headDataDictionary[@"headData"];
+        //        JQLOG(@"dict:%@", headDataDict);
+        JQHeadData *headDataModel = [JQHeadData mj_objectWithKeyValues:headDataDict];
+        weakSelf.headData = headDataModel;
+        
+        // 回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            !then ? : then();
+        });
+    });
 }
 
 @end

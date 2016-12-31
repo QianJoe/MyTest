@@ -70,7 +70,7 @@
             
             weakSelf.firstChildView.foodTotalModelArrayM = weakSelf.foodTotalDataArrM;
             
-            [weakSelf.blurImageView sd_setImageWithURL:[NSURL URLWithString:weakSelf.mineShopModel.shopImgName]  placeholderImage:[UIImage imageNamed:@"hot_food04"]];
+            [weakSelf.blurImageView sd_setImageWithURL:[NSURL URLWithString:weakSelf.mineShopModel.shopImgName]  placeholderImage:[UIImage imageNamed:@"shaxianxiaochi"]];
             
         }];
         
@@ -351,7 +351,7 @@
         
         
         /**食物**/
-        NSString *foodAlreadyBuyFoodFilePath =[[NSBundle mainBundle] pathForResource:@"foodAlreadyBuyData" ofType:@"json"];
+        NSString *foodAlreadyBuyFoodFilePath =[[NSBundle mainBundle] pathForResource:@"foodShaxianxiaochiData" ofType:@"json"];
         
         // 获取二进制数据
         NSData *data = [NSData dataWithContentsOfFile:foodAlreadyBuyFoodFilePath];
@@ -360,7 +360,7 @@
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
         
         // 转成数组
-        NSArray *foodAlreadyBuyArrayM = dataDictionary[@"foodAlreadyBuyData"];
+        NSArray *foodAlreadyBuyArrayM = dataDictionary[@"foodShaxianxiaochiData"];
         NSMutableArray *foodTotalDataArrM = @[].mutableCopy;
         
         foodTotalDataArrM = [JQFoodTotalModel mj_objectArrayWithKeyValuesArray:foodAlreadyBuyArrayM];

@@ -18,6 +18,8 @@
 #define MAS_SHORTHAND_GLOBALS
 #import <Masonry/Masonry.h>
 #import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "NSString+Extension.h"
 
 #define JQLOGFUNC JQLOG(@"%s", __func__)
 
@@ -37,8 +39,8 @@
 #define waitForTakeFoodHeadColorArray @[@"F38631", @"20B1FA"]
 
 // 早中晚的section的headtitle
-#define weekHeadTitleArray @[@"早餐", @"午餐", @"晚餐", @"早餐", @"午餐", @"晚餐"]
-#define weekHeadColorArray @[@"F38631", @"20B1FA", @"FF3319", @"F38631", @"20B1FA", @"FF3319"]
+#define weekHeadTitleArray @[@"早餐", @"午餐", @"晚餐"]
+#define weekHeadColorArray @[@"F38631", @"20B1FA", @"FF3319"]
 
 // 字体
 #define oldPriceFont [UIFont systemFontOfSize:12.0]

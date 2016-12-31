@@ -222,7 +222,6 @@ NSString * const WAITFTFTABLEVIEWCELLID = @"WAITFTFTABLEVIEWCELLID";
         
         make.bottom.equalTo(self.contactLabel.bottom).offset(margin);
     }];
-
 }
 
 - (void)setFoodTotalModel:(JQFoodTotalModel *)foodTotalModel {

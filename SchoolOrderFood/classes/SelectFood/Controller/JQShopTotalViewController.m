@@ -30,19 +30,29 @@
 
 @implementation JQShopTotalViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initTableView];
     
-    [self loadJSONData:^{
-       
-        [self.tableView registerClass:[JQShopTotalTableViewCell class] forCellReuseIdentifier:SHOPTOTALTABLEVIEWCELLID];
-        [self.tableView reloadData];
+    [self initRefresh];
+}
+
+#pragma mark - 初始化上拉刷新
+- (void)initRefresh {
+    
+    IMP_BLOCK_SELF(JQShopTotalViewController);
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         
+        [block_self loadJSONData:^{
+            
+            [block_self.tableView reloadData];
+            
+            [block_self.tableView.mj_footer endRefreshing];
+        }];
     }];
+    
+    [self.tableView.mj_footer beginRefreshing];
 }
 
 #pragma mark - 初始化tableview
@@ -75,7 +85,7 @@
 #warning 现在是模拟的json数据
         // 读取json数据
         // 获取json地址
-        NSString *foodTotalDataFilePath =[[NSBundle mainBundle] pathForResource:@"foodTotalData" ofType:@"json"];
+        NSString *foodTotalDataFilePath =[[NSBundle mainBundle] pathForResource:@"foodHaodadaData" ofType:@"json"];
         
         // 获取二进制数据
         NSData *data = [NSData dataWithContentsOfFile:foodTotalDataFilePath];
@@ -84,7 +94,7 @@
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:nil];
         
         // 转成数组
-        NSArray *foodTotalDataArr = dataDictionary[@"foodTotalData"];
+        NSArray *foodTotalDataArr = dataDictionary[@"foodHaodadaData"];
         NSMutableArray *foodTotalDataArrM = @[].mutableCopy;
         
         foodTotalDataArrM = [JQFoodTotalModel mj_objectArrayWithKeyValuesArray:foodTotalDataArr];

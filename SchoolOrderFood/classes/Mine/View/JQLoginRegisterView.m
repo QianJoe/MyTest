@@ -8,6 +8,7 @@
 
 #import "JQLoginRegisterView.h"
 #import "JQTextField.h"
+#import "RadioButton.h"
 
 @interface JQLoginRegisterView ()
 @property (weak, nonatomic) IBOutlet UIButton *loginRegisterBtn;
@@ -15,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextF;
 @property (weak, nonatomic) IBOutlet JQTextField *confirmPasswordTextF;
 
+/**选择的类型tag*/
+@property (nonatomic, assign) NSInteger selectedTag;
 /**注册用的*/
 /**用户名*/
 //@property (nonatomic, copy) NSString *userNameRe;
@@ -36,16 +39,22 @@
         [self.delegate loginRegisterView:self clickLoginRegisterWithUserName:un withPwd:pwd withTag:button.tag];
     }
 }
+- (IBAction)checkUserOrShop:(RadioButton *)radioBtn {
+    
+    JQLOG(@"rb:%@,tag:%ld", radioBtn.titleLabel.text, radioBtn.tag);
+
+    self.selectedTag = radioBtn.tag;
+}
 
 - (IBAction)finshRegisterClick:(UIButton *)button {
     
-    if ([self.delegate respondsToSelector:@selector(loginRegisterView:finshiRegisterWithConfirmPwd:)]) {
+    if ([self.delegate respondsToSelector:@selector(loginRegisterView:finshiRegisterWithConfirmPwd:withUserOrShopTag:)]) {
         
         JQLOG(@"self.confirmPasswordTextF.text:%@", self.passwordTextF.text);
         
         NSString *confPwd = self.passwordTextF.tag == button.tag ? self.passwordTextF.text :nil;
         
-        [self.delegate loginRegisterView:self finshiRegisterWithConfirmPwd:confPwd];
+        [self.delegate loginRegisterView:self finshiRegisterWithConfirmPwd:confPwd withUserOrShopTag:self.selectedTag];
     }
 }
 

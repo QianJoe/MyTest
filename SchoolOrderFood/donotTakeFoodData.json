@@ -1,9 +1,9 @@
 {
-    "foodAlreadyBuyData":[
+    "donotTakeFoodData":[
                           {
                           "food_id":1,
                           "image":"eq",
-                          "name":"牛肉部队汤",
+                          "name":"dasd",
                           "money":"20",
                           "count":10,
                           "totalCount":23,
@@ -21,7 +21,7 @@
                           {
                           "food_id":2,
                           "image":"qe",
-                          "name":"铁板豆腐",
+                          "name":"qwe",
                           "money":"10",
                           "count":10,
                           "totalCount":32,
@@ -38,7 +38,7 @@
                           },
                           {
                           "food_id":3,
-                          "image":"黑椒牛柳",
+                          "image":"qew",
                           "name":"3131",
                           "money":"50",
                           "count":10,
@@ -55,7 +55,7 @@
                           {
                           "food_id":4,
                           "image":"eq",
-                          "name":"海鲜砂锅",
+                          "name":"21134234",
                           "money":"40",
                           "count":10,
                           "totalCount":35,
@@ -72,7 +72,7 @@
                           {
                           "food_id":5,
                           "image":"eq",
-                          "name":"鱿鱼石锅拌饭",
+                          "name":"dasd",
                           "money":"20",
                           "count":10,
                           "totalCount":32,
@@ -90,7 +90,7 @@
                           {
                           "food_id":6,
                           "image":"eq",
-                          "name":"三杯鸡",
+                          "name":"dasd",
                           "money":"20",
                           "count":10,
                           "totalCount":23,
@@ -105,5 +105,5 @@
                           "takeFoodTime":1480746326,
                           "orderFoodTime":1480746310
                           }
-                         ]
+                          ]
 }

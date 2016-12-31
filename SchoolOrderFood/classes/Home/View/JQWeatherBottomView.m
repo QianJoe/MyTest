@@ -22,6 +22,10 @@
 
 - (void)setDataWithAry:(NSMutableArray *)ary
 {
+    
+    // 先移除掉所有子控件，再添加新的
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
     [ary enumerateObjectsUsingBlock:^(JQWeatherData *weatherdata, NSUInteger idx, BOOL * _Nonnull stop) {
         
         if (idx > 0) {
@@ -30,7 +34,7 @@
             CGFloat vcH = vcW * 1.8;
             CGFloat vcX = (idx-1) * vcW;
             CGFloat vcY = SCREEN_HEIGHT - vcH;
-            UIView *vc = [[UIView alloc]initWithFrame:CGRectMake(vcX, 0, vcW, vcH)];
+            UIView *vc = [[UIView alloc] initWithFrame:CGRectMake(vcX, 0, vcW, vcH)];
             [self addSubview:vc];
             self.frame = CGRectMake(0, vcY, SCREEN_WIDTH, vcH);
             self.backgroundColor = JQColor(1, 1, 1, 0.2);

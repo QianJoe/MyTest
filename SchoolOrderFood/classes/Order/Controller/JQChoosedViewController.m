@@ -31,11 +31,8 @@
     self.takeFoodTimeSp = [self.takeFoodTimeLabel getUnixTime];
 //    JQLOG(@"takeFoodTimeSp:%ld", self.takeFoodTimeSp);
     
-    // 向服务器异步提交
     
-    // 获取现在时间
     // 获取当前unix时间戳
-//    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
     NSInteger currentTimeSp = [JQTimeTool getCurrentTimeSp];
     for (JQFoodTotalModel *model in self.buyFoodDataList) {
         
@@ -50,6 +47,7 @@
             model.allowTake = NO;
         }
     }
+#warning 向服务器异步提交
     
     // 先将购物车里面的数据添加到已经购买的数组中
     [[JQShopCarTool sharedInstance] addShopCarAllFoodToBuyedArray];
@@ -78,7 +76,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
     
     // 取消编辑
     [self.takeFoodTimeLabel endEditing:YES];

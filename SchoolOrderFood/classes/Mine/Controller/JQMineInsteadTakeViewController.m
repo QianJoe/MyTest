@@ -32,10 +32,8 @@
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:naviColor] forBarMetrics:UIBarMetricsDefault];
     
-    [self loadJSONData:^{
-        
-        [self.tableView reloadData];
-    }];
+    // 下拉刷新
+    [self refreshSet];
 }
 
 - (void)viewDidLoad {
@@ -46,6 +44,25 @@
     [self initTableView];
 }
 
+#pragma mark - 刷新数据
+- (void)refreshSet {
+    
+    // 防止循环引用
+    IMP_BLOCK_SELF(JQMineInsteadTakeViewController);
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [block_self loadJSONData:^{
+            
+            [block_self.tableView reloadData];
+            
+            [block_self.tableView.mj_header endRefreshing];
+
+        }];
+    }];
+    
+    // 马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+}
 
 #pragma mark - 初始化tableview
 - (void)initTableView {

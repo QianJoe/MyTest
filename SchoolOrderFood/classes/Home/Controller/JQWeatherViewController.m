@@ -65,8 +65,11 @@
 - (void)requestNet:(NSString *)pro city:(NSString *)city
 {
     IMP_BLOCK_SELF(JQWeatherViewController);
+    
     NSString *urlstr = [NSString stringWithFormat:@"http://c.3g.163.com/nc/weather/%@|%@.html",pro,city];
+    
     urlstr = [urlstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     [[JQHttpRequestTool shareHttpRequestTool] runRequestWithPara:nil path:urlstr success:^(id responseObject) {
         
         [SVProgressHUD dismiss];
@@ -75,6 +78,7 @@
         NSArray *dataArray = [JQWeatherData mj_objectArrayWithKeyValuesArray:responseObject[str]];
         NSMutableArray *tempArray = [NSMutableArray array];
         for (JQWeatherData *weather in dataArray) {
+            
             [tempArray addObject:weather];
         }
         block_self.weatherArray = tempArray;
@@ -83,6 +87,7 @@
         JQWeatherData *wd = [JQWeatherData mj_objectWithKeyValues:responseObject[@"pm2d5"]];
         
         [block_self.headerView setHeaderDataWithAry:block_self.weatherArray dt:responseObject[@"dt"] weatherData:wd];
+        
         //底部未来三天数据
         [block_self.bottomView setDataWithAry:block_self.weatherArray];
         
@@ -103,7 +108,7 @@
 - (JQWeatherBottomView *)bottomView
 {
     if (!_bottomView) {
-        _bottomView = [[JQWeatherBottomView alloc]init];
+        _bottomView = [[JQWeatherBottomView alloc] init];
         [self.view addSubview:_bottomView];
     }
     return _bottomView;
@@ -112,25 +117,32 @@
 - (JQWeatherHeaderView *)headerView
 {
     if (!_headerView) {
-        _headerView = [[JQWeatherHeaderView alloc]init];
+        
+        _headerView = [[JQWeatherHeaderView alloc] init];
         [self.view addSubview:_headerView];
     }
+    
     IMP_BLOCK_SELF(JQWeatherViewController);
+    
     _headerView.localBlock = ^{
         
         NSString *city = [AppConfig getCityInfo];
-        JQLocaViewController *locaV = [[JQLocaViewController alloc]init];
+        JQLocaViewController *locaV = [[JQLocaViewController alloc] init];
         locaV.currentTitle = city;
         locaV.view.backgroundColor = [UIColor whiteColor];
-        locaV.CityBlock = ^(NSString *provice,NSString *city){
+        
+        locaV.CityBlock = ^(NSString *provice, NSString *city){
+            
             block_self.weatherArray = nil;
             [SVProgressHUD showWithStatus:@"正在加载..."];
             [block_self requestNet:provice city:city];
             [AppConfig saveProAndCityInfoWithPro:provice city:city];
         };
+        
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:locaV];
         [block_self.navigationController presentViewController:nav animated:YES completion:nil];
     };
+    
     _headerView.backBlock = ^{
 
         [block_self.navigationController popViewControllerAnimated:YES];

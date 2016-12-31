@@ -60,8 +60,8 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="早餐、午餐、晚餐、夜宵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS1-05-6fM">
-                            <rect key="frame" x="46" y="14" width="143" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="早餐、午餐、晚餐、夜宵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS1-05-6fM">
+                            <rect key="frame" x="48" y="14" width="143" height="16"/>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -116,19 +116,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wij-Kf-vqq">
                     <rect key="frame" x="0.0" y="304" width="375" height="44"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="举报商家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-OA-I5U">
-                            <rect key="frame" x="10" y="14" width="52" height="16"/>
-                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="举报商家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-OA-I5U">
+                            <rect key="frame" x="0.0" y="13" width="375" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="VMy-OA-I5U" firstAttribute="centerY" secondItem="Wij-Kf-vqq" secondAttribute="centerY" id="BoA-m6-ixg"/>
+                        <constraint firstItem="VMy-OA-I5U" firstAttribute="centerX" secondItem="Wij-Kf-vqq" secondAttribute="centerX" id="5YL-ix-R4T"/>
+                        <constraint firstAttribute="trailing" secondItem="VMy-OA-I5U" secondAttribute="trailing" id="Bkz-0Z-Gi9"/>
                         <constraint firstAttribute="height" constant="44" id="NNy-NI-R0X"/>
+                        <constraint firstItem="VMy-OA-I5U" firstAttribute="centerY" secondItem="Wij-Kf-vqq" secondAttribute="centerY" id="Q5I-TD-FNF"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="SNv-ZK-AcN"/>
-                        <constraint firstItem="VMy-OA-I5U" firstAttribute="leading" secondItem="Wij-Kf-vqq" secondAttribute="leading" constant="10" id="f17-6W-7TM"/>
+                        <constraint firstItem="VMy-OA-I5U" firstAttribute="leading" secondItem="Wij-Kf-vqq" secondAttribute="leading" id="h6w-Up-f8N"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">

@@ -157,7 +157,8 @@ NSString * const MINESHOPFOODTBVCELLID = @"MINESHOPFOODTBVCELLID";
     
     _foodTotalModel = foodTotalModel;
     
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image] placeholderImage:[UIImage imageNamed:@"hot_food01"]];
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:foodTotalModel.image] placeholderImage:[UIImage imageNamed:@"hot_food01"]];
+    self.iconView.image = [UIImage imageNamed:foodTotalModel.image];
     self.nameLabel.text = foodTotalModel.name;
     self.moneyLabel.text = [NSString stringWithFormat:@"单价:￥%@", foodTotalModel.money];
     self.totalCountLabel.text = [NSString stringWithFormat:@"剩余:%ld", foodTotalModel.totalCount];

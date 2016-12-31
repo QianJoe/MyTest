@@ -3,15 +3,15 @@
                      {
                      "food_id":1,
                      "image":"eq",
-                     "name":"dasd",
-                     "money":"20",
-                     "location":"第五食堂",
+                     "name":"牛肉部队汤",
+                     "money":"14",
+                     "location":"第一食堂",
                      "phone":18888177203
                      },
                      {
                      "food_id":2,
                      "image":"qe",
-                     "name":"qwe",
+                     "name":"铁板豆腐",
                      "money":"10",
                      "location":"第一食堂",
                      "phone":18888177110
@@ -19,66 +19,42 @@
                      {
                      "food_id":3,
                      "image":"qew",
-                     "name":"3131",
-                     "money":"50",
-                     "location":"第二食堂",
+                     "name":"黑椒牛柳",
+                     "money":"13",
+                     "location":"第一食堂",
                      "phone":18888177156
                      },
                      {
                      "food_id":4,
                      "image":"eq",
-                     "name":"21134234",
-                     "money":"40",
+                     "name":"海鲜砂锅",
+                     "money":"12",
                      "location":"上海美食",
                      "phone":18888177175
                      },
                      {
                      "food_id":5,
                      "image":"123",
-                     "name":"21134234",
-                     "money":"150",
+                     "name":"鱿鱼石锅拌饭",
+                     "money":"15",
                      "location":"第五食堂",
                      "phone":18888170177
                      },
                      {
                      "food_id":6,
                      "image":"cccccc",
-                     "name":"ccc",
-                     "money":"223",
+                     "name":"五花肉石锅拌饭",
+                     "money":"14",
                      "location":"大家乐",
                      "phone":18888197177
                      },
                      {
                      "food_id":7,
                      "image":"12vvvew3",
-                     "name":"2113werw4234",
-                     "money":"2323",
+                     "name":"三杯鸡",
+                     "money":"12",
                      "location":"韩菜坊",
                      "phone":18888187177
-                     },
-                     {
-                     "food_id":8,
-                     "image":"6666666",
-                     "name":"66666",
-                     "money":"2323",
-                     "location":"第二食堂",
-                     "phone":18888178177
-                     },
-                     {
-                     "food_id":9,
-                     "image":"777777",
-                     "name":"3123123",
-                     "money":"2323",
-                     "location":"第五食堂",
-                     "phone":18888177178
-                     },
-                     {
-                     "food_id":10,
-                     "image":"8888888",
-                     "name":"4444444",
-                     "money":"2323",
-                     "location":"第一食堂",
-                     "phone":18888177177
                      }
                     ]
 }
