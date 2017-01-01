@@ -8,8 +8,12 @@
 
 #import "JQInsteadTakeDetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "JQFoodTotalModel.h"
+#import "JQInsteadTakeFood.h"
 #import "JQTimeTool.h"
+#import "JQUserTool.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "JQUser.h"
+#import "PCH.h"
 
 @interface JQInsteadTakeDetailViewController ()
 
@@ -231,7 +235,7 @@
     
     UILabel *personPhoneLabel = [[UILabel alloc] init];
     personPhoneLabel.font = [UIFont systemFontOfSize:13.0f];
-    personPhoneLabel.text = [NSString stringWithFormat:@"%ld", 188888177178];
+    personPhoneLabel.text = self.foodTotalModel.personphone;
     self.personPhoneLabel = personPhoneLabel;
     [self.midContentView addSubview:personPhoneLabel];
     
@@ -274,8 +278,54 @@
 - (void)finishBtnClick:(UIButton *)btn {
     
     JQLOGFUNC;
+    
+    // 先判断是否登录了
+    JQUser *user = [JQUserTool getUserWithUnarchive];
+    if (user) {
+        
 #warning 向服务器提交
-    [self.navigationController popViewControllerAnimated:YES];
+        JQHttpRequestTool *httpTool = [JQHttpRequestTool shareHttpRequestTool];
+        
+        // 提交的数据
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setValue:user.account forKey:@"username"];
+        [dict setValue:[NSString stringWithFormat:@"%d", user.user_id] forKey:@"takeUser_id"];
+        [dict setValue:[NSString stringWithFormat:@"%d", self.foodTotalModel.buyedfood_id] forKey:@"buyedfood_id"];
+        
+        [httpTool requestWithMethod:POST andUrlString:JQApplyInsteadTakeFoodURL andParameters:dict andFinished:^(id response, NSError *error) {
+            
+            NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            JQLOG(@"%@", result);
+            
+            // 转成字典
+            NSMutableDictionary *resultDict = [result dictionaryWithJsonString:result].mutableCopy;
+            
+            if (resultDict[@"success"]) {
+                
+                [SVProgressHUD showSuccessWithStatus:@"接受成功"];
+
+                [self.navigationController popViewControllerAnimated:YES];
+            
+            } else {
+                
+                [SVProgressHUD showErrorWithStatus:@"接受失败，未知错误"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [SVProgressHUD dismiss];
+                });
+            }
+            
+        }];
+        
+    } else {
+        
+        [SVProgressHUD showErrorWithStatus:@"未登录"];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [SVProgressHUD dismiss];
+        });
+    }
 }
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JQFoodTotalModel;
+@class JQInsteadTakeFood;
 
 @interface JQMineTakeDetailViewController : UIViewController
 /**持有一个foodTotalModel*/
-@property (nonatomic, strong) JQFoodTotalModel *foodTotalModel;
+@property (nonatomic, strong) JQInsteadTakeFood *foodTotalModel;
 
 @end

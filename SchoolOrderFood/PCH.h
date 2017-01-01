@@ -23,4 +23,10 @@
 #define JQOrderSchoolFoodMinePageDataURL @"http://60.205.182.229/schoolOrderFood/index.php/Home/getMinePageData"
 // 我的订餐
 #define JQGetMineBuyedFoodDataURL @"http://60.205.182.229/schoolOrderFood/index.php/User/getMineBuyedTakeFood"
+// 代送列表
+#define JQInsteadTakeFoodDataURL @"http://60.205.182.229/schoolOrderFood/index.php/User/getWaitForTakeFood"
+// 申请代送
+#define JQApplyInsteadTakeFoodURL @"http://60.205.182.229/schoolOrderFood/index.php/User/applyWaitForTakeFood"
+// 我的代送
+#define JQGetMineTakeFoodDataURL @"http://60.205.182.229/schoolOrderFood/index.php/User/getMineTakeFood"
 #endif /* PCH_h */

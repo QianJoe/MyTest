@@ -85,7 +85,6 @@
         // Post到 待取餐
         [httpTool requestWithMethod:POST andUrlString:JQGetMineBuyedFoodDataURL andParameters:dict andFinished:^(id response, NSError *error) {
             
-            
             NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
             JQLOG(@"%@", result);
             

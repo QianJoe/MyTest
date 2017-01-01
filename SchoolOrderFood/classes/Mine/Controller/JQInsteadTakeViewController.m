@@ -14,6 +14,8 @@
 #import <MJExtension/MJExtension.h>
 #import "JQInsteadTakeDetailViewController.h"
 #import "UIImage+Image.h"
+#import "JQInsteadTakeFood.h"
+#import "PCH.h"
 
 @interface JQInsteadTakeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -56,13 +58,34 @@
     IMP_BLOCK_SELF(JQInsteadTakeViewController);
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [block_self loadJSONData:^{
+        
+        JQHttpRequestTool *httpTool = [JQHttpRequestTool shareHttpRequestTool];
+        
+        [httpTool requestWithMethod:GET andUrlString:JQInsteadTakeFoodDataURL andParameters:nil andFinished:^(id response, NSError *error) {
+           
+            NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            JQLOG(@"%@", result);
+            
+            // 转成字典
+            NSDictionary *dataDictionary = [result dictionaryWithJsonString:result];
+            
+            // 转成数组
+            NSArray *insteaFooddArray = dataDictionary[@"insteadtakefood"];
+            
+            block_self.dataListM = [JQInsteadTakeFood mj_objectArrayWithKeyValuesArray:insteaFooddArray];
             
             [block_self.tableView reloadData];
-            
+
             [block_self.tableView.mj_header endRefreshing];
-            
         }];
+        
+//        [block_self loadJSONData:^{
+//            
+//            [block_self.tableView reloadData];
+//            
+//            [block_self.tableView.mj_header endRefreshing];
+//            
+//        }];
     }];
     
     // 马上进入刷新状态

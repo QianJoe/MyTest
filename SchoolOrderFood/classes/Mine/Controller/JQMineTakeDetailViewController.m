@@ -8,7 +8,7 @@
 
 #import "JQMineTakeDetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "JQFoodTotalModel.h"
+#import "JQInsteadTakeFood.h"
 #import "JQTimeTool.h"
 #import "UIImage+Image.h"
 
@@ -234,7 +234,7 @@
     
     UILabel *personPhoneLabel = [[UILabel alloc] init];
     personPhoneLabel.font = [UIFont systemFontOfSize:13.0f];
-    personPhoneLabel.text = [NSString stringWithFormat:@"%ld", 188888177178];
+    personPhoneLabel.text = self.foodTotalModel.personphone;
     self.personPhoneLabel = personPhoneLabel;
     [self.midContentView addSubview:personPhoneLabel];
     

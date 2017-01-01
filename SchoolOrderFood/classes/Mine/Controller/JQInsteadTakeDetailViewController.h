@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "JQMineBaseViewController.h"
-@class JQFoodTotalModel;
+@class JQInsteadTakeFood;
 
 @interface JQInsteadTakeDetailViewController : JQMineBaseViewController
 
-/**持有一个foodTotalModel*/
-@property (nonatomic, strong) JQFoodTotalModel *foodTotalModel;
+/**持有一个JQInsteadTakeFood*/
+@property (nonatomic, strong) JQInsteadTakeFood *foodTotalModel;
 
 @end

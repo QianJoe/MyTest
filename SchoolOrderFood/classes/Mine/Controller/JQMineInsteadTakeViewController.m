@@ -14,6 +14,10 @@
 #import "JQMineTakeDetailViewController.h"
 #import "UIImage+Image.h"
 #import "JQMineTakeTableViewCell.h"
+#import "PCH.h"
+#import "JQUserTool.h"
+#import "JQUser.h"
+#import "JQInsteadTakeFood.h"
 
 @interface JQMineInsteadTakeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,6 +26,9 @@
 
 /**总的数据*/
 @property (nonatomic, strong) NSMutableArray *dataListM;
+
+/**user*/
+@property (nonatomic, strong) JQUser *user;
 
 @end
 
@@ -32,8 +39,17 @@
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:naviColor] forBarMetrics:UIBarMetricsDefault];
     
-    // 下拉刷新
-    [self refreshSet];
+    JQUser *user = [JQUserTool getUserWithUnarchive];
+    
+    if (user) {
+        
+        self.user = user;
+        // 下拉刷新
+        [self refreshSet];
+    } else {
+        
+        [SVProgressHUD showErrorWithStatus:@"未登录"];
+    }
 }
 
 - (void)viewDidLoad {
@@ -51,13 +67,36 @@
     IMP_BLOCK_SELF(JQMineInsteadTakeViewController);
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [block_self loadJSONData:^{
+        
+        JQHttpRequestTool *httpTool = [JQHttpRequestTool shareHttpRequestTool];
+        NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+        [dictM setValue:[NSString stringWithFormat:@"%d", self.user.user_id] forKey:@"takeUser_id"];
+        
+        [httpTool requestWithMethod:POST andUrlString:JQGetMineTakeFoodDataURL andParameters:dictM andFinished:^(id response, NSError *error) {
+            
+            NSString *result = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            JQLOG(@"%@", result);
+            
+            // 转成字典
+            NSDictionary *dataDictionary = [result dictionaryWithJsonString:result];
+            
+            // 转成数组
+            NSArray *insteaFooddArray = dataDictionary[@"mineBuyedFood"];
+            
+            block_self.dataListM = [JQInsteadTakeFood mj_objectArrayWithKeyValuesArray:insteaFooddArray];
             
             [block_self.tableView reloadData];
             
             [block_self.tableView.mj_header endRefreshing];
-
         }];
+        
+//        [block_self loadJSONData:^{
+//            
+//            [block_self.tableView reloadData];
+//            
+//            [block_self.tableView.mj_header endRefreshing];
+//
+//        }];
     }];
     
     // 马上进入刷新状态

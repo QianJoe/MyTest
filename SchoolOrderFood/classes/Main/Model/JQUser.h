@@ -12,7 +12,7 @@
 @interface JQUser : NSObject
 
 /**id*/
-@property (nonatomic, assign) NSInteger user_id;
+@property (nonatomic, assign) int user_id;
 /**账号*/
 @property (nonatomic, copy) NSString *account;
 /**密码*/

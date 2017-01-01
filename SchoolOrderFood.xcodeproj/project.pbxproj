@@ -40,6 +40,7 @@
 		6F26E81E1E1564F1002737FD /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F26E81D1E1564F1002737FD /* RadioButton.m */; };
 		6F26E8211E16A620002737FD /* JQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F26E8201E16A620002737FD /* JQUser.m */; };
 		6F26E8241E16A685002737FD /* JQUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F26E8231E16A685002737FD /* JQUserInfo.m */; };
+		6F26E84B1E18029C002737FD /* JQInsteadTakeFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F26E84A1E18029C002737FD /* JQInsteadTakeFood.m */; };
 		6F30DA3C1DC1ABC8000824CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3B1DC1ABC8000824CE /* main.m */; };
 		6F30DA3F1DC1ABC8000824CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F30DA3E1DC1ABC8000824CE /* AppDelegate.m */; };
 		6F30DA471DC1ABC8000824CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F30DA461DC1ABC8000824CE /* Assets.xcassets */; };
@@ -225,6 +226,8 @@
 		6F26E8201E16A620002737FD /* JQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQUser.m; sourceTree = "<group>"; };
 		6F26E8221E16A685002737FD /* JQUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQUserInfo.h; sourceTree = "<group>"; };
 		6F26E8231E16A685002737FD /* JQUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQUserInfo.m; sourceTree = "<group>"; };
+		6F26E8491E18029C002737FD /* JQInsteadTakeFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQInsteadTakeFood.h; sourceTree = "<group>"; };
+		6F26E84A1E18029C002737FD /* JQInsteadTakeFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQInsteadTakeFood.m; sourceTree = "<group>"; };
 		6F30DA371DC1ABC8000824CE /* SchoolOrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolOrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30DA3B1DC1ABC8000824CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F30DA3D1DC1ABC8000824CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -573,6 +576,15 @@
 				6FA875F71DD2D1D700C7FF05 /* 我的 */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6F26E8481E180278002737FD /* 代送列表 */ = {
+			isa = PBXGroup;
+			children = (
+				6F26E8491E18029C002737FD /* JQInsteadTakeFood.h */,
+				6F26E84A1E18029C002737FD /* JQInsteadTakeFood.m */,
+			);
+			name = "代送列表";
 			sourceTree = "<group>";
 		};
 		6F30DA2E1DC1ABC8000824CE = {
@@ -944,6 +956,7 @@
 		6FA875FA1DD2D20600C7FF05 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				6F26E8481E180278002737FD /* 代送列表 */,
 				6FE1C6A01DF92C56002EF4F3 /* 星期单 */,
 				6FD3F2AC1DF553AD00BA2A6A /* 我的餐店 */,
 				6FD3F2AB1DF5536200BA2A6A /* 主要的 */,
@@ -1629,6 +1642,7 @@
 				6FE571471DCF1FC2009BAD8E /* JQLoginRegisterView.m in Sources */,
 				6F10A4BA1DCC81A90027C650 /* JQHomeTableViewController.m in Sources */,
 				6FE1C6A61DF92D4E002EF4F3 /* JQWeekEveryDayModel.m in Sources */,
+				6F26E84B1E18029C002737FD /* JQInsteadTakeFood.m in Sources */,
 				6FC829231DFADD03001F4355 /* INTULocationRequest.m in Sources */,
 				6FD3F27E1DF3FD9B00BA2A6A /* JQShareFriendsViewController.m in Sources */,
 				6FE1C69C1DF86A9B002EF4F3 /* JQWeekDetailViewController.m in Sources */,

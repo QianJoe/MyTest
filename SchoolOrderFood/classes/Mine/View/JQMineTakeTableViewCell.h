@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JQFoodTotalModel;
+@class JQInsteadTakeFood;
 
 UIKIT_EXTERN NSString * const MINETAKETABLEVIEWCELLID;
 
 @interface JQMineTakeTableViewCell : UITableViewCell
-/**持有一个foodtotalModel*/
-@property (nonatomic, strong) JQFoodTotalModel *foodTotalModel;
+/**持有一个JQInsteadTakeFood*/
+@property (nonatomic, strong) JQInsteadTakeFood *foodTotalModel;
 
 @end

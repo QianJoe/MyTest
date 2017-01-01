@@ -7,7 +7,7 @@
 //
 
 #import "JQInsteadTakeTableViewCell.h"
-#import "JQFoodTotalModel.h"
+#import "JQInsteadTakeFood.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "JQTimeTool.h"
 
@@ -196,7 +196,7 @@ NSString * const INSTEADTAKETABLEVIEWCELLID = @"INSTEADTAKETABLEVIEWCELLID";
     
 }
 
-- (void)setFoodTotalModel:(JQFoodTotalModel *)foodTotalModel {
+- (void)setFoodTotalModel:(JQInsteadTakeFood *)foodTotalModel {
     
     _foodTotalModel = foodTotalModel;
     
